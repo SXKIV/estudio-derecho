@@ -24,7 +24,8 @@
       ['srs', '🔁', 'Repaso inteligente', res.vencidas + ' pendientes · ' + res.nueva + ' nuevas. Mezcla tipos y prioriza lo que fallas.'],
       ['alternativas', '🅰️', 'Alternativas', cuenta('alternativas') + ' preguntas de selección múltiple.'],
       ['vf', '✔️', 'Verdadero o falso', cuenta('vf') + ' afirmaciones para justificar.'],
-      ['relacionar', '🔗', 'Relacionar', cuenta('relacionar') + ' ejercicios de unir conceptos.']
+      ['relacionar', '🔗', 'Relacionar', cuenta('relacionar') + ' ejercicios de unir conceptos.'],
+      ['definicion', '📘', 'Definiciones', cuenta('definicion') + ' conceptos del glosario para definir de memoria.']
     ];
     c.innerHTML = '<div class="modos">' + modos.map(function (m) {
       return '<button class="modo" data-modo="' + m[0] + '"><span class="ico">' + m[1] + '</span><b>' + m[2] + '</b><span>' + m[3] + '</span></button>';
@@ -52,7 +53,7 @@
       c.innerHTML = '<div class="sesion-top"><span class="etiqueta azul">' + esc(opts.titulo || 'Práctica') + '</span><span class="small">Pregunta ' + (i + 1) + ' de ' + lista.length + '</span></div>' +
         '<div class="barra" style="max-width:860px;height:6px;margin-bottom:14px"><i class="dom" style="width:' + (100 * i / lista.length) + '%;background:var(--acento)"></i></div><div class="pregunta" id="caja-q"></div>';
       var caja = $('#caja-q', c);
-      var pintor = { alternativas: pintarAlternativas, vf: pintarVF, relacionar: pintarRelacionar, oral: pintarOralCorto }[q.tipo];
+      var pintor = { alternativas: pintarAlternativas, vf: pintarVF, relacionar: pintarRelacionar, oral: pintarOralCorto, definicion: pintarDefinicion }[q.tipo];
       pintor(caja, q, function (resultado) {
         E.registrarRespuesta(q.id, resultado);
         resultados.push({ q: q, r: resultado });
@@ -141,6 +142,16 @@
   function pintarOralCorto(caja, q, listo) {
     caja.innerHTML = '<div class="kicker">Pregunta oral</div><div class="enunciado">' + esc(q.enunciado) + '</div><p class="muted">Respóndela en voz alta y luego mira la pauta.</p><button class="btn" id="ver">Ver pauta</button>';
     $('#ver', caja).onclick = function () { pautaYAutoeval(caja, q, listo); };
+  }
+  function pintarDefinicion(caja, q, listo) {
+    caja.innerHTML = '<div class="kicker">Glosario · define con tus palabras o de memoria</div><div class="enunciado">' + esc(q.termino) + '</div><p class="muted">Dilo en voz alta y luego compara con la definición del material.</p><button class="btn" id="ver">Ver definición</button>';
+    $('#ver', caja).onclick = function () {
+      this.remove();
+      caja.appendChild(U.el('<div class="explicacion"><b>Definición</b><p style="margin:6px 0">' + (q.literal ? '«' + esc(q.definicion) + '»' : esc(q.definicion)) + '</p>' + (q.fuente ? '<p class="small"><b>Fuente:</b> ' + esc(q.fuente) + '</p>' : '') + '</div>'));
+      var ev = U.el('<div><p class="small" style="margin-top:12px"><b>¿La sabías?</b></p><div class="autoeval"><button class="btn" style="background:var(--green)" data-r="bien">Sí, completa</button><button class="btn" style="background:#d79b12" data-r="parcial">A medias</button><button class="btn" style="background:var(--red)" data-r="mal">No</button></div></div>');
+      caja.appendChild(ev);
+      $$('[data-r]', ev).forEach(function (x) { x.onclick = function () { ev.remove(); listo(x.dataset.r); }; });
+    };
   }
   function pautaYAutoeval(caja, q, listo) {
     var b = $('#ver', caja); if (b) b.remove();

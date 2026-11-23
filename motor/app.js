@@ -41,7 +41,13 @@
     registrarUnidad: function (u) {
       u.secciones = u.secciones || []; u.interactivos = u.interactivos || []; u.preguntas = u.preguntas || [];
       u.preguntas.forEach(function (q, i) { if (!q.id) q.id = u.id + '-q' + (i + 1); q.unidad = u.id; });
+      u.glosario = u.glosario || [];
+      generarPreguntasGlosario(u);
       E.unidades.push(u);
+    },
+    glosario: function () {
+      return E.unidades.reduce(function (a, u) { return a.concat(u.glosario.map(function (g) { g.unidad = u; return g; })); }, [])
+        .sort(function (x, y) { return x.termino.localeCompare(y.termino, 'es'); });
     },
     unidad: function (id) { return E.unidades.filter(function (u) { return u.id === id; })[0]; },
     todasLasPreguntas: function () { return E.unidades.reduce(function (a, u) { return a.concat(u.preguntas); }, []); },
@@ -60,6 +66,30 @@
       return nuevo;
     }
   };
+
+  /* ---------------- glosario: preguntas automáticas ---------------- */
+  function slug(t) { return String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+  E.slug = slug;
+  function generarPreguntasGlosario(u) {
+    var g = u.glosario;
+    g.forEach(function (t, i) {
+      t.id = u.id + '-g-' + slug(t.termino);
+      // 1) definición → concepto (alternativas), si hay suficientes términos para distractores
+      if (g.length >= 4) {
+        var otros = g.filter(function (x) { return x !== t; });
+        var distractores = [];
+        for (var k = 0; distractores.length < 3 && k < otros.length; k++) distractores.push(otros[(i * 7 + k * 3) % otros.length].termino);
+        distractores = distractores.filter(function (d, j, arr) { return arr.indexOf(d) === j; });
+        while (distractores.length < 3) { var cand = otros[(distractores.length * 5 + i) % otros.length].termino; if (distractores.indexOf(cand) < 0) distractores.push(cand); else break; }
+        u.preguntas.push({ id: t.id + '-a', unidad: u.id, seccion: t.seccion, glosario: true, tipo: 'alternativas',
+          enunciado: '¿Qué concepto se define así? «' + t.definicion + '»', opciones: [t.termino].concat(distractores), correcta: 0,
+          explicacion: t.termino + (t.fuente ? ' (' + t.fuente + ').' : '.') });
+      }
+      // 2) concepto → definición (tarjeta: defínelo y autoevalúate)
+      u.preguntas.push({ id: t.id + '-d', unidad: u.id, seccion: t.seccion, glosario: true, tipo: 'definicion',
+        enunciado: 'Define: ' + t.termino, termino: t.termino, definicion: t.definicion, fuente: t.fuente, literal: t.literal });
+    });
+  }
 
   /* ---------------- arranque ---------------- */
   function parametro(n) { var m = new RegExp('[?&]' + n + '=([^&#]+)').exec(location.search); return m ? decodeURIComponent(m[1]) : null; }
@@ -154,6 +184,7 @@
       '<a class="lat-link' + (ruta === '#/repaso' ? ' activo' : '') + '" href="#/repaso">🔁 Repaso del día<span class="sub" id="lat-pend"></span></a>' +
       '<a class="lat-link' + (ruta === '#/kahoot' ? ' activo' : '') + '" href="#/kahoot">⚡ Modo Kahoot</a>' +
       '<a class="lat-link' + (ruta === '#/oral' ? ' activo' : '') + '" href="#/oral">🎙️ Simulacro oral</a>' +
+      '<a class="lat-link' + (ruta.indexOf('#/glosario') === 0 ? ' activo' : '') + '" href="#/glosario">📘 Glosario<span class="sub">' + E.glosario().length + ' conceptos</span></a>' +
       '<a class="lat-link' + (ruta === '#/progreso' ? ' activo' : '') + '" href="#/progreso">📊 Mi progreso</a>';
     var bloque = null;
     E.materia.unidades.forEach(function (meta) {
@@ -184,6 +215,7 @@
     if (partes[0] === 'kahoot') return vistaKahoot(vista);
     if (partes[0] === 'oral') return vistaOral(vista);
     if (partes[0] === 'progreso') return vistaProgreso(vista);
+    if (partes[0] === 'glosario') return vistaGlosario(vista, decodeURIComponent(partes[1] || ''));
     return vistaInicio(vista);
   }
   E.alSalir = function (fn) { limpieza = fn; };
@@ -307,6 +339,52 @@
     var orales = E.todasLasPreguntas().filter(function (q) { return q.tipo === 'oral'; });
     v.innerHTML = '<div class="kicker">Examen oral</div><h1>Simulacro oral</h1><p class="lead">Preguntas abiertas de todas las unidades, al azar. Responde en voz alta con el cronómetro, después compara con la pauta y evalúate con honestidad.</p><div id="or"></div>';
     Quiz.oral($('#or'), SRS.mezclar(orales.slice()), { simulacro: true });
+  }
+
+  function vistaGlosario(v, foco) {
+    var d = E.datos(), todos = E.glosario();
+    var html = '<div class="kicker">Definiciones</div><h1>Glosario</h1><p class="lead">Los conceptos definidos en los apuntes, las diapositivas y las normas del curso. Las definiciones entre comillas son textuales de la norma o de la fuente citada; las demás son síntesis del material.</p>' +
+      '<div class="interactivo" style="padding:16px 18px"><div class="fila" style="margin:0"><div class="campo" style="flex:1;min-width:220px"><label>Buscar concepto</label><input id="g-buscar" placeholder="Ej: anatocismo, prenda, OCD…" autocomplete="off"></div>' +
+      '<div class="campo"><label>Unidad</label><select id="g-uni"><option value="">Todas</option>' + E.unidades.filter(function (u) { return u.glosario.length; }).map(function (u) { return '<option value="' + u.id + '">' + esc(u.numero + '. ' + u.titulo) + '</option>'; }).join('') + '</select></div>' +
+      '<button class="btn" id="g-def">Practicar definiciones</button><button class="btn sec" id="g-alt">Adivina el concepto</button></div><div class="indice" id="g-letras" style="margin:12px 0 0"></div></div><div id="g-zona"></div><div id="g-lista"></div>';
+    v.innerHTML = html;
+    function estadoDe(t) {
+      var r1 = d.preguntas[t.id + '-d'], r2 = d.preguntas[t.id + '-a'];
+      var c = Math.max(r1 && r1.c || 0, r2 && r2.c || 0);
+      return c >= 4 ? '<span class="etiqueta verde">Lo manejo</span>' : c >= 1 ? '<span class="etiqueta amarilla">En proceso</span>' : '';
+    }
+    function pintar() {
+      var q = $('#g-buscar').value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+      var uni = $('#g-uni').value;
+      var lista = todos.filter(function (t) {
+        if (uni && t.unidad.id !== uni) return false;
+        if (!q) return true;
+        var txt = (t.termino + ' ' + (t.alias || []).join(' ') + ' ' + t.definicion).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return txt.indexOf(q) >= 0;
+      });
+      var letras = {}; lista.forEach(function (t) { letras[t.termino.charAt(0).toUpperCase()] = 1; });
+      $('#g-letras').innerHTML = Object.keys(letras).sort().map(function (l) { return '<a href="javascript:void 0" data-l="' + l + '">' + l + '</a>'; }).join('');
+      $$('#g-letras a').forEach(function (a) { a.onclick = function () { var x = $('[data-letra="' + a.dataset.l + '"]'); if (x) x.scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
+      var actual = '';
+      $('#g-lista').innerHTML = lista.length ? lista.map(function (t) {
+        var l = t.termino.charAt(0).toUpperCase(), cab = '';
+        if (l !== actual) { actual = l; cab = '<h2 data-letra="' + l + '" style="margin:22px 0 10px;scroll-margin-top:90px">' + l + '</h2>'; }
+        return cab + '<div class="card glosa" id="g-' + t.id + '" style="margin-bottom:10px;scroll-margin-top:90px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><h3 style="margin:0">' + esc(t.termino) + '</h3>' + estadoDe(t) + '</div>' +
+          '<p style="margin:8px 0">' + (t.literal ? '«' + esc(t.definicion) + '»' : esc(t.definicion)) + '</p>' +
+          '<p class="small" style="margin:0">' + (t.fuente ? '<span class="norma">' + esc(t.fuente) + '</span> · ' : '') + '<a href="#/u/' + t.unidad.id + '/contenido/' + t.seccion + '">' + esc(t.unidad.numero + '. ' + t.unidad.titulo) + ' →</a></p></div>';
+      }).join('') : '<p class="muted">No hay conceptos que coincidan.</p>';
+    }
+    function practicar(tipo) {
+      var uni = $('#g-uni').value;
+      var qs = E.todasLasPreguntas().filter(function (x) { return x.glosario && x.tipo === tipo && (!uni || x.unidad === uni); });
+      Quiz.sesion($('#g-zona'), SRS.seleccionar(qs, d.preguntas, 15), { titulo: tipo === 'definicion' ? 'Definiciones' : 'Adivina el concepto', alVolver: function () { $('#g-zona').innerHTML = ''; } });
+      $('#g-zona').scrollIntoView({ behavior: 'smooth' });
+    }
+    $('#g-buscar').oninput = pintar; $('#g-uni').onchange = pintar;
+    $('#g-def').onclick = function () { practicar('definicion'); };
+    $('#g-alt').onclick = function () { practicar('alternativas'); };
+    pintar();
+    if (foco) { var x = $('#g-' + foco); if (x) setTimeout(function () { x.scrollIntoView({ behavior: 'smooth', block: 'start' }); x.style.boxShadow = '0 0 0 3px var(--yellow)'; }, 50); }
   }
 
   function vistaProgreso(v) {

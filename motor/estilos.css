@@ -125,7 +125,7 @@ figure.diagrama figcaption{font-size:13px;color:var(--muted);margin-top:8px;text
 .check input{margin-top:4px;width:17px;height:17px}
 
 /* ---------- Práctica ---------- */
-.modos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 20px}
+.modos{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:8px 0 20px}
 .modo{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;cursor:pointer;text-align:left;box-shadow:var(--soft)}
 .modo:hover{border-color:#9fc7e4;background:#f7fbff}
 .modo b{display:block;font-size:16px;margin-bottom:4px}
@@ -213,6 +213,7 @@ footer.pie{border-top:1px solid var(--line);padding:16px 22px;font-size:12.5px;c
   aside.lateral.abierto{transform:none}
   main{padding:20px 16px 100px}
   .grid,.grid.dos,.grid.cuatro,.modos{grid-template-columns:1fr 1fr}
+  .modos{grid-template-columns:1fr 1fr 1fr}
   .solo-movil{display:inline-block}
   h1{font-size:32px}
   .marca span{display:none}

@@ -41,6 +41,8 @@ materias/
     materia.js                nombre, color, unidades, sinónimos del chat
     u1-dinero-ley18010.js     una unidad por archivo
     u2-contratos.js
+    u3-operaciones-bancarias.js
+    u4-garantias.js
 ```
 
 ## Cómo agregar una unidad
@@ -55,6 +57,15 @@ materias/
      - `{ tipo:'vf', enunciado, respuesta: true|false, explicacion }`
      - `{ tipo:'relacionar', enunciado, pares:[[izq, der], ...], explicacion }`
      - `{ tipo:'oral', enunciado, puntos:[...], norma }`
+   - `glosario`: `[{ termino, definicion, fuente, seccion, literal?, alias? }]`.
+     - `literal: true` solo si la definición es el texto exacto de la norma o fuente citada
+       (se muestra entre comillas). Si es síntesis, no se marca.
+     - `alias`: otras formas de nombrar el concepto (siglas, plurales, sinónimos) para que
+       el chat lo reconozca: p. ej. `['tmc', 'interes maximo convencional']`.
+     - El motor crea solo dos preguntas por concepto (id fijo `uN-g-<termino>-a` y `-d`):
+       «¿qué concepto se define así?» y una tarjeta para definir de memoria.
+     - El chat responde con la definición del glosario cuando se pregunta «qué es X»,
+       «define X», «diferencia entre X e Y» o se escribe solo el concepto.
    - Las opciones se muestran desordenadas; no uses «todas las anteriores».
    - Los `id` de preguntas se generan solos (`u1-q1`, …). No reordenes preguntas ya
      publicadas: el progreso guardado depende del orden. Agrega las nuevas al final.

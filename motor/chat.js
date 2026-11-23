@@ -42,7 +42,11 @@
           indice.push({ texto: t, u: u, s: s, tipo: 'seccion' });
         });
       });
+      u.glosario.forEach(function (g) {
+        indice.push({ texto: g.termino + ': ' + g.definicion, u: u, s: seccionDe(u, g.seccion), tipo: 'glosario', g: g });
+      });
       u.preguntas.forEach(function (q) {
+        if (q.glosario) return;
         if (q.tipo === 'oral') indice.push({ texto: q.enunciado + ' — ' + q.puntos.join(' · ') + (q.norma ? ' (' + q.norma + ')' : ''), u: u, s: seccionDe(u, q.seccion), tipo: 'oral' });
         else if (q.explicacion) indice.push({ texto: q.explicacion, u: u, s: seccionDe(u, q.seccion), tipo: 'expl' });
       });
@@ -83,6 +87,7 @@
       });
       score *= (0.5 + cubiertos / qt.length);
       if (d.tipo === 'oral') score *= 1.15;
+      if (d.tipo === 'glosario') score *= 1.25;
       return { d: d, score: score };
     }).filter(function (x) { return x.score > 0; }).sort(function (a, b) { return b.score - a.score; });
     // máximo 3 resultados de secciones distintas
@@ -107,6 +112,37 @@
   }
   function recortar(t, max) { return t.length > max ? t.slice(0, max).replace(/\s\S*$/, '') + '…' : t; }
 
+  /* ---------- Glosario: si preguntan por un concepto, responder con su definición ---------- */
+  var PISTAS_DEFINICION = /(que es|que son|que significa|que se entiende|defin|concepto|significado|en que consiste|a que se refiere|explica|cual es la diferencia|diferencia|distingue|compara)/;
+  function conceptosEn(q) {
+    var t = ' ' + normalizar(q).replace(/\s+/g, ' ').trim() + ' ';
+    var hallados = [];
+    E.glosario().forEach(function (g) {
+      [g.termino].concat(g.alias || []).forEach(function (nombre) {
+        var n = normalizar(nombre).replace(/\s+/g, ' ').trim();
+        if (!n) return;
+        var pos = t.indexOf(' ' + n + ' ');
+        if (pos < 0 && n.length > 4) pos = t.indexOf(' ' + n.replace(/s$/, '') + ' ');  // plural simple
+        if (pos >= 0) hallados.push({ g: g, largo: n.length, pos: pos, n: n });
+      });
+    });
+    // quedarse con los más largos que no se solapen (p. ej. "depósito irregular" gana sobre "depósito")
+    hallados.sort(function (a, b) { return b.largo - a.largo; });
+    var elegidos = [];
+    hallados.forEach(function (h) {
+      if (elegidos.some(function (e) { return e.g === h.g || (h.pos >= e.pos && h.pos < e.pos + e.largo + 1) || (e.pos >= h.pos && e.pos < h.pos + h.largo + 1); })) return;
+      elegidos.push(h);
+    });
+    return { lista: elegidos.sort(function (a, b) { return a.pos - b.pos; }).map(function (h) { return h.g; }), texto: t, nombres: elegidos.map(function (h) { return h.n; }) };
+  }
+  function esPreguntaDeDefinicion(q, res) {
+    if (!res.lista.length) return false;
+    var resto = res.texto;
+    res.nombres.forEach(function (n) { resto = resto.split(' ' + n + ' ').join(' '); });
+    var sobran = tokens(resto).length;
+    return PISTAS_DEFINICION.test(normalizar(q)) || sobran <= 1;
+  }
+
   var Chat = {
     iniciar: function (estudio) {
       E = estudio; sinonimos = (E.materia.sinonimos || {});
@@ -128,13 +164,28 @@
       function preguntar(q) {
         q = q.trim(); if (!q) return;
         agregar(esc(q), 'yo');
+        var conceptos = conceptosEn(q);
+        if (esPreguntaDeDefinicion(q, conceptos)) {
+          var defs = conceptos.lista.slice(0, 3);
+          var html = (defs.length > 1 ? 'Estas son las definiciones del glosario:' : 'Definición del glosario:') + defs.map(function (g) {
+            return '<div class="frag"><div><b>' + esc(g.termino) + '</b></div><div>' + (g.literal ? '«' + esc(g.definicion) + '»' : esc(g.definicion)) + '</div>' +
+              '<div class="small">' + (g.fuente ? esc(g.fuente) + ' · ' : '') + esc(g.unidad.numero + '. ' + g.unidad.titulo) + '</div>' +
+              '<div><a href="#/u/' + g.unidad.id + '/contenido/' + g.seccion + '">Ir a la sección →</a> · <a href="#/glosario/' + encodeURIComponent(g.id) + '">Ver en el glosario →</a></div></div>';
+          }).join('');
+          if (defs.length > 1) {
+            var r2 = buscar(q).filter(function (x) { return x.d.tipo !== 'glosario'; })[0];
+            if (r2) html += '<div class="small" style="margin-top:6px">Para compararlos, revisa también: <a href="#/u/' + r2.d.u.id + '/contenido/' + r2.d.s.id + '">' + esc(r2.d.s.titulo) + ' →</a></div>';
+          }
+          agregar(html, 'bot');
+          return;
+        }
         var r = buscar(q);
         if (!r.length || r[0].score < 1.2) {
           agregar('No encontré eso en el contenido de la página. Prueba con otras palabras (por ejemplo, el nombre de la institución o el número del artículo) o revisa el índice de la unidad.', 'bot');
           return;
         }
         agregar('Esto es lo que dice la página:' + r.map(function (x) {
-          var d = x.d, etiqueta = d.tipo === 'oral' ? 'Pauta oral' : d.tipo === 'expl' ? 'Explicación de pregunta' : 'Contenido';
+          var d = x.d, etiqueta = d.tipo === 'oral' ? 'Pauta oral' : d.tipo === 'expl' ? 'Explicación de pregunta' : d.tipo === 'glosario' ? 'Glosario' : 'Contenido';
           return '<div class="frag"><div class="small"><b>' + esc(d.u.numero + '. ' + d.u.titulo) + '</b> › ' + esc(d.s.titulo) + ' · ' + etiqueta + '</div>' + resaltar(recortar(d.texto, 520), q) +
             (d.s.id ? '<div><a href="#/u/' + d.u.id + '/contenido/' + d.s.id + '">Ir a la sección →</a></div>' : '') + '</div>';
         }).join(''), 'bot');
