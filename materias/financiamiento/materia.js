@@ -17,7 +17,7 @@ Estudio.registrarMateria({
     { id: 'u7', numero: 7, bloque: 'Prof. Gaspar', titulo: 'Pagaré, factura, descuento y factoring', archivo: 'u7-pagare-factura.js' },
     { id: 'u8', numero: 8, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores I: los valores', archivo: 'u8-mercado-valores-1.js' },
     { id: 'u9', numero: 9, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores II: oferta, OPA e intermediarios', archivo: 'u9-mercado-valores-2.js' },
-    { id: 'u10', numero: 10, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores III: información y CMF' }
+    { id: 'u10', numero: 10, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores III: información y CMF', archivo: 'u10-mercado-valores-3.js' }
   ],
   /* El chat suma estas palabras a la búsqueda cuando aparece la clave */
   sinonimos: {
@@ -80,6 +80,10 @@ Estudio.registrarMateria({
     'safe harbor': 'ncg 336 452 oferta privada calificados',
     'suitability': 'idoneidad perfil riesgo articulo 28 fintech',
     'venta corta': 'short selling plazo vender desnudo',
+    'la polar': 'repactaciones auditores pwc escepticismo veracidad',
+    'enron': 'auditores independencia consultoria',
+    'auditor': 'auditores externos independencia escepticismo',
+    'disclosure': 'mandatory disclosure veraz suficiente oportuna articulo 9',
     'hibridos': 'hibrido bonos subordinados perpetuos convertibles preferentes'
   },
   preguntasChat: ['¿Qué es el anatocismo?', '¿Cómo se calcula la TMC?', '¿Qué resolvió el caso Cofisa?', 'Diferencia entre mutuo y depósito irregular', '¿Qué es la subordinación de créditos?']

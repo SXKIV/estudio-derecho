@@ -192,7 +192,7 @@
       var u = E.unidad(meta.id);
       if (!u) { html += '<span class="lat-link pronto">' + esc(meta.numero + '. ' + meta.titulo) + '<span class="sub">Próximamente</span></span>'; return; }
       var res = SRS.resumen(u.preguntas, d.preguntas);
-      var activo = ruta.indexOf('#/u/' + u.id) === 0;
+      var activo = ruta === '#/u/' + u.id || ruta.indexOf('#/u/' + u.id + '/') === 0;
       html += '<a class="lat-link' + (activo ? ' activo' : '') + '" href="#/u/' + u.id + '">' + esc(u.numero + '. ' + u.titulo) +
         '<span class="sub">' + res.porcentaje + '% dominio · ' + res.total + ' preguntas</span>' + minibarra(res) + '</a>';
     });

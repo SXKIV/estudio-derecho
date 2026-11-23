@@ -48,7 +48,35 @@ materias/
     u7-pagare-factura.js     (descuento y factoring: pendiente, clase de profesora invitada)
     u8-mercado-valores-1.js
     u9-mercado-valores-2.js   (caso Almacenes París: pendiente, no está en el apunte)
+    u10-mercado-valores-3.js  (clases 20 a 22: pendientes, vacías en el apunte)
 ```
+
+## Plan de trabajo (seguir siempre este orden)
+1. **Leer antes de tocar.** Leer este archivo y el archivo que se va a cambiar. No reescribir
+   archivos enteros si basta con editar una parte.
+2. **Un cambio por vez.** Cada pedido toca solo lo necesario. No "mejorar" de paso otras
+   unidades ni el motor.
+3. **Contenido vs. motor.** El contenido va en `materias/`. Solo se toca `motor/` si el
+   cambio sirve para todas las materias; en ese caso, probar al menos dos unidades.
+4. **No romper el progreso guardado.** No cambiar `id` de unidades, secciones ni
+   interactivos; no borrar ni reordenar preguntas ni términos del glosario. Para corregir
+   una pregunta, editar su texto en el mismo lugar. Para agregar, al final.
+5. **Fuentes.** Todo dato nuevo debe venir del material entregado. Si hay dudas o
+   contradicciones en el material, se marcan en la página (callout amarillo) en vez de elegir.
+6. **Verificar** (ver al final): consola sin errores, la unidad abre, el chat responde,
+   celular a 390 px sin desborde horizontal.
+7. **Entregar.** Commit con un mensaje claro y lista de archivos cambiados. Si no se puede
+   hacer push desde la sesión, entregar un zip solo con los archivos cambiados, con sus
+   carpetas (`materias/...`, `motor/...`), para copiarlos encima del repo.
+8. **Actualizar este archivo** si cambia la estructura o se cierra un pendiente.
+
+## Pendientes conocidos
+- U7: descuento y factoring (clase de profesora invitada; falta material).
+- U9: caso Almacenes París (no está en el apunte).
+- U10: clasificadores de riesgo, hechos esenciales y reservados, caso Matías Videla,
+  información privilegiada (caso Hermanos Navarrete) y CMF (clases 20 a 22, vacías en el apunte).
+- U8: número de la Ley Fintech (el apunte dice 21.521 y 21.236).
+- U9/U10: numeración del delito de información falsa y de oferta sin registro (arts. 59 A / 62 a).
 
 ## Cómo agregar una unidad
 1. En `materias/<materia>/materia.js`, la unidad ya está listada; agrégale `archivo: 'uN-nombre.js'`.
