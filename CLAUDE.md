@@ -46,6 +46,7 @@ materias/
     u5-titulos-credito.js
     u6-letra-cambio.js
     u7-pagare-factura.js     (descuento y factoring: pendiente, clase de profesora invitada)
+    u8-mercado-valores-1.js
 ```
 
 ## Cómo agregar una unidad
