@@ -14,7 +14,7 @@ Estudio.registrarMateria({
     { id: 'u4', numero: 4, bloque: 'Prof. Goldenberg', titulo: 'Garantías y subordinación', archivo: 'u4-garantias.js' },
     { id: 'u5', numero: 5, bloque: 'Prof. Gaspar', titulo: 'Teoría de los títulos de crédito', archivo: 'u5-titulos-credito.js' },
     { id: 'u6', numero: 6, bloque: 'Prof. Gaspar', titulo: 'Letra de cambio', archivo: 'u6-letra-cambio.js' },
-    { id: 'u7', numero: 7, bloque: 'Prof. Gaspar', titulo: 'Pagaré, factura, descuento y factoring' },
+    { id: 'u7', numero: 7, bloque: 'Prof. Gaspar', titulo: 'Pagaré, factura, descuento y factoring', archivo: 'u7-pagare-factura.js' },
     { id: 'u8', numero: 8, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores I: los valores' },
     { id: 'u9', numero: 9, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores II: oferta, OPA e intermediarios' },
     { id: 'u10', numero: 10, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores III: información y CMF' }
@@ -55,6 +55,8 @@ Estudio.registrarMateria({
     'aval': 'avalista 46 47',
     'endoso': 'endosar endosatario endosante',
     'prescripcion': 'prescribe plazo accion cambiaria 98 99 100',
+    'aceleracion': 'acelerar cuotas vencimientos sucesivos 105',
+    'factura': 'facturas 19983 copia cedible',
     'lgb': 'ley general bancos',
     'credito documentario': 'carta credito ucp 600 independencia',
     'filial': 'filiales articulo 70',
