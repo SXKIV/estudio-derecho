@@ -1,0 +1,9 @@
+﻿*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+apuntes/
+privado/
+.env
+.DS_Store
