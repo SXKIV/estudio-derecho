@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estudio Derecho</title>
+<link rel="stylesheet" href="motor/estilos.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="marca" href="index.html"><i class="punto"></i><b>Estudio Derecho</b><span>Material de estudio entre compañeros</span></a>
+  </div>
+</header>
+<div class="portada">
+  <div class="kicker">Derecho UC · estudio entre compañeros</div>
+  <h1>Elige una materia</h1>
+  <p class="lead">Resúmenes por unidad, ejemplos interactivos, preguntas de alternativas, verdadero o falso, modo Kahoot, simulacro oral y repaso espaciado para que sepas qué manejas y qué no.</p>
+  <div class="grid" id="materias" style="margin:24px 0"></div>
+  <div class="aviso-privacidad">🔒 <b>Privacidad:</b> esta página no recopila, no envía y no guarda en internet ningún dato personal. Cada persona crea un perfil con un apodo y su progreso queda guardado solo en su propio navegador. Para llevar tu avance a otro dispositivo, usa «Exportar progreso» e «Importar».</div>
+  <p class="small" style="margin-top:16px">Material elaborado por estudiantes a partir de apuntes de clases. No es material oficial de los cursos ni reemplaza las lecturas obligatorias.</p>
+</div>
+<script src="materias/registro.js"></script>
+<script>
+  document.getElementById('materias').innerHTML = window.REGISTRO_MATERIAS.map(function (m) {
+    return '<a class="card materia-card' + (m.activa ? '' : ' pronto') + '" href="materia.html?m=' + m.id + '" style="border-top:5px solid ' + (m.color || '#c4d0db') + '">' +
+      '<div class="kicker">' + (m.sigla || (m.activa ? '' : 'Próximamente')) + '</div><h3 style="margin-top:0">' + m.nombre + '</h3><p class="small">' + m.descripcion + '</p></a>';
+  }).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estudio Derecho</title>
+<link rel="stylesheet" href="motor/estilos.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div style="display:flex;align-items:center;gap:10px">
+      <button class="iconbtn solo-movil" id="menu-movil" aria-label="Menú">☰</button>
+      <a class="marca" href="index.html"><i class="punto"></i><b>Estudio Derecho</b><span id="nombre-materia"></span></a>
+    </div>
+    <div class="top-der">
+      <button class="chip-perfil" id="chip-perfil" title="Cambiar perfil, exportar o importar progreso">Perfil</button>
+    </div>
+  </div>
+</header>
+<div class="app">
+  <aside class="lateral" id="lateral"></aside>
+  <div>
+    <main id="vista"><p class="muted">Cargando…</p></main>
+    <footer class="pie">🔒 Esta página no recopila ni envía datos personales: el progreso se guarda solo en tu navegador. Material de estudio elaborado por estudiantes a partir de apuntes de clases; no es material oficial del curso ni reemplaza las lecturas.</footer>
+  </div>
+</div>
+<script src="materias/registro.js"></script>
+<script src="motor/almacen.js"></script>
+<script src="motor/srs.js"></script>
+<script src="motor/app.js"></script>
+<script src="motor/quiz.js"></script>
+<script src="motor/chat.js"></script>
+</body>
+</html>
