@@ -48,7 +48,7 @@ header.top{
 .avatar{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900;font-size:13px;background:var(--acento)}
 
 /* ---------- Estructura ---------- */
-.app{display:grid;grid-template-columns:290px 1fr;min-height:calc(100vh - 72px)}
+.app{display:grid;grid-template-columns:290px minmax(0,1fr);min-height:calc(100vh - 72px)}
 aside.lateral{background:#fff;border-right:1px solid var(--line);padding:18px 14px 40px;position:sticky;top:72px;height:calc(100vh - 72px);overflow:auto}
 main{padding:28px 36px 90px;max-width:1180px;width:100%}
 .lat-titulo{font-size:11px;letter-spacing:.13em;font-weight:900;color:var(--muted);text-transform:uppercase;margin:16px 8px 8px}
@@ -208,7 +208,7 @@ footer.pie{border-top:1px solid var(--line);padding:16px 22px;font-size:12.5px;c
 /* ---------- Responsive ---------- */
 .solo-movil{display:none}
 @media(max-width:960px){
-  .app{grid-template-columns:1fr}
+  .app{grid-template-columns:minmax(0,1fr)}
   aside.lateral{position:fixed;left:0;top:0;bottom:0;height:100vh;width:290px;z-index:80;transform:translateX(-100%);transition:transform .2s;box-shadow:var(--shadow)}
   aside.lateral.abierto{transform:none}
   main{padding:20px 16px 100px}
@@ -219,7 +219,11 @@ footer.pie{border-top:1px solid var(--line);padding:16px 22px;font-size:12.5px;c
   .marca span{display:none}
 }
 @media(max-width:600px){
-  .grid,.grid.dos,.grid.cuatro,.modos,.relacionar,.kahoot .k-grid{grid-template-columns:1fr}
+  .grid,.grid.dos,.grid.cuatro,.modos,.relacionar,.kahoot .k-grid{grid-template-columns:minmax(0,1fr)}
+  .tabla{display:block;overflow-x:auto;font-size:14px}
+  .flow{flex-wrap:wrap}
   section.seccion{padding:18px 16px}
+  section.seccion h2{flex-wrap:wrap}
+  section.seccion h2 span{min-width:0;overflow-wrap:anywhere}
   .top-inner{padding:8px 12px}
 }

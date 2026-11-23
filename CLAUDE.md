@@ -47,6 +47,7 @@ materias/
     u6-letra-cambio.js
     u7-pagare-factura.js     (descuento y factoring: pendiente, clase de profesora invitada)
     u8-mercado-valores-1.js
+    u9-mercado-valores-2.js   (caso Almacenes París: pendiente, no está en el apunte)
 ```
 
 ## Cómo agregar una unidad

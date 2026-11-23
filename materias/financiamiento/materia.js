@@ -16,7 +16,7 @@ Estudio.registrarMateria({
     { id: 'u6', numero: 6, bloque: 'Prof. Gaspar', titulo: 'Letra de cambio', archivo: 'u6-letra-cambio.js' },
     { id: 'u7', numero: 7, bloque: 'Prof. Gaspar', titulo: 'Pagaré, factura, descuento y factoring', archivo: 'u7-pagare-factura.js' },
     { id: 'u8', numero: 8, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores I: los valores', archivo: 'u8-mercado-valores-1.js' },
-    { id: 'u9', numero: 9, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores II: oferta, OPA e intermediarios' },
+    { id: 'u9', numero: 9, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores II: oferta, OPA e intermediarios', archivo: 'u9-mercado-valores-2.js' },
     { id: 'u10', numero: 10, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores III: información y CMF' }
   ],
   /* El chat suma estas palabras a la búsqueda cuando aparece la clave */
@@ -70,6 +70,16 @@ Estudio.registrarMateria({
     'limite': 'limites credito patrimonio efectivo articulo 84',
     'relacionados': 'vinculadas articulo 84',
     'vale vista': 'deposito vista articulo 65',
+    'opa': 'oferta publica adquisicion acciones toma control 199',
+    'toma de control': 'opa informar articulo 54 199',
+    'azul azul': 'opa adquisicion indirecta clark fip tactical sport',
+    'cascada': 'operaciones ficticias ponce oro blanco sqm',
+    'chang': 'oferta publica sin registro pagares delito 62',
+    'controlador': 'control articulo 97 influencia decisiva',
+    'corredor': 'corredor bolsa intermediario articulo 24 33',
+    'safe harbor': 'ncg 336 452 oferta privada calificados',
+    'suitability': 'idoneidad perfil riesgo articulo 28 fintech',
+    'venta corta': 'short selling plazo vender desnudo',
     'hibridos': 'hibrido bonos subordinados perpetuos convertibles preferentes'
   },
   preguntasChat: ['¿Qué es el anatocismo?', '¿Cómo se calcula la TMC?', '¿Qué resolvió el caso Cofisa?', 'Diferencia entre mutuo y depósito irregular', '¿Qué es la subordinación de créditos?']
