@@ -43,6 +43,7 @@ materias/
     u2-contratos.js
     u3-operaciones-bancarias.js
     u4-garantias.js
+    u5-titulos-credito.js
 ```
 
 ## Cómo agregar una unidad
