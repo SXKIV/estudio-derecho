@@ -1,11 +1,12 @@
 /* Unidad 5 — Teoría de los títulos de crédito (clases 1 a 3 del Prof. Gaspar).
-   Fuentes: apuntes de clases del Prof. Gaspar (lectura de apoyo: Sandoval, tomo II, pp. 17-64 y 285-296). */
+   Fuentes: apuntes de clases del Prof. Gaspar (lectura de apoyo: Sandoval, tomo II, pp. 17-64 y 285-296).
+   Secciones 6 a 8: Sandoval, Derecho Comercial, tomo II (5ª ed., 2005), cap. I. */
 (function () {
   Estudio.registrarUnidad({
     id: 'u5', numero: 5, bloque: 'Prof. Gaspar', profesor: 'Gaspar',
     titulo: 'Teoría de los títulos de crédito',
-    resumen: 'Por qué la cesión de créditos civil no sirve al comercio, cómo los títulos de crédito «incorporan» el derecho a un documento para que circule como una cosa mueble, sus características (necesariedad, literalidad, autonomía, abstracción, legitimación) y sus clasificaciones.',
-    lecturas: 'Apuntes de clases del Prof. Gaspar (clases 1 a 3 del cronograma). Lectura de apoyo: Sandoval, Derecho Comercial, tomo II, pp. 17-64 y 285-296. Normas: arts. 699, 1901 y ss. CC; arts. 161 y ss., 620 CCom; Ley 18.092.',
+    resumen: 'Por qué la cesión de créditos civil no sirve al comercio, cómo los títulos de crédito «incorporan» el derecho a un documento para que circule como una cosa mueble, sus características (necesariedad, literalidad, autonomía, abstracción, legitimación) y sus clasificaciones. Con Sandoval: nociones amplia y restringida, aspecto jurídico-real, efectos de comercio, títulos representativos de mercaderías y títulos electrónicos.',
+    lecturas: 'Apuntes de clases del Prof. Gaspar (clases 1 a 3 del cronograma). Lectura de apoyo: Sandoval, Derecho Comercial, tomo II, pp. 17-64 y 285-296. Normas: arts. 699, 1901 y ss. CC; arts. 161 y ss., 620 CCom; Ley 18.092. Secciones 6 a 8: Sandoval, tomo II, cap. I (§§ 2-4, 19-22, 31-32 y 42-57); arts. 173-178, 977 y ss. CCom; Leyes 18.690 y 18.876.',
 
     /* ---------------- Glosario (definiciones del material) ---------------- */
     glosario: [
@@ -37,7 +38,16 @@
       { termino: 'Endoso', definicion: 'Declaración escrita al dorso del documento, firmada por el portador legítimo, para transferir su dominio, entregarlo en cobro o constituir prenda. Salvo pacto, tiene efecto traslaticio, legitimante y vinculatorio (el endosante responde solidariamente).', fuente: 'Apuntes de clases', seccion: 'clasificaciones', alias: ['endosos', 'endosar'] },
       { termino: 'Transfert', definicion: 'Inscripción de la transferencia de un título nominativo en el registro de la entidad emisora.', fuente: 'Apuntes de clases', seccion: 'clasificaciones' },
       { termino: 'Equivalencia funcional', definicion: 'Principio de la Ley 19.779 que equipara el soporte de papel al electrónico y la firma manuscrita a la electrónica, permitiendo títulos electrónicos.', fuente: 'Ley 19.779; apuntes', seccion: 'clasificaciones' },
-      { termino: 'Títulos impropios', definicion: 'Documentos probatorios sin función circulatoria ni los caracteres esenciales del título-valor: comprobantes de legitimación (pasajes, entradas) y documentos de legitimación en sentido estricto (contraseñas de guardarropía).', fuente: 'Apuntes de clases (Sandoval)', seccion: 'clasificaciones', alias: ['titulos valores impropios', 'documentos de legitimacion'] }
+      { termino: 'Títulos impropios', definicion: 'Documentos probatorios sin función circulatoria ni los caracteres esenciales del título-valor: comprobantes de legitimación (pasajes, entradas) y documentos de legitimación en sentido estricto (contraseñas de guardarropía).', fuente: 'Apuntes de clases (Sandoval)', seccion: 'clasificaciones', alias: ['titulos valores impropios', 'documentos de legitimacion'] },
+      { termino: 'Delegación', definicion: 'Mecanismo por el que un deudor (delegante) es reemplazado o acompañado por otro (delegado) frente al acreedor (delegatario). Es perfecta si el acreedor libera al deudor primitivo (novación) e imperfecta si no lo libera (en el fondo, cesión de deuda).', fuente: 'Sandoval, tomo II, § 3', seccion: 'sandoval-nocion', alias: ['delegacion perfecta', 'delegacion imperfecta'] },
+      { termino: 'Derecho documental', definicion: 'Nombre que da Sandoval al derecho incorporado en el título: va ligado al documento y corre su suerte, de modo que si este se pierde o destruye el derecho desaparece, salvo las medidas legales (extravío).', fuente: 'Sandoval, tomo II, § 4', seccion: 'sandoval-nocion' },
+      { termino: 'Derecho sobre el título', definicion: 'Relación real sobre el documento como cosa mueble (compra, prenda, usufructo, embargo), regida por el derecho común; se distingue del derecho del título, que es la relación obligacional incorporada y se rige por el derecho comercial.', fuente: 'Sandoval, tomo II, §§ 19-22', seccion: 'sandoval-nocion', alias: ['aspecto juridico real', 'derecho del titulo', 'res nova'] },
+      { termino: 'Efecto de comercio cambiario', definicion: 'Según Sandoval, título negociable que indica un valor en moneda, representa un crédito en dinero pagadero a corto plazo y cumple entre comerciantes un rol análogo a la moneda. En Chile: letra de cambio, pagaré, cheque y carta orden de crédito.', fuente: 'Sandoval, tomo II, §§ 31-32', seccion: 'sandoval-nocion' },
+      { termino: 'Carta de porte', definicion: 'El documento que las partes otorgan para acreditar la existencia y condiciones del contrato, y la entrega de las mercaderías al porteador.', fuente: 'Art. 173 CCom', seccion: 'mercaderias', literal: true, alias: ['carta guia'] },
+      { termino: 'Conocimiento de embarque', definicion: 'Documento que prueba la existencia de un contrato de transporte marítimo, y acredita que el transportador ha tomado a su cargo o ha cargado las mercancías y se ha obligado a entregarlas contra la presentación de ese documento a una persona determinada, a su orden o al portador.', fuente: 'Art. 977 CCom', seccion: 'mercaderias', literal: true, alias: ['bill of lading', 'bl'] },
+      { termino: 'Seawaybill', definicion: 'Carta de porte marítima no negociable: la carga se entrega a quien designa el contrato y su transferencia se rige por la cesión de créditos. No es título de crédito porque carece de función dispositiva.', fuente: 'Sandoval, tomo II, § 49', seccion: 'mercaderias', alias: ['sea waybill', 'carta de porte maritima'] },
+      { termino: 'Anotación en cuenta', definicion: 'Registro electrónico o contable que reemplaza al documento de papel: es constitutivo del derecho y su transferencia contable produce los efectos de la entrega del título.', fuente: 'Sandoval, tomo II, § 54', seccion: 'electronicos', alias: ['anotaciones en cuenta', 'representacion tabular', 'titulos desmaterializados'] },
+      { termino: 'Truncamiento', definicion: 'Técnica por la que un título emitido en papel (cheque, letra, pagaré) se inmoviliza y circula o se cobra mediante su imagen o datos transmitidos electrónicamente.', fuente: 'Sandoval, tomo II, § 54', seccion: 'electronicos', alias: ['truncamiento de cheques'] }
     ],
 
     secciones: [
@@ -161,6 +171,95 @@
   <li>Por su masividad: <b>en serie</b> (acciones, bonos) e <b>individuales</b> (cheque).</li>
   <li><b>Impropios:</b> documentos sin función circulatoria. Comprobantes de legitimación (pasajes, entradas, billetes de lotería) y documentos de legitimación en sentido estricto (contraseña de guardarropía).</li>
 </ul>`
+      },
+      {
+        id: 'sandoval-nocion', titulo: '6. Profundización (Sandoval): noción, origen y aspecto real del título',
+        html: `
+<div class="callout green"><p><b>Fuente de esta sección:</b> Sandoval, <i>Derecho Comercial</i>, tomo II (5ª ed., 2005), §§ 2-4, 19-22 y 31-32. Complementa lo visto con el apunte de Gaspar.</p></div>
+<h3>Dos nociones de título de crédito</h3>
+<div class="grid dos">
+  <div class="card"><b>Noción restringida (doctrina italiana)</b><p>Documento transferible cuya posesión es necesaria para ejercer el derecho <b>literal y autónomo</b> que representa. La afirmó Vivante y la acogió el Código Civil italiano de 1942.</p></div>
+  <div class="card"><b>Noción amplia (doctrina alemana)</b><p>Documento cuya tenencia es necesaria para <b>ejercer</b> el derecho, sea o no necesario también para <b>transferirlo</b>. La recogió el art. 965 del Código suizo de las obligaciones (1936).</p></div>
+</div>
+<p>Como en Chile no hay una definición legal, Sandoval sostiene que usar una u otra depende de la función que se quiera dar al instrumento. Su definición coincide con la del apunte: documento que lleva incorporado un derecho literal y autónomo que el portador legítimo puede ejercer contra el deudor al vencimiento. Al derecho incorporado lo llama <b>derecho documental</b>: corre la suerte del papel, y si este se pierde o destruye el derecho desaparece, salvo que el dueño tome las medidas legales (el procedimiento de extravío).</p>
+<h3>Antes de los títulos: cesión y delegación</h3>
+<p>Además de la cesión de créditos (Unidad 5, sección 1), se usó la <b>delegación</b>: el deudor (delegante) es reemplazado por otro (delegado) frente al acreedor (delegatario).</p>
+<table class="tabla">
+<tr><th>Delegación perfecta</th><th>Delegación imperfecta</th></tr>
+<tr><td>El acreedor acepta expresamente el cambio y libera al deudor primitivo. Es una <b>novación</b>.</td><td>El acreedor no libera al deudor primitivo: el delegado se suma como nuevo deudor. En el fondo es una <b>cesión de deuda</b>.</td></tr>
+</table>
+<p>Ninguna de las dos satisfacía la <b>certeza</b> (que el crédito exista al adquirirlo), la <b>rapidez</b> (negociaciones ágiles) ni la <b>seguridad</b> (que el crédito siga inalterable tras las transferencias). Según Sandoval, el creador de la teoría general fue <b>Vivante</b> (Tratado, 1896): extrajo de la letra de cambio los caracteres comunes a todos los títulos, separó lo propio de la letra como papel de comercio, excluyó los documentos meramente probatorios y describió la circulación de los títulos nominativos, a la orden y al portador.</p>
+<h3>El aspecto jurídico-real: el título como cosa mueble</h3>
+<p>Al incorporarse el derecho, el papel adquiere un valor que no tenía y se vuelve una <b>cosa nueva</b> (<i>res nova</i>). Por eso el título puede comprarse, venderse, transarse en bolsa, heredarse, donarse, depositarse, darse en prenda o usufructo y embargarse. En todos esos casos la relación recae directamente sobre el documento y solo indirectamente sobre el derecho, aunque es el derecho el que le da valor.</p>
+<div class="grid dos">
+  <div class="card"><b>Derecho sobre el título</b><p>Relación real sobre el papel como cosa mueble. Se rige por el <b>derecho común</b>. Se adquiere en forma originaria (por ejemplo, apropiación) o derivada (cesión, endoso).</p><p>Se extingue en forma <b>absoluta</b> (destrucción del título) o <b>relativa</b> (pérdida, robo o extravío: un decreto judicial «desincorpora» la prestación; también al fraccionar un título en varios o fundir varios en uno).</p></div>
+  <div class="card"><b>Derecho del título</b><p>La relación obligacional incorporada. Se rige por el <b>derecho comercial</b>, con un régimen de circulación propio: puede quedar legitimado incluso el portador de un título robado.</p><p>Los derechos emergentes nacen <b>nuevos</b> en cada portador (adquisición originaria): por eso no se le oponen excepciones personales. Se extinguen por pago, novación, confusión, remisión o prescripción, acompañados de la destrucción del documento.</p></div>
+</div>
+<h3>Los efectos de comercio según Sandoval</h3>
+<p>Efecto de comercio es el título que puede jugar entre comerciantes un rol <b>análogo a la moneda</b>. Rasgos: (1) es <b>negociable</b> por procedimientos rápidos del derecho comercial; (2) indica su <b>valor en moneda</b>; (3) esa indicación es normativa: representa un <b>crédito en dinero</b>; y (4) es pagadero a <b>corto plazo</b>. Un cheque de $20.000 vale $20.000; un conocimiento de embarque no tiene un valor tan determinado.</p>
+<p>Aun así no es moneda (valores irregulares, sin curso forzoso, valor limitado en el tiempo). Para Sandoval la diferencia de fondo es <b>psicológica</b>: recibir un efecto de comercio no da la misma seguridad que recibir dinero. En Chile, los más conocidos son la <b>letra de cambio, el pagaré, el cheque y la carta orden de crédito</b> (Unidad 7).</p>
+<div class="callout yellow"><p><b>Ojo con dos diferencias entre fuentes:</b></p>
+<ul>
+  <li>Sandoval (ed. 2005) dice que en Chile «no existe la factura protestable». El apunte de Gaspar enseña que la <b>Ley 19.983</b> convirtió la copia cedible de la factura en un título con mérito ejecutivo (Unidad 7). Para el examen, sigue el apunte.</li>
+  <li>«Efecto de comercio» en Sandoval es una categoría cambiaria. En la LMV (Unidad 8) se llama así a un <b>título de deuda de corto plazo de oferta pública</b>. Son usos distintos de la misma expresión.</li>
+</ul></div>`
+      },
+      {
+        id: 'mercaderias', titulo: '7. Títulos representativos de mercaderías (Sandoval)',
+        html: `
+<p>Estos títulos dan al portador legítimo el derecho a exigir la <b>entrega de ciertas mercaderías</b>. Su gran función es movilizarlas: al circular el documento, circulan las mercaderías <b>sin necesidad de título y modo</b> del derecho común. Según Sandoval (§§ 42-53), los principales son la carta de porte, el conocimiento de embarque y el certificado de depósito (warrant). Todos son <b>causados</b>: mencionan el contrato del que nacen.</p>
+<h3>Carta de porte (transporte terrestre)</h3>
+<div class="cita">«Llámase carta de porte el documento que las partes otorgan para acreditar la existencia y condiciones del contrato, y la entrega de las mercaderías al porteador.»<span class="fuente">Art. 173 CCom, citado por Sandoval</span></div>
+<ul>
+  <li>Nace del <b>acuerdo</b> de las partes; convenido su otorgamiento, se extiende y firma <b>por duplicado</b> (art. 174).</li>
+  <li>Es título de crédito (necesariedad, literalidad, autonomía), pero <b>sin abstracción ni formalidad</b>: si omite menciones del art. 175, no pierde su mérito probatorio y lo omitido se prueba por cualquier medio (art. 177).</li>
+  <li>Circula según cómo se extienda: <b>nominativa, a la orden o al portador</b> (art. 176). El cesionario, endosatario o portador se subroga en los derechos y obligaciones del cargador.</li>
+  <li>Reconocida la firma, contra su tenor solo caben las excepciones de <b>falsedad, omisión o error involuntario</b> (art. 178).</li>
+  <li>Cumple funciones <b>probatoria</b> (prueba el contrato y la entrega), <b>constitutiva</b> (el derecho a reclamar la carga nace con el título) y <b>dispositiva</b> (solo se dispone de la carga transfiriendo el título).</li>
+</ul>
+<h3>Conocimiento de embarque (bill of lading)</h3>
+<div class="cita">«El conocimiento de embarque es un documento que prueba la existencia de un contrato de transporte marítimo, y acredita que el transportador ha tomado a su cargo o ha cargado las mercancías y se ha obligado a entregarlas contra la presentación de ese documento a una persona determinada, a su orden o al portador.»<span class="fuente">Art. 977 CCom, citado por Sandoval</span></div>
+<ul>
+  <li>Origen en el <i>common law</i>. El Libro III del CCom se inspiró en las <b>Reglas de Hamburgo</b> (1978), obra de la CNUDMI.</li>
+  <li>«Por escrito» incluye télex y otros medios (art. 978). La firma puede ser manuscrita, en facsímil, perforada, estampada en símbolos o <b>electrónica</b> (art. 1014 inc. 3°); la del capitán se entiende hecha por el transportador.</li>
+  <li>Sus menciones están en el art. 1015, pero no es formal: omitir algunas no lo invalida si se ajusta al art. 977.</li>
+  <li>Funciones: probar el contrato; acreditar que se recibió o cargó la mercancía (si dice «embarcado»); obligar al transportador a entregar contra presentación del título.</li>
+  <li><b>Autonomía:</b> si se transfirió a un tercero de buena fe que confió en la descripción de las mercancías, el transportador no puede probar en contrario (art. 1020 N° 2).</li>
+</ul>
+<div class="grid dos">
+  <div class="card"><b>Seawaybill: no es título de crédito</b><p>Carta de porte marítima no negociable. La carga se entrega a quien el contrato designa, no a cualquier portador. Si se transfiere, es por <b>cesión de créditos</b>, con todas las excepciones del contrato de transporte. Le falta la función dispositiva.</p></div>
+  <div class="card"><b>Documento de transporte multimodal</b><p>Porteo por al menos dos modos de transporte (art. 1041 N° 1 CCom). El cargador decide si el documento es <b>negociable</b> o no. Si lo es, Sandoval lo considera un auténtico título de crédito.</p></div>
+</div>
+<h3>Certificado de depósito (warrant) como título</h3>
+<p>La prenda warrant se estudia como garantía en la <b>Unidad 4</b>. Como título, Sandoval destaca que:</p>
+<ul>
+  <li>El almacenista emite el <b>certificado de depósito</b> y el <b>vale de prenda</b> (Ley 18.690), con las mismas menciones (art. 5°), y los inscribe en su registro.</li>
+  <li>Es <b>causado</b>: queda ligado al contrato de almacenaje. El dominio de las especies se transfiere por <b>endoso</b> del certificado (art. 6°).</li>
+  <li>Es un híbrido: se emite <b>nominativo</b> e inscrito, pero circula por endoso. No puede ser al portador ni endosarse en blanco; el endoso debe identificar al endosatario y llevar firma y fecha. Un autor citado por Sandoval (Sfeir) los llama «nominativos y también a la orden».</li>
+</ul>`
+      },
+      {
+        id: 'electronicos', titulo: '8. Títulos electrónicos o desincorporados (Sandoval)',
+        html: `
+<p>Los títulos de crédito son «víctimas de su propio éxito»: emitir y manejar millones de papeles (acciones, bonos, pero también letras y cheques) es lento y caro. Según Sandoval (§§ 54-57), más que una «desmaterialización» hay un <b>cambio de soporte</b>: el derecho se registra en una anotación electrónica.</p>
+<div class="grid dos">
+  <div class="card"><b>Anotación en cuenta</b><p>Antes, un asiento contable solo hacía presumir la entrega de una cosa. Ahora la anotación tiene <b>valor propio</b>: es el registro constitutivo del derecho y produce los efectos de la tradición, sin papel.</p></div>
+  <div class="card"><b>Equivalencia funcional</b><p>La transferencia contable produce el mismo efecto que la entrega del título de papel. Pero para Sandoval no se aplica íntegro el régimen cartular: surge un <b>nuevo régimen de circulación de bienes inmateriales</b>.</p></div>
+</div>
+<h3>Cómo se llegó ahí</h3>
+<table class="tabla">
+<tr><th>Lugar</th><th>Hito</th></tr>
+<tr><td>Alemania</td><td><i>Depotgesetz</i> (1937): depósito colectivo de títulos fungibles; el depositante pasa a ser copropietario por cuotas y los bancos transfieren con anotaciones contables. Luego, el «derecho valor» (<i>Wertrechte</i>), sin documento.</td></tr>
+<tr><td>Francia</td><td>SICOVAM (1949): depósito facultativo de valores, obligatorio desde 1984. Para títulos individuales, la <i>lettre de change relevé</i> (letra en soporte magnético).</td></tr>
+<tr><td>España</td><td>Ley del Mercado de Valores de 1988: anotaciones en cuenta, irreversibles y necesarias para negociar en bolsa.</td></tr>
+<tr><td>Chile</td><td><span class="norma">Ley 18.876</span> (1989), sobre depósito y custodia de valores: permite transferir y constituir derechos reales sobre títulos depositados por comunicación escrita o electrónica.</td></tr>
+</table>
+<ul>
+  <li><b>Truncamiento:</b> el cheque (y otros efectos de comercio) se emite en papel, pero se <b>inmoviliza</b> y circula o se cobra con su imagen transmitida electrónicamente.</li>
+  <li><b>Transporte:</b> sistemas que reemplazan el conocimiento de embarque por avisos electrónicos. El desafío es asegurar la <b>autenticidad e inalterabilidad</b> de los registros; en Chile el art. 1014 inc. 3° CCom ya admite la firma electrónica del conocimiento.</li>
+  <li><b>Ley Modelo de la CNUDMI sobre Comercio Electrónico</b> (1996): un mensaje de datos satisface la exigencia de escrito si la información es accesible para su consulta posterior (art. 6°), y la de firma si se usa un método fiable para identificar al iniciador y su aprobación (art. 7°).</li>
+</ul>
+<div class="callout yellow"><p><b>Conecta con el apunte:</b> la Ley 19.779 consagró la equivalencia funcional (sección 5), pero según el apunte de Gaspar en materia cambiaria la firma sigue siendo física y el pagaré solo se emite en papel (Unidades 6 y 7). Sandoval describe la tendencia general; el apunte, la regla actual de la letra y el pagaré.</p></div>`
       }
     ],
 
@@ -245,6 +344,35 @@
           el.querySelectorAll('#t button').forEach(function (b) { b.onclick = function () { tipo = b.dataset.t; el.querySelectorAll('#t button').forEach(function (x) { x.classList.toggle('activo', x === b); }); calc(); }; });
           el.querySelectorAll('input').forEach(function (i) { i.onchange = calc; }); calc();
         }
+      },
+      {
+        id: 'estitulo', titulo: '¿Es título de crédito y cómo circula?', seccion: 'mercaderias',
+        descripcion: 'Para cada documento del transporte o del depósito, decide si es título de crédito según Sandoval y cómo se transfiere.',
+        montar: function (el) {
+          var casos = [
+            ['Carta de porte extendida «a la orden» del consignatario.', 'o', 'Es título de crédito causado; al extenderse a la orden, circula por endoso (art. 176 CCom).'],
+            ['Conocimiento de embarque emitido al portador.', 'p', 'Es título de crédito; al portador circula por simple entrega y el portador puede exigir la carga.'],
+            ['Seawaybill que designa a una empresa determinada como destinataria.', 'c', 'No es título de crédito: no es negociable y, si se transfiere, es por cesión de créditos, con todas las excepciones del contrato.'],
+            ['Certificado de depósito emitido por un almacén general de depósito.', 'w', 'Es título causado, nominativo e inscrito, que se transfiere por endoso con firma, fecha e identificación del endosatario (nunca en blanco).'],
+            ['Contraseña que entrega el guardarropía de un teatro.', 'i', 'Es un documento de legitimación (título impropio): no tiene función circulatoria.']
+          ];
+          var et = { o: 'Título: circula por endoso', p: 'Título: circula por entrega', w: 'Título: nominativo que se endosa', c: 'No es título: cesión de créditos', i: 'Título impropio' };
+          var i = 0, ok = 0;
+          function pintar() {
+            if (i >= casos.length) { el.innerHTML = '<div class="resultado ok"><b>Resultado: ' + ok + ' de ' + casos.length + '.</b> <button class="btn sec" id="re">Repetir</button></div>'; el.querySelector('#re').onclick = function () { i = 0; ok = 0; pintar(); }; return; }
+            var c = casos[i];
+            el.innerHTML = '<p class="small">Caso ' + (i + 1) + ' de ' + casos.length + '</p><p style="font-size:18px;font-weight:700">' + c[0] + '</p><div class="opciones-chip">' + Object.keys(et).map(function (k) { return '<button data-v="' + k + '">' + et[k] + '</button>'; }).join('') + '</div><div id="fb"></div>';
+            el.querySelectorAll('[data-v]').forEach(function (b) {
+              b.onclick = function () {
+                var bien = b.dataset.v === c[1]; if (bien) ok++;
+                el.querySelectorAll('[data-v]').forEach(function (x) { x.disabled = true; if (x.dataset.v === c[1]) x.classList.add('activo'); });
+                el.querySelector('#fb').innerHTML = '<div class="resultado ' + (bien ? 'ok' : 'mal') + '"><b>' + (bien ? '✓ Correcto.' : '✗ Era: ' + et[c[1]] + '.') + '</b> ' + c[2] + '<div style="margin-top:10px"><button class="btn" id="sig">Siguiente</button></div></div>';
+                el.querySelector('#sig').onclick = function () { i++; pintar(); };
+              };
+            });
+          }
+          pintar();
+        }
       }
     ],
 
@@ -285,7 +413,27 @@
       { tipo: 'oral', seccion: 'nocion', enunciado: 'Defina título de crédito y explique sus elementos.', puntos: ['Documento que incorpora un derecho literal y autónomo ejercible por el portador legítimo a su vencimiento.', 'Incorporación: no hay derecho sin papel (extravío).', 'Literalidad: rige lo escrito.', 'Autonomía: derecho originario del adquirente de buena fe (caso Inverlink).', 'Legitimación activa y pasiva (ticket de equipaje).', 'Estructura: elemento material (constitutivo, probatorio, dispositivo) y contenido jurídico.'], norma: 'Apuntes (Gaspar); Sandoval' },
       { tipo: 'oral', seccion: 'caracteristicas', enunciado: 'Distinga autonomía y abstracción, y explique sus manifestaciones en la Ley 18.092.', puntos: ['Autonomía: prescindencia subjetiva; derecho originario; vicios de la cadena no afectan al tercero de buena fe.', 'Manifestaciones: independencia de las firmas (art. 7°) e inoponibilidad de excepciones personales (art. 28).', 'Abstracción: prescindencia objetiva del negocio causal; causa-fuente (firma) vs. causa-fin (negocio).', 'No novación (art. 12): coexisten acción cambiaria y causal.', 'Límite: la abstracción no opera entre partes directas.', 'Títulos abstractos (letra, pagaré, cheque) vs. causados (acciones, títulos de mercaderías, facturas).'], norma: 'Arts. 7°, 12 y 28 Ley 18.092' },
       { tipo: 'oral', seccion: 'clasificaciones', enunciado: 'Clasifique los títulos de crédito según su ley de circulación y explique cómo se legitima el portador en cada caso.', puntos: ['Al portador: entrega; posesión y presentación; no reivindicables en general; Ley 18.552 para títulos de dinero.', 'A la orden: endoso con triple efecto (traslaticio, legitimante, vinculatorio); cadena regular; control formal (art. 31 Ley 18.092).', 'Nominativos: registro del emisor (transfert); debate Bolaffio y Vivante; acciones de S.A.', 'El endosante responde solidariamente, al revés del art. 1907 CC.'], norma: 'Ley 18.092; Ley 18.552' },
-      { tipo: 'oral', seccion: 'clasificaciones', enunciado: 'Explique las demás clasificaciones de los títulos de crédito.', puntos: ['Completos (pagaré) e incompletos (acciones, nominativos, causados).', 'Abstractos y causados.', 'Por contenido: de pago, de mercaderías (art. 149 CCom) y de participación (valores mobiliarios).', 'Diferencias entre títulos de pago y moneda: curso forzoso, vencimiento, valores irregulares, confianza en las firmas.', 'Por soporte: cartáceos y electrónicos (Ley 19.779; registro centralizado o blockchain).', 'Otras: públicos y privados, comerciales y civiles, unitarios y múltiples, en serie e individuales, impropios.'], norma: 'Apuntes (Gaspar); Sandoval' }
+      { tipo: 'oral', seccion: 'clasificaciones', enunciado: 'Explique las demás clasificaciones de los títulos de crédito.', puntos: ['Completos (pagaré) e incompletos (acciones, nominativos, causados).', 'Abstractos y causados.', 'Por contenido: de pago, de mercaderías (art. 149 CCom) y de participación (valores mobiliarios).', 'Diferencias entre títulos de pago y moneda: curso forzoso, vencimiento, valores irregulares, confianza en las firmas.', 'Por soporte: cartáceos y electrónicos (Ley 19.779; registro centralizado o blockchain).', 'Otras: públicos y privados, comerciales y civiles, unitarios y múltiples, en serie e individuales, impropios.'], norma: 'Apuntes (Gaspar); Sandoval' },
+
+      { tipo: 'alternativas', seccion: 'sandoval-nocion', enunciado: 'Según Sandoval, ¿qué distingue la noción amplia de título de crédito de la restringida?', opciones: ['En la amplia basta que el documento sea necesario para ejercer el derecho, aunque no lo sea para transferirlo', 'La amplia exige que el derecho sea abstracto', 'La amplia solo comprende la letra de cambio', 'La amplia excluye los títulos nominativos'], correcta: 0, explicacion: 'La restringida (italiana) exige un documento transferible necesario para ejercer un derecho literal y autónomo.' },
+      { tipo: 'relacionar', seccion: 'sandoval-nocion', enunciado: 'Relaciona cada noción con su origen según Sandoval.', pares: [['Noción restringida', 'Doctrina italiana y Código Civil italiano de 1942'], ['Noción amplia', 'Doctrina alemana y Código suizo de las obligaciones de 1936']], explicacion: 'En Chile no hay definición legal.' },
+      { tipo: 'alternativas', seccion: 'sandoval-nocion', enunciado: '¿Qué es la delegación imperfecta?', opciones: ['Aquella en que el acreedor no libera al deudor primitivo y el delegado se suma como nuevo deudor', 'Aquella en que el acreedor libera al deudor primitivo', 'Una forma de endoso en garantía', 'La cesión de un crédito sin notificación'], correcta: 0, explicacion: 'En el fondo es una cesión de deuda. La perfecta es novación.' },
+      { tipo: 'alternativas', seccion: 'sandoval-nocion', enunciado: 'Según Sandoval, ¿quién creó la teoría general de los títulos de crédito?', opciones: ['Vivante, en su Tratado de 1896', 'Einert', 'Bolaffio', 'Ascarelli'], correcta: 0, explicacion: 'Extrajo de la letra de cambio los caracteres comunes a todos los títulos.' },
+      { tipo: 'vf', seccion: 'sandoval-nocion', enunciado: 'Para Sandoval, el título de crédito puede ser objeto de prenda, usufructo y embargo porque funciona como cosa mueble.', respuesta: true, explicacion: 'Es el aspecto jurídico-real: el papel se vuelve una res nova.' },
+      { tipo: 'alternativas', seccion: 'sandoval-nocion', enunciado: 'Según Sandoval, ¿qué derecho rige al documento como cosa y cuál a la relación obligacional incorporada?', opciones: ['El documento, el derecho común; la relación incorporada, el derecho comercial', 'Ambos, el derecho comercial', 'Ambos, el derecho común', 'El documento, el derecho comercial; la relación, el derecho civil'], correcta: 0, explicacion: 'El régimen comercial de circulación puede legitimar incluso al portador de un título robado.' },
+      { tipo: 'vf', seccion: 'sandoval-nocion', enunciado: 'La pérdida o el robo del título producen una extinción relativa del derecho sobre el título, porque un decreto judicial puede «desincorporar» la prestación.', respuesta: true, explicacion: 'La destrucción, en cambio, produce extinción absoluta.' },
+      { tipo: 'alternativas', seccion: 'sandoval-nocion', enunciado: '¿Cuál NO es un rasgo del efecto de comercio según Sandoval?', opciones: ['Tener curso forzoso', 'Ser negociable por procedimientos rápidos', 'Representar un crédito en dinero', 'Ser pagadero a corto plazo'], correcta: 0, explicacion: 'El curso forzoso es de la moneda, no del efecto de comercio.' },
+      { tipo: 'alternativas', seccion: 'mercaderias', enunciado: '¿Qué permite un título representativo de mercaderías?', opciones: ['Transferir las mercaderías transfiriendo el documento, sin título y modo del derecho común', 'Cobrar una suma de dinero al porteador', 'Asegurar las mercaderías contra robo', 'Eximir del pago de aranceles'], correcta: 0, explicacion: 'Poseer el título equivale a poseer las mercaderías.' },
+      { tipo: 'vf', seccion: 'mercaderias', enunciado: 'Si a la carta de porte le falta una mención del art. 175 CCom, deja de producir efectos.', respuesta: false, explicacion: 'No es un título formal: lo omitido puede probarse por cualquier medio (art. 177).' },
+      { tipo: 'alternativas', seccion: 'mercaderias', enunciado: '¿Qué excepciones admite el art. 178 CCom contra el tenor de la carta de porte, una vez reconocida la firma?', opciones: ['Falsedad, omisión o error involuntario', 'Cualquier excepción del contrato de transporte', 'Solo la prescripción', 'Ninguna'], correcta: 0, explicacion: 'Según Sandoval.' },
+      { tipo: 'alternativas', seccion: 'mercaderias', enunciado: 'Por el art. 1020 N° 2 CCom, si el conocimiento de embarque se transfirió a un tercero de buena fe que confió en la descripción de la carga…', opciones: ['El transportador no puede probar en contrario', 'El transportador puede probar que recibió otra carga', 'El tercero debe probar la carga', 'El conocimiento se convierte en seawaybill'], correcta: 0, explicacion: 'Muestra su carácter de título de crédito (autonomía).' },
+      { tipo: 'vf', seccion: 'mercaderias', enunciado: 'El seawaybill es un título de crédito representativo de mercaderías que circula por endoso.', respuesta: false, explicacion: 'No es negociable: se transfiere por cesión de créditos y carece de función dispositiva.' },
+      { tipo: 'alternativas', seccion: 'mercaderias', enunciado: '¿Cómo se transfiere el certificado de depósito (warrant) según Sandoval?', opciones: ['Se emite nominativo e inscrito, pero se transfiere por endoso con firma, fecha e identificación del endosatario', 'Por simple entrega, como un título al portador', 'Por endoso en blanco', 'Solo por escritura pública'], correcta: 0, explicacion: 'Por eso se dice que son «nominativos y también a la orden».' },
+      { tipo: 'alternativas', seccion: 'electronicos', enunciado: 'Para Sandoval, ¿qué ocurre realmente con los títulos electrónicos?', opciones: ['Cambia el soporte: el derecho se registra en una anotación con valor constitutivo', 'El derecho desaparece y queda solo la obligación civil', 'Se vuelven títulos impropios', 'Pierden toda protección legal'], correcta: 0, explicacion: 'Más que desmaterialización, cambio de soporte.' },
+      { tipo: 'alternativas', seccion: 'electronicos', enunciado: '¿Qué ley chilena es, según Sandoval, el primer atisbo de la representación electrónica de valores?', opciones: ['Ley 18.876 (1989), sobre depósito y custodia de valores', 'Ley 18.092', 'Ley 19.983', 'Ley 18.010'], correcta: 0, explicacion: 'Permite transferir títulos depositados por comunicación escrita o electrónica.' },
+      { tipo: 'vf', seccion: 'electronicos', enunciado: 'El truncamiento consiste en emitir el título en papel pero inmovilizarlo, de modo que circule o se cobre con su imagen o datos electrónicos.', respuesta: true, explicacion: 'Se aplica al cheque y a otros efectos de comercio.' },
+      { tipo: 'oral', seccion: 'mercaderias', enunciado: 'Explique los títulos representativos de mercaderías.', puntos: ['Función: movilizar mercaderías sin título y modo; poseer el título equivale a poseerlas.', 'Carta de porte (arts. 173 a 178 CCom): causada, no formal, nominativa, a la orden o al portador; funciones probatoria, constitutiva y dispositiva.', 'Conocimiento de embarque (art. 977): Reglas de Hamburgo; firma electrónica admitida; art. 1020 N° 2 protege al tercero de buena fe.', 'Seawaybill: no es título; multimodal: título si es negociable.', 'Warrant (Ley 18.690): causado, nominativo que se endosa; ver Unidad 4.'], norma: 'Arts. 173-178, 977 y 1020 CCom; Ley 18.690' },
+      { tipo: 'oral', seccion: 'sandoval-nocion', enunciado: 'Explique el aspecto jurídico-real del título de crédito según Sandoval.', puntos: ['El papel se vuelve una cosa nueva (res nova) con el valor del derecho incorporado.', 'Puede venderse, darse en prenda o usufructo, heredarse, depositarse y embargarse.', 'Derecho sobre el título (derecho común) vs. derecho del título (derecho comercial).', 'Extinción absoluta (destrucción) y relativa (pérdida, robo, extravío con decreto judicial).', 'Los derechos emergentes nacen nuevos en cada portador: no hay excepciones personales.'], norma: 'Sandoval, tomo II, §§ 19-22' }
     ]
   });
 })();

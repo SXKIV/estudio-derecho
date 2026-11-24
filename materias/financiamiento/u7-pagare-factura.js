@@ -1,12 +1,13 @@
 /* Unidad 7 — Pagaré, factura, descuento y factoring (clases 10 y 11 del cronograma del Prof. Gaspar).
    Fuentes: apuntes de clases del Prof. Gaspar (pagaré completo; factura solo en menciones dispersas).
-   PENDIENTE: la clase de descuento y factoring la dictó una profesora invitada y no está en el apunte. */
+   PENDIENTE: la clase de descuento y factoring la dictó una profesora invitada y no está en el apunte.
+   Secciones 6 y 7: Sandoval, Derecho Comercial, tomo II (5ª ed., 2005), cap. III (pagaré y carta orden de crédito). */
 (function () {
   Estudio.registrarUnidad({
     id: 'u7', numero: 7, bloque: 'Prof. Gaspar', profesor: 'Gaspar',
     titulo: 'Pagaré, factura, descuento y factoring',
-    resumen: 'El pagaré como promesa directa de pago: menciones, vencimientos sucesivos y cláusula de aceleración. Lo que el material dice de la factura, el descuento y el factoring. La clase de descuento y factoring (profesora invitada) está pendiente.',
-    lecturas: 'Apuntes de clases del Prof. Gaspar (pagaré). Lecturas del cronograma: Sandoval, tomo II, pp. 165-175 y 219-224 (pagaré y factura) y pp. 224-230 y 296-302 (descuento y factoring). <b>Pendiente:</b> la clase de descuento y factoring la dictó una profesora invitada y no está en el apunte de Gaspar.',
+    resumen: 'El pagaré como promesa directa de pago: menciones, vencimientos sucesivos y cláusula de aceleración. Lo que el material dice de la factura, el descuento y el factoring. Con Sandoval: diferencias con la letra, jurisprudencia de la cláusula de aceleración y la carta orden de crédito. La clase de descuento y factoring (profesora invitada) está pendiente.',
+    lecturas: 'Apuntes de clases del Prof. Gaspar (pagaré). Lecturas del cronograma: Sandoval, tomo II, pp. 165-175 y 219-224 (pagaré y factura) y pp. 224-230 y 296-302 (descuento y factoring). <b>Pendiente:</b> la clase de descuento y factoring la dictó una profesora invitada y no está en el apunte de Gaspar. Secciones 6 y 7: Sandoval, tomo II, cap. III (§§ 149-163) y arts. 782 a 794 CCom.',
 
     glosario: [
       { termino: 'Pagaré', definicion: 'Título de crédito en que el suscriptor formula una promesa incondicional de pagar una suma de dinero al beneficiario («debo y pagaré»), obligándose directamente desde su emisión. Se le aplican supletoriamente las reglas de la letra de cambio.', fuente: 'Arts. 102 y 107 Ley 18.092; apuntes', seccion: 'pagare', alias: ['pagares', 'promissory note'] },
@@ -15,7 +16,12 @@
       { termino: 'Aceleración automática', definicion: 'Cláusula por la que el solo no pago de una cuota hace exigible de pleno derecho todo el saldo; desde ese momento corre la prescripción sobre toda la deuda.', fuente: 'Apuntes de clases', seccion: 'vencimientos' },
       { termino: 'Aceleración facultativa', definicion: 'Cláusula por la que el no pago de una cuota permite al acreedor, si así lo decide, hacer exigible el saldo; le da control sobre el inicio de la prescripción. Es la preferida en la práctica.', fuente: 'Apuntes de clases', seccion: 'vencimientos' },
       { termino: 'Factura', definicion: 'Título-valor causado que debe referirse a una compraventa o prestación de servicios real; la Ley 19.983 convirtió su copia cedible en un título dinerario con mérito ejecutivo.', fuente: 'Ley 19.983; apuntes', seccion: 'factura', alias: ['facturas', 'copia cedible'] },
-      { termino: 'Factoring', definicion: 'Operación en que un tercero adquiere un crédito a plazo (por ejemplo, una factura) por un precio menor a su valor, para dar liquidez inmediata al cedente.', fuente: 'Apuntes de clases (ejemplo de la lechería)', seccion: 'descuento-factoring', alias: ['factoraje', 'factorings'] }
+      { termino: 'Factoring', definicion: 'Operación en que un tercero adquiere un crédito a plazo (por ejemplo, una factura) por un precio menor a su valor, para dar liquidez inmediata al cedente.', fuente: 'Apuntes de clases (ejemplo de la lechería)', seccion: 'descuento-factoring', alias: ['factoraje', 'factorings'] },
+      { termino: 'Carta orden de crédito', definicion: 'Documento por el que el dador ordena a un corresponsal entregar al tomador las sumas que necesite, dentro de un máximo y un plazo. Realiza un contrato de cambio condicional que se perfecciona si el tomador usa el crédito; es nominativa y no se protesta.', fuente: 'Arts. 782 y ss. CCom; Sandoval, §§ 158-163', seccion: 'carta-orden', alias: ['carta orden', 'cartas ordenes de credito'] },
+      { termino: 'Dador', definicion: 'Quien expide la carta orden de crédito: debe pagar al corresponsal lo que entregó y mantener el crédito durante el plazo, sin revocarlo sin motivo serio.', fuente: 'Arts. 786 y 787 CCom; Sandoval', seccion: 'carta-orden' },
+      { termino: 'Corresponsal', definicion: 'Persona a quien va dirigida la carta orden de crédito y que entrega el dinero al tomador; su relación con el dador es un mandato.', fuente: 'Sandoval, § 160', seccion: 'carta-orden' },
+      { termino: 'Carta de introducción y recomendación', definicion: 'Carta orden que no designa cantidad: el dador no responde de los contratos que el corresponsal celebre con el tomador, salvo dolo.', fuente: 'Art. 794 CCom; Sandoval', seccion: 'carta-orden', alias: ['carta de recomendacion'] },
+      { termino: 'Pagaré a la vista', definicion: 'Pagaré exigible desde su emisión. Según la jurisprudencia que cita Sandoval, su prescripción corre desde la suscripción y debe protestarse dentro del año siguiente para evitar la caducidad del art. 49, aunque tenga cláusula sin protesto.', fuente: 'Arts. 49 y 105 Ley 18.092; Sandoval', seccion: 'sandoval-pagare' }
     ],
 
     secciones: [
@@ -81,11 +87,79 @@
       {
         id: 'descuento-factoring', titulo: '5. Descuento y factoring (pendiente)',
         html: `
-<div class="callout red"><p><b>Pendiente:</b> la clase de descuento y factoring (clase 11 del cronograma) la dictó una profesora invitada y <b>no está en el apunte de Gaspar</b>. Lectura del cronograma: Sandoval, tomo II, pp. 224-230 y 296-302. Esta sección se completará cuando llegue ese material. Mientras tanto, esto es lo que dicen las otras unidades:</p></div>
+<div class="callout red"><p><b>Pendiente:</b> la clase de descuento y factoring (clase 11 del cronograma) la dictó una profesora invitada y <b>no está en el apunte de Gaspar</b>. Lectura del cronograma: Sandoval, tomo II, pp. 224-230 y 296-302. Ojo: la edición de Sandoval que tenemos (5ª ed., 2005) termina en el cheque y no trata el descuento ni el factoring; esas páginas deben ser de otra edición. Esta sección se completará cuando llegue ese material. Mientras tanto, esto es lo que dicen las otras unidades:</p></div>
 <div class="grid dos">
   <div class="card"><h4 style="margin-top:0">Descuento bancario</h4><p>El banco entrega al portador de un título no vencido su valor nominal menos un descuento por el tiempo al vencimiento; el cliente suele quedar como deudor solidario por ser endosante. Es <b>operación de crédito de dinero</b> (art. 1° Ley 18.010), sujeta a la TMC (<span class="norma">art. 69 N°4 LGB</span>).</p><p class="small"><a href="#/u/u3/contenido/activas">Ver Unidad 3 →</a></p></div>
   <div class="card"><h4 style="margin-top:0">Factoring</h4><ul><li>Es una variante de la deuda como forma de financiamiento (Unidad 1).</li><li>El factoraje es una actividad complementaria al giro que un banco puede hacer por filial (art. 70 b LGB, Unidad 3).</li><li>Ejemplo de la lechería: el factoring compra en $500.000 un crédito de $1.000.000; con cesión civil, si el deudor no paga, solo recupera el precio (art. 1907 CC). Por eso se imponen cláusulas de «plena responsabilidad» al cedente (Unidad 5).</li></ul></div>
 </div>`
+      },
+      {
+        id: 'sandoval-pagare', titulo: '6. Profundización (Sandoval): concepto, diferencias y jurisprudencia de la aceleración',
+        html: `
+<div class="callout green"><p><b>Fuente de esta sección:</b> Sandoval, <i>Derecho Comercial</i>, tomo II (5ª ed., 2005), cap. III, §§ 149-157, y la jurisprudencia que cita.</p></div>
+<h3>Concepto</h3>
+<ul>
+  <li>El pagaré es un <b>efecto de comercio</b> (como la letra, el cheque y la carta orden de crédito). Su emisión, suscripción, endoso y aval son <b>actos de comercio formales</b> (art. 3° N° 10 CCom, texto fijado por la Ley 18.092).</li>
+  <li>Es un acto <b>unilateral</b>: una verdadera <b>confesión de deuda</b> del suscriptor. No requiere aceptación.</li>
+  <li>El derogado <b>art. 766 CCom</b> lo definía como un escrito por el que quien lo firma se confiesa deudor de cierta cantidad y se obliga a pagarla a su orden en un plazo; si se pagaba en otro lugar, era «pagaré a domicilio». La Ley 18.092 no lo define: solo fija sus menciones.</li>
+  <li>El suscriptor queda obligado <b>de igual manera que el aceptante</b> de una letra de cambio.</li>
+</ul>
+<table class="tabla">
+<tr><th></th><th>Pagaré</th><th>Letra de cambio</th></tr>
+<tr><td>Creación</td><td>Una persona: el suscriptor (confesión de deuda).</td><td>Al menos dos: librador y librado.</td></tr>
+<tr><td>Aceptación</td><td>No existe.</td><td>El librado se obliga solo si acepta.</td></tr>
+<tr><td>Protesto</td><td>Solo por falta de pago.</td><td>Por falta de aceptación, de fecha de aceptación o de pago.</td></tr>
+<tr><td>Vencimiento</td><td>Admite cuotas y cláusula de aceleración.</td><td>Un solo vencimiento; no admite aceleración.</td></tr>
+</table>
+<h3>Matices de las menciones (art. 102)</h3>
+<ul>
+  <li>El <b>beneficiario</b> define cómo circula: nominativo, por cesión de créditos; a la orden, por endoso; al portador, por simple entrega.</li>
+  <li>El <b>lugar y fecha de expedición</b> sirven para juzgar la capacidad del suscriptor, contar el plazo de los pagarés «a un plazo desde su fecha», suplir el lugar de pago y aplicar <i>locus regit actum</i>.</li>
+  <li>Sin las menciones del art. 102 el documento <b>no vale como pagaré</b>, salvo el lugar y la época de pago, que la ley suple.</li>
+  <li>El art. 107 remite a las normas de la letra en lo que no sean contrarias a la naturaleza del pagaré.</li>
+</ul>
+<div class="callout yellow"><p><b>Diferencia entre fuentes sobre la firma:</b> Sandoval señala que, bajo responsabilidad del suscriptor, la firma puede estamparse por otros procedimientos que autorice el reglamento. El apunte de Gaspar enseña que en materia cambiaria la firma debe ser física y que el pagaré solo se emite en papel. Para el examen, sigue el apunte y menciona la regla reglamentaria como matiz.</p></div>
+<h3>La cláusula de aceleración en los tribunales</h3>
+<p>Sandoval reúne fallos que matizan lo visto en la sección 2:</p>
+<table class="tabla">
+<tr><th>Fallo</th><th>Criterio</th></tr>
+<tr><td>C. de Santiago, 1990</td><td>La aceleración <b>facultativa</b> no opera por el solo no pago: requiere que el acreedor manifieste su voluntad. Mientras tanto, <b>cada cuota</b> es exigible y prescribe desde su propio vencimiento.</td></tr>
+<tr><td>C. de Santiago, 1997</td><td>El acreedor no puede usar la cláusula «en cualquier tiempo» para evitar la prescripción: sería una <b>renuncia anticipada a la prescripción</b>, prohibida por el art. 2494 CC y contraria al art. 98 de la Ley 18.092.</td></tr>
+<tr><td>Corte Suprema, 1991</td><td>Si la cláusula está redactada en forma <b>imperativa</b> («hará exigible»), el vencimiento es el día de la primera cuota impaga y desde ahí corre la prescripción. Si se entendiera facultativa, la voluntad se manifiesta al protestar y presentar la demanda.</td></tr>
+<tr><td>Voto disidente citado</td><td>La cláusula siempre está concebida en beneficio del acreedor, sea imperativa o facultativa, y nunca opera de pleno derecho.</td></tr>
+<tr><td>C. de San Miguel y CS, 1988</td><td>Las cuotas son un beneficio para el suscriptor; la aceleración favorece solo al acreedor y no lo obliga a cobrar el total.</td></tr>
+<tr><td>C. de Arica, 1991</td><td>La aceleración no favorece al <b>fiador ni al codeudor solidario</b> (arts. 1479, 1520 y 2354 CC).</td></tr>
+</table>
+<div class="callout yellow"><p><b>Ojo con la tensión:</b> el apunte de Gaspar presenta la aceleración facultativa como la forma en que el acreedor <b>controla</b> cuándo empieza la prescripción. La jurisprudencia que cita Sandoval pone un límite: cada cuota prescribe desde su vencimiento y la cláusula no puede usarse para postergar la prescripción indefinidamente. En el oral, explica ambas cosas.</p></div>
+<h3>Pagaré a la vista</h3>
+<ul>
+  <li>Su prescripción se cuenta desde la <b>suscripción</b>, porque desde ese día el acreedor puede cobrarlo (C. de Concepción, 1985).</li>
+  <li>Debe protestarse dentro del <b>año siguiente a la suscripción</b> para evitar la caducidad del art. 49, aunque tenga la cláusula «devuelta sin protesto» (Corte Suprema, 1985).</li>
+</ul>`
+      },
+      {
+        id: 'carta-orden', titulo: '7. La carta orden de crédito (Sandoval)',
+        html: `
+<p>Sandoval la cuenta entre los efectos de comercio chilenos, junto a la letra, el pagaré y el cheque. Sigue regulada en el <b>Código de Comercio</b> (arts. 782 y ss.). Una persona (el <b>dador</b>) se dirige a otra (el <b>corresponsal</b>) para que entregue a un tercero (el <b>tomador</b>) el dinero que necesite, hasta cierto monto. Se llama «carta» porque se redactaba en forma de carta; «orden», porque contiene una orden; «de crédito», porque se funda en el crédito de quienes intervienen.</p>
+<div class="cita">«Las cartas órdenes de crédito tienen por objeto realizar un contrato de cambio condicional, celebrado entre el dador y el tomador, cuya perfección pende de que éste haga uso del crédito que aquél le abre.»<span class="fuente">Art. 782 CCom, citado por Sandoval</span></div>
+<div class="grid dos">
+  <div class="card"><b>Para qué sirve</b><p>A diferencia de la letra y el pagaré, que se pagan en un solo lugar, permite retirar dinero <b>en varias plazas</b> y en montos que no se conocen de antemano. Suele emitirse a la vista. Es <b>acto de comercio</b>: remesa de dinero de una plaza a otra en virtud de un contrato de cambio (art. 3° N° 10 CCom).</p></div>
+  <div class="card"><b>Dos relaciones</b><p><b>Dador–tomador:</b> contrato de cambio condicional (depende de que el tomador use la carta) e indeterminado en montos y plazas; el tomador paga un precio por el servicio.</p><p><b>Dador–corresponsal:</b> mandato; el dador reembolsa al corresponsal lo que entregó.</p></div>
+</div>
+<div class="flow"><div class="node">Dador<small>emite la carta</small></div><div class="arrow">→</div><div class="node">Tomador<small>la presenta en otra plaza</small></div><div class="arrow">→</div><div class="node">Corresponsal<small>entrega el dinero</small></div><div class="arrow">→</div><div class="node y">Dador reembolsa al corresponsal<small>y el tomador al dador</small></div></div>
+<h3>Requisitos</h3>
+<ol>
+  <li><b>Nominativa:</b> se da a persona determinada, no a la orden (art. 783). Si se expide a la orden, el tomador puede cobrarla personalmente, pero <b>no endosarla</b>: el endoso no transfiere el derecho a cobrarla.</li>
+  <li><b>Cantidad:</b> fija, o una o más cantidades indeterminadas dentro de un <b>máximo</b> señalado (arts. 784 y 793). Sin cantidad, es una simple <b>carta de introducción y recomendación</b> y el dador no responde de lo que el corresponsal contrate con el tomador, salvo dolo (art. 794).</li>
+  <li><b>Plazo de uso</b> (art. 784). Si falta, lo fija el tribunal según las circunstancias.</li>
+  <li><b>Firmas</b> del dador, del tomador y de los corresponsales si son varios.</li>
+</ol>
+<table class="tabla">
+<tr><th>Obligaciones del dador</th><th>Obligaciones del tomador</th></tr>
+<tr><td>Extenderla con las formalidades legales. Pagar al corresponsal lo que entregó (art. 787). Mantener el crédito durante el plazo: si lo <b>revoca</b> sin motivo serio, responde de los perjuicios, salvo que se deteriore el crédito del tomador (art. 786).</td><td>Firmar la carta o dar al dador un modelo de su firma (art. 785). Probar su identidad si el corresponsal lo pide (art. 789). Devolverla si no la usa o caucionar su importe (art. 790). Reembolsar al dador lo recibido; si no, debe además intereses corrientes desde la entrega.</td></tr>
+</table>
+<div class="callout red"><p><b>Una carta que no se protesta:</b> aunque no se pague, la carta no da al tomador <b>ningún derecho</b> contra el dador ni contra el corresponsal (art. 788). Por eso no se protesta y la ley no le da garantías de pago. Según Sandoval, hoy casi no se usa: la reemplazaron el cheque viajero, el vale vista y la tarjeta de crédito.</p></div>
+<div class="callout yellow"><p><b>No la confundas con la carta de crédito documentaria</b> (Unidad 3, UCP 600), que es una operación bancaria internacional. El art. 783 CCom llama «cartas de crédito» a las cartas órdenes, lo que se presta a confusión.</p></div>`
       }
     ],
 
@@ -151,6 +225,35 @@
           ];
           el.innerHTML = '<table class="tabla"><tr><th></th><th>Letra de cambio</th><th>Pagaré</th></tr>' + filas.map(function (f) { return '<tr><td><b>' + f[0] + '</b></td><td>' + f[1] + '</td><td>' + f[2] + '</td></tr>'; }).join('') + '</table>';
         }
+      },
+      {
+        id: 'cartaorden', titulo: 'Carta orden de crédito: ¿qué pasa en cada caso?', seccion: 'carta-orden',
+        descripcion: 'Situaciones ilustrativas resueltas con las reglas del Código de Comercio que cita Sandoval.',
+        montar: function (el) {
+          var casos = [
+            ['El dador expide la carta «a la orden» del tomador y este la endosa a un amigo.', 'a', 'El tomador puede cobrarla personalmente, pero el endoso no transfiere al endosatario el derecho a cobrarla (art. 783).'],
+            ['La carta no indica ninguna cantidad, ni fija ni máxima.', 'b', 'Es una simple carta de introducción y recomendación: el dador no responde de lo que contraten, salvo dolo (art. 794).'],
+            ['El corresponsal se niega a pagar y el tomador quiere protestar y demandar al dador.', 'c', 'La carta no le da derecho alguno contra el dador ni contra el corresponsal (art. 788): no se protesta.'],
+            ['La carta no dice dentro de qué plazo debe usarse.', 'd', 'El plazo lo fija el tribunal, según las circunstancias del dador y del tomador y la operación (art. 784 inc. 2°).'],
+            ['El dador revoca la carta sin motivo serio mientras el tomador está de viaje y le causa perjuicios.', 'e', 'Responde de los daños, salvo que haya sobrevenido un deterioro del crédito del tomador (art. 786).']
+          ];
+          var et = { a: 'Solo cobra el tomador', b: 'Es carta de recomendación', c: 'No hay acción ni protesto', d: 'Plazo lo fija el juez', e: 'Dador indemniza' };
+          var i = 0, ok = 0;
+          function pintar() {
+            if (i >= casos.length) { el.innerHTML = '<div class="resultado ok"><b>Resultado: ' + ok + ' de ' + casos.length + '.</b> <button class="btn sec" id="re">Repetir</button></div>'; el.querySelector('#re').onclick = function () { i = 0; ok = 0; pintar(); }; return; }
+            var c = casos[i];
+            el.innerHTML = '<p class="small">Caso ' + (i + 1) + ' de ' + casos.length + '</p><p style="font-size:18px;font-weight:700">' + c[0] + '</p><div class="opciones-chip">' + Object.keys(et).map(function (k) { return '<button data-v="' + k + '">' + et[k] + '</button>'; }).join('') + '</div><div id="fb"></div>';
+            el.querySelectorAll('[data-v]').forEach(function (b) {
+              b.onclick = function () {
+                var bien = b.dataset.v === c[1]; if (bien) ok++;
+                el.querySelectorAll('[data-v]').forEach(function (x) { x.disabled = true; if (x.dataset.v === c[1]) x.classList.add('activo'); });
+                el.querySelector('#fb').innerHTML = '<div class="resultado ' + (bien ? 'ok' : 'mal') + '"><b>' + (bien ? '✓ Correcto.' : '✗ Era: ' + et[c[1]] + '.') + '</b> ' + c[2] + '<div style="margin-top:10px"><button class="btn" id="sig">Siguiente</button></div></div>';
+                el.querySelector('#sig').onclick = function () { i++; pintar(); };
+              };
+            });
+          }
+          pintar();
+        }
       }
     ],
 
@@ -179,7 +282,25 @@
 
       { tipo: 'oral', seccion: 'pagare', enunciado: 'Explique el pagaré y compárelo con la letra de cambio.', puntos: ['Promesa directa de pago («debo y pagaré»), relación bipartita; la letra es una orden tripartita.', 'Remisión a la letra (art. 107).', 'Menciones del art. 102: indicación, promesa incondicional, lugar y época (naturaleza), beneficiario o al portador, lugar y fecha, firma.', 'Puede nacer al portador; solo protesto por falta de pago.', 'Vencimientos (art. 105): a la vista, a plazo desde su fecha, a día fijo; admite cuotas.'], norma: 'Arts. 102-107 Ley 18.092' },
       { tipo: 'oral', seccion: 'vencimientos', enunciado: 'Explique los vencimientos sucesivos del pagaré y la cláusula de aceleración.', puntos: ['Art. 105: cuotas en un solo documento; para hacer exigible todo, debe expresarse; si no, cada cuota se protesta.', 'Aceleración automática: prescripción corre sobre todo desde el no pago.', 'Aceleración facultativa: el acreedor decide; preferida en la práctica.', 'Art. 30 Ley 18.010: solo capital e intereses devengados; los futuros no se aceleran; irrenunciable.', 'Ejemplo: 1.000 UF en dos cuotas con 5%.'], norma: 'Art. 105 Ley 18.092; art. 30 Ley 18.010' },
-      { tipo: 'oral', seccion: 'factura', enunciado: '¿Qué es la factura como título de crédito y por qué no es un valor?', puntos: ['Título causado (Ley 19.983): compraventa o servicio real.', 'La copia cedible es título-valor dinerario con mérito ejecutivo; facilita el factoring.', 'Debate sobre si es título de crédito puro (Prado y Parra).', 'No es valor para la LMV (SVS/CMF): sin autonomía; excepciones causales si no fue aceptada irrevocablemente o hay mala fe.', 'Ley 19.220: se transa en bolsas de productos.'], norma: 'Ley 19.983; Ley 19.220' }
+      { tipo: 'oral', seccion: 'factura', enunciado: '¿Qué es la factura como título de crédito y por qué no es un valor?', puntos: ['Título causado (Ley 19.983): compraventa o servicio real.', 'La copia cedible es título-valor dinerario con mérito ejecutivo; facilita el factoring.', 'Debate sobre si es título de crédito puro (Prado y Parra).', 'No es valor para la LMV (SVS/CMF): sin autonomía; excepciones causales si no fue aceptada irrevocablemente o hay mala fe.', 'Ley 19.220: se transa en bolsas de productos.'], norma: 'Ley 19.983; Ley 19.220' },
+
+      { tipo: 'alternativas', seccion: 'sandoval-pagare', enunciado: 'Según Sandoval, ¿qué naturaleza tiene la emisión, suscripción, endoso y aval de un pagaré?', opciones: ['Son actos de comercio formales (art. 3° N° 10 CCom)', 'Son actos civiles salvo entre comerciantes', 'Son actos mixtos', 'Dependen del giro del suscriptor'], correcta: 0, explicacion: 'Texto fijado por la Ley 18.092.' },
+      { tipo: 'vf', seccion: 'sandoval-pagare', enunciado: 'Para Sandoval, el pagaré es en el fondo una confesión de deuda del suscriptor.', respuesta: true, explicacion: 'Acto unilateral que no requiere aceptación.' },
+      { tipo: 'relacionar', seccion: 'sandoval-pagare', enunciado: 'Relaciona cada rasgo con el título al que corresponde.', pares: [['Solo se protesta por falta de pago', 'Pagaré'], ['Puede protestarse por falta de aceptación', 'Letra de cambio'], ['Admite cláusula de aceleración', 'Pagaré'], ['Requiere librador y librado', 'Letra de cambio']], explicacion: 'Diferencias del § 151 de Sandoval.' },
+      { tipo: 'alternativas', seccion: 'sandoval-pagare', enunciado: 'Si el pagaré es nominativo, ¿cómo circula según Sandoval?', opciones: ['Por cesión de créditos', 'Por endoso', 'Por simple entrega', 'No puede circular'], correcta: 0, explicacion: 'A la orden circula por endoso; al portador, por entrega.' },
+      { tipo: 'alternativas', seccion: 'sandoval-pagare', enunciado: 'Según la C. de Santiago (1997) citada por Sandoval, ¿por qué el acreedor no puede usar la cláusula de aceleración en cualquier tiempo para evitar la prescripción?', opciones: ['Porque equivaldría a una renuncia anticipada a la prescripción (art. 2494 CC)', 'Porque la cláusula es nula en los pagarés', 'Porque solo el deudor puede acelerar', 'Porque la aceleración exige autorización judicial'], correcta: 0, explicacion: 'También sería contrario al art. 98 de la Ley 18.092.' },
+      { tipo: 'vf', seccion: 'sandoval-pagare', enunciado: 'Según la C. de Santiago (1990), mientras el acreedor no ejerce la aceleración facultativa, cada cuota prescribe desde su propio vencimiento.', respuesta: true, explicacion: 'La cláusula sirve para anticipar la exigibilidad, no para postergarla.' },
+      { tipo: 'alternativas', seccion: 'sandoval-pagare', enunciado: 'Según la Corte Suprema (1991), si la cláusula dice que el atraso «hará exigible» todo el saldo, ¿desde cuándo corre la prescripción?', opciones: ['Desde el día en que se dejó de pagar la primera cuota', 'Desde la última cuota pactada', 'Desde que el acreedor demanda', 'Desde la suscripción'], correcta: 0, explicacion: 'Redactada así, es imperativa.' },
+      { tipo: 'vf', seccion: 'sandoval-pagare', enunciado: 'Según la C. de Arica (1991), la cláusula de aceleración puede ser invocada por el fiador o codeudor solidario.', respuesta: false, explicacion: 'Es una estipulación personal del deudor que no los favorece (arts. 1479, 1520 y 2354 CC).' },
+      { tipo: 'alternativas', seccion: 'sandoval-pagare', enunciado: 'Según la Corte Suprema (1985), ¿qué debe hacer el portador de un pagaré a la vista con cláusula «devuelta sin protesto»?', opciones: ['Protestarlo dentro del año siguiente a la suscripción para evitar la caducidad del art. 49', 'Nada: la cláusula lo libera de protestar', 'Protestarlo dentro de 30 días', 'Notificar al suscriptor por carta certificada'], correcta: 0, explicacion: 'El protesto es el único modo de impedir esa caducidad.' },
+      { tipo: 'alternativas', seccion: 'carta-orden', enunciado: 'Según el art. 782 CCom, ¿qué objeto tiene la carta orden de crédito?', opciones: ['Realizar un contrato de cambio condicional entre dador y tomador, que se perfecciona si este usa el crédito', 'Garantizar una compraventa internacional', 'Documentar un mutuo bancario', 'Transferir mercaderías en tránsito'], correcta: 0, explicacion: 'Permite retirar dinero en varias plazas.' },
+      { tipo: 'relacionar', seccion: 'carta-orden', enunciado: 'Relaciona cada persona de la carta orden con su papel.', pares: [['Dador', 'Expide la carta y reembolsa al corresponsal'], ['Tomador', 'Retira el dinero y luego reembolsa al dador'], ['Corresponsal', 'Entrega el dinero por mandato del dador']], explicacion: 'Sandoval, § 160.' },
+      { tipo: 'vf', seccion: 'carta-orden', enunciado: 'La carta orden de crédito expedida a la orden puede transferirse por endoso.', respuesta: false, explicacion: 'Es nominativa: el tomador puede cobrarla, pero el endoso no transfiere el derecho a cobrarla (art. 783).' },
+      { tipo: 'alternativas', seccion: 'carta-orden', enunciado: '¿Qué es una carta orden que no designa cantidad?', opciones: ['Una simple carta de introducción y recomendación', 'Una carta a la vista por monto ilimitado', 'Un pagaré en blanco', 'Una carta nula'], correcta: 0, explicacion: 'El dador no responde salvo dolo (art. 794).' },
+      { tipo: 'vf', seccion: 'carta-orden', enunciado: 'Si el corresponsal no paga la carta orden, el tomador puede protestarla y demandar al dador.', respuesta: false, explicacion: 'No le da derecho alguno contra el dador ni contra el corresponsal (art. 788); no se protesta.' },
+      { tipo: 'alternativas', seccion: 'carta-orden', enunciado: '¿Cuándo responde el dador por revocar la carta orden?', opciones: ['Cuando la revoca intempestivamente y sin motivo serio, salvo que se deteriore el crédito del tomador', 'Siempre que la revoque', 'Nunca, porque es un acto unilateral', 'Solo si el tomador ya la usó'], correcta: 0, explicacion: 'Art. 786 CCom.' },
+      { tipo: 'oral', seccion: 'carta-orden', enunciado: 'Explique la carta orden de crédito.', puntos: ['Concepto y art. 782: contrato de cambio condicional; utilidad en varias plazas.', 'Personas y relaciones: dador–tomador (cambio condicional) y dador–corresponsal (mandato).', 'Requisitos: nominativa (art. 783), cantidad o máximo (si no, carta de recomendación), plazo, firmas.', 'Obligaciones del dador y del tomador; revocación (art. 786).', 'No da acción ni se protesta (art. 788); hoy en desuso; no confundir con el crédito documentario.'], norma: 'Arts. 782 a 794 CCom' },
+      { tipo: 'oral', seccion: 'sandoval-pagare', enunciado: 'Explique la jurisprudencia sobre la cláusula de aceleración que recoge Sandoval.', puntos: ['Facultativa: requiere voluntad del acreedor; mientras tanto, cada cuota prescribe desde su vencimiento.', 'No puede usarse para eludir la prescripción: renuncia anticipada (art. 2494 CC).', 'Imperativa («hará exigible»): prescripción desde la primera cuota impaga (CS 1991).', 'Beneficia solo al acreedor y no favorece al fiador ni al codeudor solidario.', 'Contraste con el apunte: control del acreedor sobre el inicio de la prescripción.'], norma: 'Art. 105 Ley 18.092; art. 2494 CC' }
     ]
   });
 })();

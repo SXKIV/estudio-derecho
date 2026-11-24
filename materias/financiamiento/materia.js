@@ -84,7 +84,25 @@ Estudio.registrarMateria({
     'enron': 'auditores independencia consultoria',
     'auditor': 'auditores externos independencia escepticismo',
     'disclosure': 'mandatory disclosure veraz suficiente oportuna articulo 9',
-    'hibridos': 'hibrido bonos subordinados perpetuos convertibles preferentes'
+    'hibridos': 'hibrido bonos subordinados perpetuos convertibles preferentes',
+    'clasificadora': 'clasificadoras riesgo suficiencia aaa bbb categoria',
+    'ifrs': 'estados financieros contabilidad suficiencia',
+    'esg': 'asg memoria integrada ncg 461',
+    'hecho esencial': 'hechos esenciales articulo 10 oportunidad',
+    'hecho reservado': 'reservado tres cuartas partes directores 164 privilegiada',
+    'cmf': 'comision mercado financiero sanciones multas fiscal consejo',
+    'privilegiada': 'informacion privilegiada insider 164 165 166',
+    'insider': 'informacion privilegiada iniciados 165 166',
+    'videla': 'cencosud hecho reservado informacion privilegiada',
+    'navarrete': 'cap ibercap revelacion induccion hermanas',
+    'blanco y negro': 'restle mosa uso abstencion balance',
+    'blackout': 'periodo bloqueo 30 dias estados financieros',
+    'articulo 55': 'triple responsabilidad civil administrativa penal',
+    'carta de porte': 'transporte terrestre 173 mercaderias',
+    'conocimiento de embarque': 'bill lading transporte maritimo 977',
+    'carta orden': 'carta orden credito dador tomador corresponsal 782',
+    'extravio': 'declaracion extravio 88 resolucion reemplaza letra',
+    'tacha': 'tacha falsedad firma 110'
   },
   preguntasChat: ['¿Qué es el anatocismo?', '¿Cómo se calcula la TMC?', '¿Qué resolvió el caso Cofisa?', 'Diferencia entre mutuo y depósito irregular', '¿Qué es la subordinación de créditos?']
 });

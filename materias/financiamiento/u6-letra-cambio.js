@@ -1,5 +1,6 @@
 /* Unidad 6 — Letra de cambio (clases 4 a 9 del Prof. Gaspar).
-   Fuentes: apuntes de clases del Prof. Gaspar (lectura de apoyo: Sandoval, tomo II, pp. 65-162). Norma: Ley 18.092. */
+   Fuentes: apuntes de clases del Prof. Gaspar (lectura de apoyo: Sandoval, tomo II, pp. 65-162). Norma: Ley 18.092.
+   Secciones 8 y 9: Sandoval, Derecho Comercial, tomo II (5ª ed., 2005), cap. II. */
 (function () {
   function fecha(d) { return d.toLocaleDateString('es-CL', { day: 'numeric', month: 'long', year: 'numeric' }); }
   function masMeses(d, m) { var x = new Date(d.getTime()); x.setMonth(x.getMonth() + m); return x; }
@@ -7,8 +8,8 @@
   Estudio.registrarUnidad({
     id: 'u6', numero: 6, bloque: 'Prof. Gaspar', profesor: 'Gaspar',
     titulo: 'Letra de cambio',
-    resumen: 'Del contrato de cambio a la letra abstracta; el giro y sus menciones; el endoso y sus clases; la aceptación y el aval; el pago, el protesto y el perjuicio de la letra; las acciones cambiarias y su prescripción.',
-    lecturas: 'Apuntes de clases del Prof. Gaspar (clases 4 a 9 del cronograma). Lectura de apoyo: Sandoval, tomo II, pp. 65-162. Norma principal: Ley 18.092 sobre letra de cambio y pagaré.',
+    resumen: 'Del contrato de cambio a la letra abstracta; el giro y sus menciones; el endoso y sus clases; la aceptación y el aval; el pago, el protesto y el perjuicio de la letra; las acciones cambiarias y su prescripción. Con Sandoval: la letra sin menciones esenciales, retiro de la aceptación, solidaridad cambiaria, protesto notarial y bancario, extravío, interrupción de la prescripción y tacha de falsedad.',
+    lecturas: 'Apuntes de clases del Prof. Gaspar (clases 4 a 9 del cronograma). Lectura de apoyo: Sandoval, tomo II, pp. 65-162. Norma principal: Ley 18.092 sobre letra de cambio y pagaré. Secciones 8 y 9: Sandoval, tomo II, cap. II (§§ 64, 70, 98-101, 113-148).',
 
     /* ---------------- Glosario (definiciones del material) ---------------- */
     glosario: [
@@ -36,7 +37,14 @@
       { termino: 'Perjuicio de la letra', definicion: 'Caducidad de las acciones cambiarias contra el librador, los endosantes y sus avales por no protestar en tiempo y forma. No libera al aceptante ni a su aval.', fuente: 'Art. 79 Ley 18.092', seccion: 'pago-protesto', alias: ['letra perjudicada', 'caducidad de la letra'] },
       { termino: 'Acción cambiaria directa', definicion: 'La que tiene el portador contra el aceptante y su aval. No requiere protesto y prescribe en un año desde el vencimiento.', fuente: 'Arts. 79, 80 y 98 Ley 18.092', seccion: 'acciones', alias: ['accion directa'] },
       { termino: 'Acción de regreso', definicion: 'La que tiene el portador contra el librador, los endosantes y sus avales, solidariamente. Requiere protesto oportuno (salvo cláusula «sin protesto») y prescribe en un año desde el vencimiento.', fuente: 'Arts. 79 y 80 Ley 18.092', seccion: 'acciones' },
-      { termino: 'Acción de reembolso', definicion: 'La que tiene el obligado de regreso que pagó, contra los obligados anteriores. Prescribe en seis meses desde el pago.', fuente: 'Art. 99 Ley 18.092; apuntes', seccion: 'acciones' }
+      { termino: 'Acción de reembolso', definicion: 'La que tiene el obligado de regreso que pagó, contra los obligados anteriores. Prescribe en seis meses desde el pago.', fuente: 'Art. 99 Ley 18.092; apuntes', seccion: 'acciones' },
+      { termino: 'Retiro de la aceptación', definicion: 'Facultad del librado de borrar o tachar su aceptación antes de restituir la letra, agregando «retiro mi aceptación» y firmando de nuevo; se considera que la aceptación se negó.', fuente: 'Art. 44 Ley 18.092; Sandoval', seccion: 'sandoval-forma', alias: ['retiro mi aceptacion'] },
+      { termino: 'Solidaridad cambiaria', definicion: 'Responsabilidad solidaria por el total que la ley impone a libradores, aceptantes y endosantes de la letra. A diferencia de la civil, los endosantes actúan más bien como fiadores solidarios con reembolso contra los obligados anteriores.', fuente: 'Arts. 79 y 82 Ley 18.092; Sandoval', seccion: 'sandoval-forma' },
+      { termino: 'Protesto bancario', definicion: 'Protesto por falta de pago que hace un banco o financiera que tiene la letra como beneficiario o endosatario, salvo instrucción en contrario del portador, con aviso previo de al menos 10 días al aceptante y registros públicos. No es protesto personal para ejecutar.', fuente: 'Art. 71 Ley 18.092; Sandoval', seccion: 'sandoval-protesto', alias: ['protesto por banco'] },
+      { termino: 'Registro de Protestos', definicion: 'Registro que debe llevar todo funcionario que protesta letras, con los protestos realizados día a día, numerados y con sus datos principales.', fuente: 'Art. 63 Ley 18.092; Sandoval', seccion: 'sandoval-protesto' },
+      { termino: 'Declaración de extravío', definicion: 'Procedimiento judicial ante el juez civil del domicilio del portador, con traslado a los obligados y aviso en el Diario Oficial, cuya resolución reemplaza a la letra perdida para requerir la aceptación o el pago.', fuente: 'Arts. 88 a 96 Ley 18.092; Sandoval', seccion: 'sandoval-protesto', alias: ['extravio', 'extravio de la letra'] },
+      { termino: 'Acción extracambiaria', definicion: 'Acción que nace de la relación subyacente a la letra, no del título; se rige por el derecho común y puede ser ejecutiva u ordinaria.', fuente: 'Sandoval, tomo II, § 131', seccion: 'sandoval-protesto', alias: ['acciones extracambiarias'] },
+      { termino: 'Tacha de falsedad', definicion: 'Alegación de que la firma puesta en una letra o pagaré es falsa. Si resulta auténtica, quien la tachó incurre en el delito del art. 110 de la Ley 18.092 (penas del art. 467 CP), salvo justa causa de error o título falso.', fuente: 'Art. 110 Ley 18.092; Sandoval', seccion: 'sandoval-protesto', alias: ['tacha de falsedad de firma'] }
     ],
 
     secciones: [
@@ -233,6 +241,78 @@
   <li><b>Firma autorizada ante notario.</b></li>
 </ol>
 <p class="small">Sin el pago del impuesto de timbres y estampillas (art. 26 DL 3.475), la letra conserva su validez pero pierde el mérito ejecutivo: hay que ir a juicio ordinario.</p>`
+      },
+      {
+        id: 'sandoval-forma', titulo: '8. Profundización (Sandoval): forma, aceptación y solidaridad',
+        html: `
+<div class="callout green"><p><b>Fuente de esta sección:</b> Sandoval, <i>Derecho Comercial</i>, tomo II (5ª ed., 2005), cap. II. Complementa las secciones 3 a 5.</p></div>
+<h3>La letra sin una mención esencial: ¿nula o convertida?</h3>
+<p>El <span class="norma">art. 2° Ley 18.092</span> dice que el documento sin las menciones del art. 1° «no valdrá como letra de cambio». El derogado art. 641 CCom era distinto: la letra defectuosa valía como <b>simple pagaré</b> del librador.</p>
+<div class="grid dos">
+  <div class="card"><b>Tesis de Sandoval (y C. de Talca, 1988)</b><p>No es <b>nula</b>: se convierte en otro acto, un <b>instrumento privado</b> que prueba una deuda. Puede servir para preparar la vía ejecutiva (confesión de deuda o reconocimiento de firma), pero sin necesariedad, literalidad, autonomía, abstracción ni acciones cambiarias.</p></div>
+  <div class="card"><b>Caso de la firma equivocada (CS, 1998)</b><p>Un documento cuya única firma era la del <b>librado</b> (no la del librador) no vale como letra. Darle mérito ejecutivo como letra infringe los arts. 434 y 435 CPC.</p></div>
+</div>
+<ul>
+  <li><b>Ejemplares:</b> la Ley 18.092 no regula la emisión en varios ejemplares (resabio del contrato de cambio). Nada impide pactarla como mención facultativa, indicando que los segundos solo valen si no se pagó el primero.</li>
+</ul>
+<h3>Aceptación: retiro y negativa</h3>
+<div class="grid dos">
+  <div class="card"><b>Retiro de la aceptación (art. 44)</b><p>Las declaraciones cambiarias son irrevocables, pero la ley permite al librado <b>borrar o tachar</b> su aceptación <b>antes de restituir la letra</b>, agregando «retiro mi aceptación» y firmando de nuevo. Se entiende que la aceptación se negó.</p></div>
+  <div class="card"><b>Negativa a aceptar</b><p>El librado que no acepta <b>no responde</b> ante el portador: no tiene relación con él. Responde el <b>librador</b>, que garantizó la aceptación, y los endosantes traslaticios, siempre que se proteste la letra por falta de aceptación.</p></div>
+</div>
+<h3>Solidaridad cambiaria (art. 79)</h3>
+<p>La ley hace solidariamente responsables del total a quienes firman como libradores, aceptantes o endosantes. Pero no es la solidaridad del Código Civil:</p>
+<table class="tabla">
+<tr><th>Solidaridad civil</th><th>Solidaridad cambiaria</th></tr>
+<tr><td>Los codeudores comparten una deuda común; cada uno tiene su parte, aunque se le pueda cobrar el total.</td><td>Los endosantes no son codeudores, sino más bien <b>fiadores solidarios</b>: responden si no paga el deudor principal y, si pagan, tienen reembolso contra él.</td></tr>
+</table>
+<ul>
+  <li>El endosante que paga solo tiene reembolso contra el librador, el aceptante, los <b>endosantes anteriores</b> y sus avalistas (art. 82 inc. 2°): son ellos quienes le garantizaron el pago.</li>
+  <li>El librador o el aceptante que pagan <b>no tienen reembolso</b> entre sí ni contra los demás firmantes (art. 82).</li>
+  <li>Solo el endoso <b>traslaticio</b> genera la solidaridad del endosante (art. 25), que puede excluirla en el mismo endoso.</li>
+  <li>La solidaridad del librador y de los endosantes depende del <b>protesto oportuno</b>; si no, la letra se perjudica.</li>
+  <li><b>Pago por un extraño:</b> cualquier tercero puede pagar (art. 1572 CC) y se <b>subroga</b> en los derechos del portador, que debe anotar en la letra el nombre de quien pagó.</li>
+</ul>`
+      },
+      {
+        id: 'sandoval-protesto', titulo: '9. Profundización (Sandoval): protesto, extravío, prescripción y tacha',
+        html: `
+<div class="callout green"><p><b>Fuente de esta sección:</b> Sandoval, tomo II, cap. II, §§ 113-148. Complementa las secciones 6 y 7.</p></div>
+<div class="callout yellow"><p><b>Terminología:</b> Sandoval (ed. 2005) habla de «quiebra» del portador o del librado. El apunte de Gaspar usa «liquidación concursal». Se refieren a la misma hipótesis de los arts. 57 y 79.</p></div>
+<h3>El protesto notarial paso a paso</h3>
+<div class="flow"><div class="node">Notario competente<small>u oficial del Registro Civil donde no hay notario (art. 60)</small></div><div class="arrow">→</div><div class="node">Aviso<small>cita al librado al día hábil siguiente que no sea sábado</small></div><div class="arrow">→</div><div class="node">Verifica la Tesorería<small>si hay depósito suficiente, no hay protesto (art. 70)</small></div><div class="arrow">→</div><div class="node">Requerimiento y acta<small>se anota la respuesta</small></div><div class="arrow">→</div><div class="node y">Registro de Protestos<small>art. 63</small></div></div>
+<ul>
+  <li><b>Competencia:</b> el protesto por falta de aceptación o de fecha se hace ante el funcionario del lugar donde debe aceptarse (art. 65); el de pago, del lugar de pago (art. 68).</li>
+  <li>El notario puede delegar la entrega del aviso en un empleado, con autorización de la Corte de Apelaciones.</li>
+  <li>Si el depósito en Tesorería no alcanza, se protesta por el saldo. El funcionario retira el depósito y lo entrega al portador.</li>
+  <li>Hecho el protesto, debe devolver la letra a más tardar el día hábil siguiente que no sea sábado, y responde de los perjuicios por demora, irregularidades o extravío.</li>
+</ul>
+<h3>El protesto por bancos o financieras (art. 71)</h3>
+<div class="grid dos">
+  <div class="card"><b>Requisitos copulativos</b><ol><li>Que el banco no reciba <b>instrucciones en contrario</b> del portador (por ejemplo, que proteste un notario).</li><li>Que el banco tenga la letra en su poder como <b>beneficiario o endosatario</b> (cualquier endoso).</li></ol></div>
+  <div class="card"><b>Formalidades</b><p>Aviso escrito al aceptante con al menos <b>10 días</b> de anticipación al vencimiento; registro diario de avisos; certificación de la falta de pago al dorso; Registro de Letras Protestadas. Los registros son públicos y se presumen verídicos (presunción simplemente legal).</p></div>
+</div>
+<p><b>Ineficacia:</b> el protesto bancario no produce efecto si se omite el aviso, el número, la fecha o la firma del representante. Y, según Sandoval, <b>no es un protesto personal</b> para el art. 434 N° 4 CPC: para ejecutar hay que notificar judicialmente el protesto.</p>
+<h3>Extravío de la letra (arts. 88 a 96)</h3>
+<ol>
+  <li>Solicitud ante el <b>juez civil del domicilio del peticionario</b>, identificando la letra.</li>
+  <li>Traslado de <b>5 días hábiles</b> a los obligados y al librado, y aviso en el Diario Oficial (días 1 o 15) para que los interesados comparezcan dentro de <b>30 días</b>.</li>
+  <li>Sin oposición, el juez autoriza a requerir la aceptación o el pago y puede exigir <b>garantía de resultas</b>. Con oposición, se tramita como <b>incidente</b>.</li>
+  <li>En cualquier momento puede pedirse la <b>suspensión provisional</b> de la aceptación o el pago.</li>
+  <li>Una <b>copia autorizada de la resolución reemplaza la letra</b>; los obligados conservan sus excepciones. Los plazos que vencían durante el procedimiento se prorrogan hasta el tercer día hábil después de ejecutoriada.</li>
+  <li>Solo procede <b>apelación en ambos efectos</b>. La aceptación o el pago autorizados producen los mismos efectos que el ejemplar auténtico (art. 96). También se aplica a la destrucción parcial.</li>
+</ol>
+<h3>Acciones y prescripción</h3>
+<ul>
+  <li><b>Cambiarias y extracambiarias:</b> las cambiarias nacen de la letra (directa, de regreso y de reembolso). Las extracambiarias nacen de la <b>relación subyacente</b>, se rigen por el derecho común y pueden ser ejecutivas u ordinarias.</li>
+  <li><b>Interrupción (art. 100):</b> solo respecto del obligado a quien se notifica la demanda o la gestión necesaria para demandar o preparar la ejecución; también con la notificación de la solicitud de extravío, y por el <b>reconocimiento</b> expreso o tácito del obligado (interrupción natural, art. 2518 CC). Una sentencia citada por Sandoval (C. de San Miguel, 1997) exige la <b>notificación</b>, no la mera presentación de la demanda.</li>
+</ul>
+<h3>Tacha de falsedad de la firma (art. 110)</h3>
+<p>Para frenar a deudores que negaban su propia firma y obligaban a ir a juicio ordinario, la ley sanciona con las penas del <b>art. 467 del Código Penal</b> a quien, en el protesto o en la gestión preparatoria, tacha de falsa su firma y esta resulta auténtica, salvo justa causa de error o que el título sea falso.</p>
+<ul>
+  <li>La tacha se tramita como <b>incidente</b>; el demandante debe probar que la firma es auténtica (por ejemplo, con peritaje caligráfico). La Corte Suprema (1984) admitió también la confesión judicial.</li>
+  <li>Si se acredita, el documento es título ejecutivo. Las apelaciones se conceden en el solo efecto devolutivo.</li>
+</ul>`
       }
     ],
 
@@ -337,6 +417,30 @@
           }
           el.querySelectorAll('input').forEach(function (i) { i.onchange = calc; }); calc();
         }
+      },
+      {
+        id: 'protestobanco', titulo: '¿Vale el protesto hecho por el banco?', seccion: 'sandoval-protesto',
+        descripcion: 'Marca lo que ocurrió y revisa si el protesto bancario del art. 71 es eficaz y si sirve para ejecutar directamente (según Sandoval).',
+        montar: function (el) {
+          var req = [
+            ['tiene', 'El banco tiene la letra como beneficiario o endosatario', 'requisito'],
+            ['instr', 'El portador NO dio instrucciones de protestar ante notario', 'requisito'],
+            ['aviso', 'Se envió aviso escrito al aceptante con 10 días o más de anticipación', 'formalidad'],
+            ['numero', 'La certificación lleva el número del Registro de Letras no Pagadas', 'formalidad'],
+            ['fecha', 'La certificación indica fecha y lugar', 'formalidad'],
+            ['firma', 'Firma el representante autorizado del banco', 'formalidad']
+          ];
+          el.innerHTML = req.map(function (r) { return '<label class="check" style="display:block;margin:6px 0"><input type="checkbox" data-k="' + r[0] + '" checked> ' + r[1] + '</label>'; }).join('') + '<div id="out"></div>';
+          function calc() {
+            var falta = req.filter(function (r) { return !el.querySelector('[data-k="' + r[0] + '"]').checked; });
+            var out;
+            if (!falta.length) out = '<div class="resultado ok"><b>Protesto eficaz.</b> Conserva las acciones de regreso. Pero no es un protesto personal para el art. 434 N° 4 CPC: para ejecutar hay que notificar judicialmente el protesto.</div>';
+            else if (falta.some(function (r) { return r[2] === 'requisito'; })) out = '<div class="resultado mal"><b>El banco no podía protestar.</b> Faltan requisitos copulativos: ' + falta.filter(function (r) { return r[2] === 'requisito'; }).map(function (r) { return r[1].toLowerCase(); }).join('; ') + '. Debe protestar un notario.</div>';
+            else out = '<div class="resultado mal"><b>Protesto sin efectos jurídicos.</b> Se omitió: ' + falta.map(function (r) { return r[1].toLowerCase(); }).join('; ') + '. Si no se protesta bien a tiempo, la letra se perjudica frente al librador, los endosantes y sus avales.</div>';
+            el.querySelector('#out').innerHTML = out;
+          }
+          el.querySelectorAll('input').forEach(function (i) { i.onchange = calc; }); calc();
+        }
       }
     ],
 
@@ -389,7 +493,27 @@
       { tipo: 'oral', seccion: 'endoso', enunciado: 'Explique el endoso: clases, requisitos y efectos.', puntos: ['Art. 17: transfiere el dominio, entrega en cobro o constituye prenda; al dorso y firmado.', 'Puro y simple (condición no escrita) y total (el parcial no produce efecto) (art. 19).', 'Presunción de traslaticio (art. 21); endoso en blanco (arts. 23-24).', 'Traslaticio: garantía solidaria (art. 25), inoponibilidad (art. 28; Inverlink).', 'En cobro (art. 29): mandato, no purga excepciones; en garantía (art. 30): cobrar e imputar.', 'Limitaciones: sin responsabilidad, no endosable (arts. 18 y 25), letra vencida (art. 32). Portador legítimo (art. 26) y deber del que paga (art. 31).'], norma: 'Arts. 17-32 Ley 18.092' },
       { tipo: 'oral', seccion: 'aceptacion-aval', enunciado: 'Explique la aceptación y el aval de la letra de cambio.', puntos: ['Aceptación: acto unilateral del librado (art. 33); sola firma en el anverso; fecha obligatoria en letras a plazo desde la vista (art. 36).', 'Pura y simple; se admite la parcial; otra reserva equivale a rechazo (art. 42).', 'Si no acepta: garantía de aceptación del librador y protesto.', 'Aval (art. 46): anverso (sola firma), dorso («por aval»), documento separado (no circula con el endoso).', 'Responde como el aceptante; limitable a tiempo, caso, cantidad o persona (art. 47).', 'Diferencia con la fianza civil: unilateral, autónomo e incausado.'], norma: 'Arts. 33-47 Ley 18.092' },
       { tipo: 'oral', seccion: 'pago-protesto', enunciado: 'Explique el protesto y el perjuicio de la letra.', puntos: ['Protesto: acto formal e insustituible de un ministro de fe; por falta de aceptación, de fecha o de pago (art. 59).', 'Procedimiento notarial (arts. 61, 62, 69) y protesto bancario (art. 71).', 'Consignación previa en la tesorería comunal (art. 70).', 'Perjuicio (art. 79): caducan las acciones contra librador, endosantes y avales; no contra el aceptante ni su aval.', 'Excepciones: quiebra del aceptante antes del vencimiento y cláusula devuelta sin gastos (art. 74).', 'Nulidad solo con perjuicio efectivo (art. 77).'], norma: 'Arts. 59-79 Ley 18.092' },
-      { tipo: 'oral', seccion: 'acciones', enunciado: 'Explique las acciones cambiarias y su prescripción.', puntos: ['Directa: contra el aceptante y su aval; sin protesto; 1 año desde el vencimiento.', 'Regreso: contra librador, endosantes y avales, solidaria; requiere protesto salvo cláusula; 1 año.', 'Reembolso: el que paga contra los anteriores; 6 meses desde el pago; cada pago abre un plazo nuevo.', 'Si paga el aceptante o el librador, se extingue la cadena.', 'Art. 100: interrupción solo respecto del notificado.', 'Mérito ejecutivo (art. 434 N°4 CPC): protesto personal, notificación judicial del protesto o firma autorizada; impuesto de timbres.'], norma: 'Arts. 79-100 Ley 18.092; art. 434 N°4 CPC' }
+      { tipo: 'oral', seccion: 'acciones', enunciado: 'Explique las acciones cambiarias y su prescripción.', puntos: ['Directa: contra el aceptante y su aval; sin protesto; 1 año desde el vencimiento.', 'Regreso: contra librador, endosantes y avales, solidaria; requiere protesto salvo cláusula; 1 año.', 'Reembolso: el que paga contra los anteriores; 6 meses desde el pago; cada pago abre un plazo nuevo.', 'Si paga el aceptante o el librador, se extingue la cadena.', 'Art. 100: interrupción solo respecto del notificado.', 'Mérito ejecutivo (art. 434 N°4 CPC): protesto personal, notificación judicial del protesto o firma autorizada; impuesto de timbres.'], norma: 'Arts. 79-100 Ley 18.092; art. 434 N°4 CPC' },
+
+      { tipo: 'alternativas', seccion: 'sandoval-forma', enunciado: 'Según Sandoval, ¿qué es un documento al que le falta una mención esencial del art. 1° de la Ley 18.092?', opciones: ['No es nulo: se convierte en un instrumento privado sin los beneficios cambiarios', 'Es nulo absolutamente', 'Vale como pagaré del librador', 'Vale como letra si el deudor no reclama'], correcta: 0, explicacion: 'Puede servir para preparar la vía ejecutiva por confesión o reconocimiento de firma. La regla del pagaré era la del derogado art. 641 CCom.' },
+      { tipo: 'vf', seccion: 'sandoval-forma', enunciado: 'Bajo el derogado art. 641 CCom, la letra a la que faltaba una formalidad valía como simple pagaré firmado por el librador.', respuesta: true, explicacion: 'Hoy el art. 2° dice que «no valdrá como letra de cambio».' },
+      { tipo: 'alternativas', seccion: 'sandoval-forma', enunciado: '¿Qué resolvió la Corte Suprema (1998) sobre un documento cuya única firma era la del librado?', opciones: ['Que no vale como letra y darle mérito ejecutivo infringe los arts. 434 y 435 CPC', 'Que vale como letra aceptada', 'Que vale como pagaré del librado', 'Que es nulo y obliga a indemnizar'], correcta: 0, explicacion: 'Faltaba la firma del librador, mención esencial.' },
+      { tipo: 'alternativas', seccion: 'sandoval-forma', enunciado: '¿Cómo puede el librado retirar su aceptación según el art. 44?', opciones: ['Borrándola o tachándola antes de restituir la letra, con la expresión «retiro mi aceptación» y su firma', 'Avisando al librador por carta dentro de 30 días', 'Mediante protesto', 'No puede: la aceptación es irrevocable'], correcta: 0, explicacion: 'Cumplidos esos requisitos, la aceptación se entiende negada.' },
+      { tipo: 'vf', seccion: 'sandoval-forma', enunciado: 'Si el librado se niega a aceptar, responde ante el portador por los perjuicios.', respuesta: false, explicacion: 'No tiene relación con el portador. Responde el librador, que garantizó la aceptación, previo protesto.' },
+      { tipo: 'alternativas', seccion: 'sandoval-forma', enunciado: 'Según Sandoval, ¿en qué se diferencia la solidaridad cambiaria de la civil?', opciones: ['Los endosantes no son codeudores de una deuda común, sino fiadores solidarios con reembolso contra el deudor principal', 'En la cambiaria no se puede cobrar el total a ninguno', 'La cambiaria es convencional y la civil legal', 'No hay diferencia'], correcta: 0, explicacion: 'Por eso el que paga solo se dirige contra los obligados anteriores.' },
+      { tipo: 'alternativas', seccion: 'sandoval-forma', enunciado: 'Por el art. 82, ¿qué acción tiene el aceptante que paga la letra?', opciones: ['Ninguna acción cambiaria de reembolso contra los demás firmantes', 'Reembolso contra todos los endosantes', 'Reembolso solo contra el librador', 'Acción directa contra su avalista'], correcta: 0, explicacion: 'Lo mismo vale para el librador que paga.' },
+      { tipo: 'vf', seccion: 'sandoval-forma', enunciado: 'Un tercero ajeno a la letra puede pagarla y se subroga en los derechos del portador.', respuesta: true, explicacion: 'Aplica el art. 1572 CC; el portador anota en la letra el nombre de quien pagó.' },
+      { tipo: 'alternativas', seccion: 'sandoval-protesto', enunciado: '¿Quién protesta una letra en una comuna que no es asiento de notario?', opciones: ['El oficial del Registro Civil del lugar', 'El juez de policía local', 'El tesorero comunal', 'Nadie: debe ir a la comuna vecina'], correcta: 0, explicacion: 'Art. 60 Ley 18.092.' },
+      { tipo: 'alternativas', seccion: 'sandoval-protesto', enunciado: '¿Qué hace el funcionario si hay un depósito en Tesorería, pero no alcanza para pagar la letra, intereses y reajustes?', opciones: ['Deja constancia y protesta por el saldo insoluto', 'No protesta', 'Devuelve el depósito al deudor', 'Suspende el protesto 30 días'], correcta: 0, explicacion: 'Si alcanza, se omite el protesto (art. 70).' },
+      { tipo: 'alternativas', seccion: 'sandoval-protesto', enunciado: '¿Cuáles son los requisitos copulativos para que un banco proteste por falta de pago (art. 71)?', opciones: ['Tener la letra como beneficiario o endosatario y no recibir instrucciones en contrario del portador', 'Ser el aceptante y tener autorización de la CMF', 'Tener la letra en endoso en garantía y avisar al notario', 'Que la letra sea en UF'], correcta: 0, explicacion: 'Cualquier clase de endoso sirve.' },
+      { tipo: 'vf', seccion: 'sandoval-protesto', enunciado: 'Según Sandoval, el protesto hecho por un banco permite ejecutar directamente, como un protesto personal del art. 434 N° 4 CPC.', respuesta: false, explicacion: 'No es personal: hay que notificar judicialmente el protesto para preparar la vía ejecutiva.' },
+      { tipo: 'alternativas', seccion: 'sandoval-protesto', enunciado: '¿Qué reemplaza a la letra extraviada para requerir su aceptación o pago?', opciones: ['Una copia autorizada de la resolución judicial que acoge la solicitud', 'Una declaración jurada del portador', 'Un duplicado firmado por el librador', 'El acta de protesto'], correcta: 0, explicacion: 'Los obligados conservan las excepciones que tenían respecto del original.' },
+      { tipo: 'relacionar', seccion: 'sandoval-protesto', enunciado: 'Relaciona cada paso del procedimiento de extravío con su plazo o regla.', pares: [['Traslado a obligados y librado', '5 días hábiles'], ['Comparecencia de interesados tras el aviso', '30 días'], ['Prórroga de plazos vencidos durante el procedimiento', 'Tercer día hábil tras quedar ejecutoriada'], ['Recurso contra la resolución final', 'Apelación en ambos efectos']], explicacion: 'Arts. 88 a 96 Ley 18.092, según Sandoval.' },
+      { tipo: 'alternativas', seccion: 'sandoval-protesto', enunciado: 'Además de la demanda notificada, ¿qué otra cosa interrumpe la prescripción de las acciones cambiarias respecto de un obligado?', opciones: ['Su reconocimiento expreso o tácito de la calidad de obligado', 'La mera presentación de la demanda sin notificar', 'El protesto notarial', 'El aviso de cobro del banco'], correcta: 0, explicacion: 'Es la interrupción natural (art. 2518 CC). La notificación de la solicitud de extravío también interrumpe.' },
+      { tipo: 'vf', seccion: 'sandoval-protesto', enunciado: 'Quien tacha de falsa su firma en la gestión preparatoria y luego se prueba que es auténtica puede cometer un delito.', respuesta: true, explicacion: 'Art. 110 Ley 18.092: penas del art. 467 CP, salvo justa causa de error o título falso.' },
+      { tipo: 'alternativas', seccion: 'sandoval-protesto', enunciado: '¿Qué son las acciones extracambiarias?', opciones: ['Las que nacen de la relación subyacente y se rigen por el derecho común', 'Las acciones de regreso contra los endosantes', 'Las que tiene el avalista contra el avalado', 'Las acciones penales por giro doloso'], correcta: 0, explicacion: 'Pueden ser ejecutivas u ordinarias.' },
+      { tipo: 'oral', seccion: 'sandoval-protesto', enunciado: 'Explique el procedimiento de extravío de la letra de cambio.', puntos: ['Fundamento: «desincorporar» la prestación del documento perdido o destruido.', 'Solicitud ante el juez civil del domicilio del peticionario; traslado de 5 días; aviso en el Diario Oficial y 30 días.', 'Sin oposición: autorización para requerir aceptación o pago, con posible garantía; con oposición: incidente.', 'Suspensión provisional; la copia de la resolución reemplaza la letra; los obligados conservan sus excepciones.', 'Prórroga de plazos, apelación en ambos efectos y mismos efectos que el original (art. 96).'], norma: 'Arts. 88 a 96 Ley 18.092' },
+      { tipo: 'oral', seccion: 'sandoval-forma', enunciado: 'Explique la solidaridad cambiaria y sus diferencias con la solidaridad civil.', puntos: ['Fuente legal (art. 79): libradores, aceptantes y endosantes responden del total.', 'Los endosantes son más bien fiadores solidarios, no codeudores de una deuda común.', 'Reembolso solo contra los obligados anteriores (art. 82 inc. 2°); librador y aceptante que pagan no tienen reembolso.', 'Solo el endoso traslaticio obliga (art. 25); puede excluirse en el endoso.', 'Depende del protesto oportuno; si no, la letra se perjudica.'], norma: 'Arts. 25, 79 y 82 Ley 18.092' }
     ]
   });
 })();

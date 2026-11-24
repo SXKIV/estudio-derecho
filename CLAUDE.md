@@ -12,8 +12,11 @@ Se publica con GitHub Pages desde la rama `main` y se comparte con amigos.
 - No copiar párrafos de libros ni subir PDF de apuntes o lecturas: el contenido es una
   síntesis propia. Las citas textuales son solo de normas, de sentencias o frases breves.
 - Todo dato jurídico (artículos, cifras, fechas, casos) debe salir del material del curso
-  que entregó el usuario. No agregar normas ni artículos de memoria. Si algo no está en
-  el material, se deja fuera o se marca como pendiente.
+  que entregó el usuario: el apunte completo del Prof. Gaspar, los apuntes y diapositivas
+  del Prof. Goldenberg y Sandoval, Derecho Comercial, tomo II (5ª ed., 2005). Lo que viene
+  de Sandoval va en secciones «Profundización (Sandoval)» o con la fuente indicada. No agregar
+  normas ni artículos de memoria. Si algo no está en el material, se deja fuera o se marca
+  como pendiente.
 - Lenguaje claro, en español de Chile. Frases cortas.
 
 ## Tecnología
@@ -43,12 +46,12 @@ materias/
     u2-contratos.js
     u3-operaciones-bancarias.js
     u4-garantias.js
-    u5-titulos-credito.js
-    u6-letra-cambio.js
-    u7-pagare-factura.js     (descuento y factoring: pendiente, clase de profesora invitada)
+    u5-titulos-credito.js     (secciones 6-8: Sandoval, tomo II)
+    u6-letra-cambio.js        (secciones 8-9: Sandoval, tomo II)
+    u7-pagare-factura.js      (secciones 6-7: Sandoval; descuento y factoring: pendiente)
     u8-mercado-valores-1.js
     u9-mercado-valores-2.js   (caso Almacenes París: pendiente, no está en el apunte)
-    u10-mercado-valores-3.js  (clases 20 a 22: pendientes, vacías en el apunte)
+    u10-mercado-valores-3.js  (completa con el apunte completo de Gaspar)
 ```
 
 ## Plan de trabajo (seguir siempre este orden)
@@ -71,12 +74,14 @@ materias/
 8. **Actualizar este archivo** si cambia la estructura o se cierra un pendiente.
 
 ## Pendientes conocidos
-- U7: descuento y factoring (clase de profesora invitada; falta material).
+- U7: descuento y factoring (clase de profesora invitada; falta material). La edición de
+  Sandoval que tenemos (2005) no trata estos temas.
 - U9: caso Almacenes París (no está en el apunte).
-- U10: clasificadores de riesgo, hechos esenciales y reservados, caso Matías Videla,
-  información privilegiada (caso Hermanos Navarrete) y CMF (clases 20 a 22, vacías en el apunte).
 - U8: número de la Ley Fintech (el apunte dice 21.521 y 21.236).
-- U9/U10: numeración del delito de información falsa y de oferta sin registro (arts. 59 A / 62 a).
+- U9/U10: numeración del delito de información falsa y de oferta sin registro (arts. 59 A / 62 a);
+  el apunte completo mantiene la contradicción.
+- U10: el apunte ubica el período de bloqueo en el «art. 16 LMV» y no dice si los 30 días son
+  corridos o hábiles.
 
 ## Cómo agregar una unidad
 1. En `materias/<materia>/materia.js`, la unidad ya está listada; agrégale `archivo: 'uN-nombre.js'`.
