@@ -90,8 +90,6 @@ materias/
 - Cambios al `motor/` (por ejemplo, modo oscuro) van en un pull request separado de los de contenido.
 
 ## Pendientes conocidos
-- U1 (numeración según el apunte completo de clases, Goldenberg): puntos del apunte sin contenido en la
-  página todavía: 3.9.7, 3.9.9, 3.9.10, 3.12.4 y 3.14.1; la pestaña 3.14 no tiene preguntas.
 - U1 3.8.4.2: las diapositivas/apuntes de clase atribuyen la crítica a la propuesta de Jackson al Banco
   Central y la ABIF; el apunte completo, al Banco Central y la CMF (callout amarillo en la página).
 - U7: descuento y factoring (clase de profesora invitada; falta material). La edición de
