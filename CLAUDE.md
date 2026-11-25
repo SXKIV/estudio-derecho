@@ -51,7 +51,7 @@ materias/
     u2-contratos.js
     u3-operaciones-bancarias.js
     u4-garantias.js
-    u5-titulos-credito.js     (secciones 6-8: Sandoval, tomo II)
+    u5-titulos-credito.js     (puntos 1-9 del apunte de Gaspar; al final, Profundización (Sandoval))
     u6-letra-cambio.js        (secciones 8-9: Sandoval, tomo II)
     u7-pagare-factura.js      (secciones 6-7: Sandoval; descuento y factoring: pendiente)
     u8-mercado-valores-1.js
@@ -109,8 +109,8 @@ con el apunte al lado, y que cada subsección tenga preguntas propias en «Compr
 Se hace **una unidad por pull request** (numeración + contenido + preguntas juntos), en la rama
 `actualizacion/financiamiento-uN-numeracion`, partiendo de `main` actualizado.
 
-**Estado:** U1–U4 listas (apunte de Goldenberg). Pendientes U5–U10 (apunte de Gaspar). El índice
-de Gaspar tiene dos partes que reinician la numeración: títulos de crédito (1–11: aprox. U5 = 1–9,
+**Estado:** U1–U4 listas (apunte de Goldenberg) y U5 lista (apunte de Gaspar). Pendientes U6–U10. El índice
+de Gaspar tiene dos partes que reinician la numeración: títulos de crédito (1–11: U5 = 1–9 (confirmado),
 U6 = 10 Letra de cambio, U7 = 11 Pagaré) y mercado de valores (1–9: U8–U10). Confirmarlo al leerlo.
 
 1. **Leer el apunte.** Índice con números de página:
