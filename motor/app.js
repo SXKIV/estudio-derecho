@@ -285,15 +285,21 @@
     return $$('[data-sub]', t.content).map(function (h) { return { id: h.getAttribute('data-sub'), titulo: h.textContent.trim() }; });
   }
   function rutaSec(u, s, sub) { return '#/u/' + u.id + '/contenido/' + s.id + (sub ? '/' + sub : ''); }
+  // Campo opcional de la sección: grupo:'1. Dinero' (punto principal del apunte). Agrupa el índice
+  // y se muestra sobre el título de la diapositiva.
   function chipsIndice(u, d, actual) {
+    var grupo = null;
     return '<div class="indice">' + u.secciones.map(function (s) {
       var leida = d.leidas[u.id + ':' + s.id];
-      return '<a href="' + rutaSec(u, s) + '" class="' + (leida ? 'leida' : '') + (actual === s.id ? ' actual' : '') + '"' + (actual === s.id ? ' aria-current="page"' : '') + '>' + (leida ? '✓ ' : '') + esc(s.titulo) + '</a>';
+      var cab = '';
+      if (s.grupo && s.grupo !== grupo) cab = '<span class="indice-grupo">' + esc(s.grupo) + '</span>';
+      grupo = s.grupo || null;
+      return cab + '<a href="' + rutaSec(u, s) + '" class="' + (leida ? 'leida' : '') + (actual === s.id ? ' actual' : '') + '"' + (actual === s.id ? ' aria-current="page"' : '') + '>' + (leida ? '✓ ' : '') + esc(s.titulo) + '</a>';
     }).join('') + '</div>';
   }
   function cabeceraSeccion(u, s, d) {
     var leida = d.leidas[u.id + ':' + s.id];
-    return '<h2><span>' + esc(s.titulo) + '</span><button class="marcar-leida' + (leida ? ' si' : '') + '" data-sec="' + s.id + '">' + (leida ? '✓ Leída' : 'Marcar como leída') + '</button></h2>';
+    return (s.grupo ? '<div class="kicker grupo-seccion">' + esc(s.grupo) + '</div>' : '') + '<h2><span>' + esc(s.titulo) + '</span><button class="marcar-leida' + (leida ? ' si' : '') + '" data-sec="' + s.id + '">' + (leida ? '✓ Leída' : 'Marcar como leída') + '</button></h2>';
   }
   function avisoInteractivos(u, s) {
     var inter = u.interactivos.filter(function (i) { return i.seccion === s.id; });

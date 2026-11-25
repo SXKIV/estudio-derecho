@@ -121,6 +121,9 @@ section.seccion > h2{display:flex;justify-content:space-between;gap:10px;align-i
 .diapo-barra{display:flex;justify-content:space-between;align-items:flex-start;gap:10px 14px;flex-wrap:wrap;margin:0 0 16px}
 .diapo-barra .indice{margin:0;flex:1 1 420px}
 .diapo-acciones{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.indice-grupo{flex:0 0 100%;font-size:11px;letter-spacing:.12em;font-weight:900;color:var(--muted);text-transform:uppercase;margin:6px 0 0}
+.indice-grupo:first-child{margin-top:0}
+.grupo-seccion{margin-bottom:4px}
 .indice a.actual{border-color:var(--acento);background:var(--azul-sel);color:var(--ucdark);box-shadow:0 0 0 2px var(--azul-suave)}
 .carrusel{position:relative;display:grid;grid-template-columns:64px minmax(0,1fr) 64px;overflow:hidden;overflow:clip;padding:4px 0 8px}
 .carrusel > section.diapo{margin:0;position:relative;z-index:1}

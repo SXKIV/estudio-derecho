@@ -63,8 +63,10 @@ for (const meta of actual.materia.unidades) {
   u.glosario.forEach(g => { const k = g.termino.toLowerCase(); if (terminos[k]) falla(`término '${g.termino}' repetido en ${terminos[k]} y ${u.id}`); terminos[k] = u.id; });
   const a = anterior && anterior.unidades.find(x => x.id === u.id);
   if (a) {
-    // Agregar o cambiar 'sub' (subsección) no altera el id ni el progreso: se ignora al comparar.
-    const sinSub = q => q && JSON.stringify(Object.assign({}, q, { sub: undefined }));
+    // Cambiar 'seccion' o 'sub' (reordenar el contenido según el apunte) no altera el id ni el
+    // progreso: se ignora al comparar, pero se informa.
+    const sinSub = q => q && JSON.stringify(Object.assign({}, q, { sub: undefined, seccion: undefined }));
+    a.preguntas.forEach((q, i) => { const n = u.preguntas[i]; if (n && q.seccion !== n.seccion) console.log(`  · ${u.id}-q${i + 1}: pasa de la sección '${q.seccion}' a '${n.seccion}'`); });
     a.preguntas.forEach((q, i) => { if (sinSub(q) !== sinSub(u.preguntas[i])) falla(`${u.id}-q${i + 1}: una pregunta que ya existía cambió o se movió (rompe el progreso guardado)`); });
     a.glosario.forEach(g => { if (!u.glosario.some(h => h.termino === g.termino)) falla(`${u.id}: se borró o renombró el término '${g.termino}'`); });
     (a.interactivos || []).forEach(x => { if (!ints.has(x.id)) falla(`${u.id}: se borró el interactivo '${x.id}'`); });
