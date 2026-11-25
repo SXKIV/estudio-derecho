@@ -89,6 +89,9 @@ materias/
   - `/actualizar-materia <id> [unidades y material]`: agrega material nuevo sin romper el progreso.
   - `node .claude/skills/actualizar-materia/verificar.js <id>`: revisa ids, secciones y que lo ya
     publicado siga intacto respecto de `HEAD`.
+  - `/importar-preguntas <id> <unidad>`: genera con NotebookLM (`notebooklm-py`, cuenta de Google
+    secundaria) un cuestionario difícil, lo revisa contra el apunte y agrega al final las preguntas
+    que sirvan. Los JSON y hojas de revisión quedan en `apuntes/<id>/notebooklm/` (no se suben).
 - Cambios al `motor/` (por ejemplo, modo oscuro) van en un pull request separado de los de contenido.
 
 ## Pendientes conocidos
