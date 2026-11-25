@@ -165,6 +165,16 @@ U6 = 10 Letra de cambio, U7 = 11 Pagaré) y mercado de valores (1–9: U8–U10)
    `gh api repos/<dueño>/<repo>/pulls -f title=… -f head=<rama> -f base=main -F body=@<archivo>`.
    No sobrescribir ramas ya subidas (sin force push).
 
+## Preguntas de razonamiento con NotebookLM
+Se generan con `/importar-preguntas <id> <unidad>` (ver `.claude/skills/importar-preguntas/SKILL.md`):
+NotebookLM redacta, Claude Code revisa cada dato contra el apunte y agrega solo lo que sirve.
+
+**Estado:** U1 (#12), U2 (#15) y U3 (#16) listas. Siguen U4 y U5, que ya están numeradas.
+U6–U10: primero su pull request de numeración (sección anterior) y después el de NotebookLM, porque
+los `sub` se definen al numerar. Nunca dos pull requests abiertos sobre la misma unidad.
+Fuente por unidad (opción `-s`): apunte de Goldenberg para U1–U4; apunte de Gaspar para U5–U10.
+Sandoval no está en el cuaderno de NotebookLM.
+
 ## Cómo agregar una unidad
 1. En `materias/<materia>/materia.js`, la unidad ya está listada; agrégale `archivo: 'uN-nombre.js'`.
 2. Crea ese archivo con `Estudio.registrarUnidad({...})`. Copia la forma de `u1-dinero-ley18010.js`:
