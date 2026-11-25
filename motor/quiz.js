@@ -70,7 +70,7 @@
       c.innerHTML = '<div class="panel" style="max-width:860px"><div class="kicker">Resultado</div><div class="big">' + bien + ' / ' + resultados.length + '</div>' +
         '<p class="lead">' + (pct >= 85 ? '¡Excelente! Esa materia está firme.' : pct >= 60 ? 'Bien. Repasa las que fallaste antes de seguir.' : 'Vuelve a leer las secciones de las preguntas falladas y repite.') + '</p>' +
         (mal.length ? '<h3>Para repasar</h3><ul>' + mal.map(function (x) {
-          return '<li>' + esc(x.q.enunciado) + (x.q.seccion ? ' — <a href="#/u/' + x.q.unidad + '/contenido/' + x.q.seccion + '">ver sección</a>' : '') + '</li>';
+          return '<li>' + esc(x.q.enunciado) + (x.q.seccion ? ' — <a href="#/u/' + x.q.unidad + '/contenido/' + x.q.seccion + (x.q.sub ? '/' + x.q.sub : '') + '">ver sección</a>' : '') + '</li>';
         }).join('') + '</ul>' : '') +
         '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">' + (mal.length ? '<button class="btn" id="rep-mal">Repetir las falladas</button>' : '') + '<button class="btn sec" id="volver">Volver</button></div></div>';
       if ($('#rep-mal', c)) $('#rep-mal', c).onclick = function () { Quiz.sesion(c, mal.map(function (x) { return x.q; }), opts); };
@@ -81,7 +81,7 @@
 
   function explicacion(caja, ok, q, extra) {
     caja.appendChild(U.el('<div class="explicacion ' + (ok ? 'ok' : 'mal') + '"><b>' + (ok ? '✓ Correcto.' : '✗ No es correcto.') + '</b> ' + (extra || '') + ' ' + esc(q.explicacion || '') +
-      (q.seccion ? ' <a href="#/u/' + q.unidad + '/contenido/' + q.seccion + '">Ver sección →</a>' : '') + '</div>'));
+      (q.seccion ? ' <a href="#/u/' + q.unidad + '/contenido/' + q.seccion + (q.sub ? '/' + q.sub : '') + '">Ver sección →</a>' : '') + '</div>'));
   }
 
   function pintarAlternativas(caja, q, listo) {
@@ -156,7 +156,7 @@
   function pautaYAutoeval(caja, q, listo) {
     var b = $('#ver', caja); if (b) b.remove();
     caja.appendChild(U.el('<div class="explicacion"><b>Pauta de respuesta</b><ul class="puntos-clave">' + q.puntos.map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>' +
-      (q.norma ? '<p class="small"><b>Normas:</b> ' + esc(q.norma) + '</p>' : '') + (q.seccion ? '<p class="small"><a href="#/u/' + q.unidad + '/contenido/' + q.seccion + '">Ver sección →</a></p>' : '') + '</div>'));
+      (q.norma ? '<p class="small"><b>Normas:</b> ' + esc(q.norma) + '</p>' : '') + (q.seccion ? '<p class="small"><a href="#/u/' + q.unidad + '/contenido/' + q.seccion + (q.sub ? '/' + q.sub : '') + '">Ver sección →</a></p>' : '') + '</div>'));
     var ev = U.el('<div><p class="small" style="margin-top:12px"><b>¿Cómo te fue?</b></p><div class="autoeval"><button class="btn" style="background:var(--green)" data-r="bien">Lo dije completo</button><button class="btn" style="background:#d79b12" data-r="parcial">Parcial</button><button class="btn" style="background:var(--red)" data-r="mal">No lo sabía</button></div></div>');
     caja.appendChild(ev);
     $$('[data-r]', ev).forEach(function (x) { x.onclick = function () { ev.remove(); listo(x.dataset.r); }; });

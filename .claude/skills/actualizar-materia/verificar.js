@@ -42,17 +42,30 @@ for (const meta of actual.materia.unidades) {
   const secs = new Set();
   u.secciones.forEach(s => { if (secs.has(s.id)) falla(`${u.id}: sección repetida '${s.id}'`); secs.add(s.id); });
   [...u.preguntas, ...u.glosario, ...(u.interactivos || [])].forEach(x => { if (x.seccion && !secs.has(x.seccion)) falla(`${u.id}: '${x.enunciado || x.termino || x.id}' apunta a la sección inexistente '${x.seccion}'`); });
+  // Subsecciones: títulos con data-sub="<id>" dentro del html de cada sección (ids únicos en la unidad).
+  const subsDe = {}; const subsVistas = new Set();
+  u.secciones.forEach(s => {
+    subsDe[s.id] = new Set();
+    for (const m of String(s.html || '').matchAll(/data-sub="([^"]+)"/g)) {
+      if (subsVistas.has(m[1])) falla(`${u.id}: subsección repetida '${m[1]}'`);
+      subsVistas.add(m[1]); subsDe[s.id].add(m[1]);
+    }
+  });
   u.preguntas.forEach((q, i) => {
     if (!q.seccion) falla(`${u.id}-q${i + 1}: sin sección`);
+    if (q.sub && subsDe[q.seccion] && !subsDe[q.seccion].has(q.sub)) falla(`${u.id}-q${i + 1}: 'sub: ${q.sub}' no existe en la sección '${q.seccion}' (falta data-sub="${q.sub}")`);
     if (q.tipo === 'alternativas' && !(q.correcta >= 0 && q.correcta < q.opciones.length)) falla(`${u.id}-q${i + 1}: 'correcta' fuera de rango`);
     if (q.tipo === 'relacionar' && !(q.pares && q.pares.length >= 2)) falla(`${u.id}-q${i + 1}: 'relacionar' necesita al menos 2 pares`);
     if (q.tipo === 'vf' && typeof q.respuesta !== 'boolean') falla(`${u.id}-q${i + 1}: 'vf' sin respuesta true/false`);
   });
   const ints = new Set(); (u.interactivos || []).forEach(x => { if (ints.has(x.id)) falla(`${u.id}: interactivo repetido '${x.id}'`); ints.add(x.id); });
+  u.glosario.forEach(g => { if (g.sub && subsDe[g.seccion] && !subsDe[g.seccion].has(g.sub)) falla(`${u.id}: término '${g.termino}' con 'sub: ${g.sub}' que no existe en la sección '${g.seccion}'`); });
   u.glosario.forEach(g => { const k = g.termino.toLowerCase(); if (terminos[k]) falla(`término '${g.termino}' repetido en ${terminos[k]} y ${u.id}`); terminos[k] = u.id; });
   const a = anterior && anterior.unidades.find(x => x.id === u.id);
   if (a) {
-    a.preguntas.forEach((q, i) => { if (JSON.stringify(q) !== JSON.stringify(u.preguntas[i])) falla(`${u.id}-q${i + 1}: una pregunta que ya existía cambió o se movió (rompe el progreso guardado)`); });
+    // Agregar o cambiar 'sub' (subsección) no altera el id ni el progreso: se ignora al comparar.
+    const sinSub = q => q && JSON.stringify(Object.assign({}, q, { sub: undefined }));
+    a.preguntas.forEach((q, i) => { if (sinSub(q) !== sinSub(u.preguntas[i])) falla(`${u.id}-q${i + 1}: una pregunta que ya existía cambió o se movió (rompe el progreso guardado)`); });
     a.glosario.forEach(g => { if (!u.glosario.some(h => h.termino === g.termino)) falla(`${u.id}: se borró o renombró el término '${g.termino}'`); });
     (a.interactivos || []).forEach(x => { if (!ints.has(x.id)) falla(`${u.id}: se borró el interactivo '${x.id}'`); });
     a.secciones.forEach(s => { if (!secs.has(s.id)) console.log(`  ! ${u.id}: ya no existe la sección '${s.id}' (solo se pierde su marca de «leída»; justifícalo en el commit)`); });

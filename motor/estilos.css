@@ -117,6 +117,39 @@ main{padding:28px 36px 90px;max-width:1180px;width:100%}
 section.seccion{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 26px;margin:0 0 18px;box-shadow:var(--soft);scroll-margin-top:90px}
 section.seccion > h2{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
 .marcar-leida{flex:0 0 auto;font-size:12.5px;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 11px;cursor:pointer;font-weight:800;color:var(--muted)}
+/* ---------- Diapositivas de contenido ---------- */
+.diapo-barra{display:flex;justify-content:space-between;align-items:flex-start;gap:10px 14px;flex-wrap:wrap;margin:0 0 16px}
+.diapo-barra .indice{margin:0;flex:1 1 420px}
+.diapo-acciones{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.indice a.actual{border-color:var(--acento);background:var(--azul-sel);color:var(--ucdark);box-shadow:0 0 0 2px var(--azul-suave)}
+.carrusel{position:relative;display:grid;grid-template-columns:64px minmax(0,1fr) 64px;overflow:hidden;overflow:clip;padding:4px 0 8px}
+.carrusel > section.diapo{margin:0;position:relative;z-index:1}
+.diapo-fantasma{position:absolute;top:28px;bottom:28px;width:calc(100% - 128px);overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 26px;
+  filter:blur(2.5px);opacity:.42;pointer-events:none;user-select:none;z-index:0}
+.diapo-fantasma.izq{right:calc(100% - 52px);transform:scale(.92);transform-origin:right center}
+.diapo-fantasma.der{left:calc(100% - 52px);transform:scale(.92);transform-origin:left center}
+.diapo-lado{position:relative;z-index:2;padding-top:140px}
+.flecha{position:sticky;top:calc(50vh - 24px);display:grid;place-items:center;width:46px;height:46px;margin:0 auto;border-radius:50%;
+  background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);color:var(--ucdark);font-size:30px;line-height:1;text-decoration:none;font-weight:700}
+.flecha:hover{border-color:var(--borde-hover);background:var(--hover)}
+.subindice{display:flex;flex-wrap:wrap;gap:6px;margin:-2px 0 14px}
+.subindice a{font-size:12.5px;font-weight:750;text-decoration:none;color:var(--ucdark);background:var(--azul-suave);border-radius:7px;padding:4px 9px}
+[data-sub]{scroll-margin-top:90px}
+.diapo-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.diapo-nav a,.diapo-fin a{text-decoration:none;max-width:100%;overflow-wrap:anywhere}
+.diapo-fin{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.comprueba{margin-top:22px;border:1px solid var(--borde-azul);background:var(--superficie);border-radius:14px;padding:16px 18px;scroll-margin-top:90px}
+.comprueba .pregunta,.comprueba .panel{box-shadow:none}
+.comprueba a.btn{text-decoration:none}
+.comprueba-grupos{display:grid;gap:6px;margin:6px 0 4px}
+.comprueba-grupo{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.comprueba-grupo .btn{padding:7px 11px;font-size:13px}
+section.diapo{scroll-margin-top:90px}
+.diapo.entra-der{animation:entraDer .28s ease}
+.diapo.entra-izq{animation:entraIzq .28s ease}
+@keyframes entraDer{from{transform:translateX(28px);opacity:.4}}
+@keyframes entraIzq{from{transform:translateX(-28px);opacity:.4}}
+@media (prefers-reduced-motion:reduce){.diapo.entra-der,.diapo.entra-izq{animation:none}}
 .marcar-leida.si{border-color:var(--borde-verde);background:var(--verde-suave);color:var(--green)}
 
 /* ---------- Diagramas ---------- */
@@ -255,6 +288,12 @@ footer.pie{border-top:1px solid var(--line);padding:16px 22px;font-size:12.5px;c
   .tabla{display:block;overflow-x:auto;font-size:14px}
   .flow{flex-wrap:wrap}
   section.seccion{padding:18px 16px}
+  .carrusel{grid-template-columns:minmax(0,1fr)}
+  .diapo-fantasma,.diapo-lado{display:none}
+  .diapo-nav{flex-direction:column}
+  .diapo-nav a{text-align:center}
+  .diapo-fin{margin-left:0;flex-direction:column}
+  .comprueba{padding:14px 12px}
   section.seccion h2{flex-wrap:wrap}
   section.seccion h2 span{min-width:0;overflow-wrap:anywhere}
   .top-inner{padding:8px 12px;gap:8px}
