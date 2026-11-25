@@ -32,7 +32,10 @@ Se publica con GitHub Pages desde la rama `main` y se comparte con amigos.
 index.html                  portada: lista de materias
 materia.html                la app (se abre como materia.html?m=<id>)
 motor/                      igual para todas las materias — no depende del contenido
-  estilos.css                 colores y diseño (paleta UC: azul #1479c9, amarillo #ffdd00)
+  estilos.css                 colores y diseño (paleta UC: azul #1479c9, amarillo #ffdd00);
+                              los colores son variables de :root y se redefinen en
+                              :root[data-theme="dark"] (modo oscuro). Usar var(--…), no #hex.
+  tema.js                     botón 🌙/☀️ de modo claro/oscuro (se carga en el <head>)
   almacen.js                  perfiles, guardado local, exportar/importar progreso
   srs.js                      repetición espaciada (cajas de Leitner, estilo Anki)
   app.js                      carga la materia, navegación, vistas, progreso

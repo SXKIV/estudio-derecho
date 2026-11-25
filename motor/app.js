@@ -224,7 +224,7 @@
   function barraGrande(res) {
     var t = res.total || 1;
     return '<div class="barra"><i class="dom" style="width:' + (100 * res.dominada / t) + '%"></i><i class="apr" style="width:' + (100 * (res.bien + res.aprendiendo) / t) + '%"></i></div>' +
-      '<div class="leyenda"><span style="--c:var(--green)">Dominadas ' + res.dominada + '</span><span style="--c:#f2b632">En proceso ' + (res.bien + res.aprendiendo) + '</span><span style="--c:#e8eef4">Sin ver ' + res.nueva + '</span></div>';
+      '<div class="leyenda"><span style="--c:var(--green)">Dominadas ' + res.dominada + '</span><span style="--c:#f2b632">En proceso ' + (res.bien + res.aprendiendo) + '</span><span style="--c:var(--pista)">Sin ver ' + res.nueva + '</span></div>';
   }
 
   function vistaInicio(v) {
