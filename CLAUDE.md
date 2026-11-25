@@ -52,7 +52,7 @@ materias/
     u3-operaciones-bancarias.js
     u4-garantias.js
     u5-titulos-credito.js     (puntos 1-9 del apunte de Gaspar; al final, Profundización (Sandoval))
-    u6-letra-cambio.js        (secciones 8-9: Sandoval, tomo II)
+    u6-letra-cambio.js        (punto 10 del apunte de Gaspar; al final, Profundización (Sandoval))
     u7-pagare-factura.js      (secciones 6-7: Sandoval; descuento y factoring: pendiente)
     u8-mercado-valores-1.js
     u9-mercado-valores-2.js   (caso Almacenes París: pendiente, no está en el apunte)
@@ -106,6 +106,8 @@ materias/
 - U8: número de la Ley Fintech (el apunte dice 21.521 y 21.236).
 - U9/U10: numeración del delito de información falsa y de oferta sin registro (arts. 59 A / 62 a);
   el apunte completo mantiene la contradicción.
+- U6 10.5.1.4: el apunte transcribe el art. 10 Ley 18.092 (la cláusula que exime al librador del pago «se tendrá
+  por no escrita»), pero al explicarlo dice que el título «vale cero» / «no hay letra» (callout amarillo).
 - U10: el apunte ubica el período de bloqueo en el «art. 16 LMV» y no dice si los 30 días son
   corridos o hábiles.
 
@@ -115,9 +117,9 @@ con el apunte al lado, y que cada subsección tenga preguntas propias en «Compr
 Se hace **una unidad por pull request** (numeración + contenido + preguntas juntos), en la rama
 `actualizacion/financiamiento-uN-numeracion`, partiendo de `main` actualizado.
 
-**Estado:** U1–U4 listas (apunte de Goldenberg) y U5 lista (apunte de Gaspar). Pendientes U6–U10. El índice
-de Gaspar tiene dos partes que reinician la numeración: títulos de crédito (1–11: U5 = 1–9 (confirmado),
-U6 = 10 Letra de cambio, U7 = 11 Pagaré) y mercado de valores (1–9: U8–U10). Confirmarlo al leerlo.
+**Estado:** U1–U4 listas (apunte de Goldenberg) y U5–U6 listas (apunte de Gaspar). Pendientes U7–U10. El índice
+de Gaspar tiene dos partes que reinician la numeración: títulos de crédito (1–11: U5 = 1–9 y U6 = 10 Letra de cambio
+(confirmados), U7 = 11 Pagaré) y mercado de valores (1–9: U8–U10). Confirmarlo al leerlo.
 
 1. **Leer el apunte.** Índice con números de página:
    `python -c "import pypdf; r=pypdf.PdfReader('apuntes/financiamiento/<pdf>'); ..."` recorriendo
