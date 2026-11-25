@@ -58,7 +58,7 @@ materias/
     u8-mercado-valores-1.js   (puntos 1-6 de «Mercado de valores» del apunte de Gaspar)
     u9-mercado-valores-2.js   (puntos 7.1-7.7 de «Mercado de valores»; caso Almacenes París: pendiente,
                               no está en el apunte)
-    u10-mercado-valores-3.js  (completa con el apunte completo de Gaspar)
+    u10-mercado-valores-3.js  (puntos 7.8-9 de «Mercado de valores» del apunte de Gaspar)
 ```
 
 ## Plan de trabajo (seguir siempre este orden)
@@ -121,9 +121,9 @@ con el apunte al lado, y que cada subsección tenga preguntas propias en «Compr
 Se hace **una unidad por pull request** (numeración + contenido + preguntas juntos), en la rama
 `actualizacion/financiamiento-uN-numeracion`, partiendo de `main` actualizado.
 
-**Estado:** U1–U4 listas (apunte de Goldenberg) y U5–U9 listas (apunte de Gaspar). Pendiente U10. El índice
+**Estado:** U1–U4 listas (apunte de Goldenberg) y U5–U10 listas (apunte de Gaspar). Todas las unidades están numeradas. El índice
 de Gaspar tiene dos partes que reinician la numeración: títulos de crédito (1–11: U5 = 1–9 y U6 = 10 Letra de cambio
-(confirmados), U7 = 11 Pagaré (confirmado)) y mercado de valores (1–9: U8 = 1–6 (confirmado); U9 = 7.1–7.7 (confirmado); U10 = 7.8–9). Confirmarlo al leerlo.
+(confirmados), U7 = 11 Pagaré (confirmado)) y mercado de valores (1–9: U8 = 1–6 (confirmado); U9 = 7.1–7.7 (confirmado); U10 = 7.8–9 (confirmado; el apunte numera «2.6» el período de bloqueo, que va como 9.3)).
 
 1. **Leer el apunte.** Índice con números de página:
    `python -c "import pypdf; r=pypdf.PdfReader('apuntes/financiamiento/<pdf>'); ..."` recorriendo
@@ -177,8 +177,7 @@ NotebookLM redacta, Claude Code revisa cada dato contra el apunte y agrega solo 
 
 **Estado:** U1 (#12), U2 (#15), U3 (#16), U4 (#18) y U5 (#19) listas. En U4 y U5 casi todo salió
 repetido (entraron 13 de 26 y 2 de 27): conviene más en unidades con pocas preguntas.
-U6–U10: primero su pull request de numeración (sección anterior) y después el de NotebookLM, porque
-los `sub` se definen al numerar. Nunca dos pull requests abiertos sobre la misma unidad.
+U6–U10: la numeración ya está lista (sección anterior); falta su pull request de NotebookLM. Nunca dos pull requests abiertos sobre la misma unidad.
 Fuente por unidad (opción `-s`): apunte de Goldenberg para U1–U4; apunte de Gaspar para U5–U10.
 Sandoval no está en el cuaderno de NotebookLM.
 
