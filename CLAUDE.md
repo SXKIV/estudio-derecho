@@ -68,10 +68,23 @@ materias/
    contradicciones en el material, se marcan en la página (callout amarillo) en vez de elegir.
 6. **Verificar** (ver al final): consola sin errores, la unidad abre, el chat responde,
    celular a 390 px sin desborde horizontal.
-7. **Entregar.** Commit con un mensaje claro y lista de archivos cambiados. Si no se puede
-   hacer push desde la sesión, entregar un zip solo con los archivos cambiados, con sus
-   carpetas (`materias/...`, `motor/...`), para copiarlos encima del repo.
+7. **Entregar.** En una rama propia (`materia/<id>`, `actualizacion/<id>-<tema>`,
+   `motor/<tema>`), commit con mensaje claro, push y pull request hacia `main`. No trabajar
+   directo en `main`: GitHub Pages publica desde ahí. Solo si la sesión no puede hacer push
+   (por ejemplo, el chat de claude.ai), entregar un zip con los archivos cambiados y sus
+   carpetas, para copiarlos encima del repo.
 8. **Actualizar este archivo** si cambia la estructura o se cierra un pendiente.
+
+## Fuentes y colaboración
+- Los apuntes, programas, formularios y lecturas van en `apuntes/<id-materia>/` en el computador
+  de cada uno. Esa carpeta y los PDF/Word están en `.gitignore`: **nunca** se suben (el repo es
+  público). Al repo solo va la síntesis.
+- Comandos del proyecto para Claude Code (en `.claude/skills/`):
+  - `/nueva-materia <id> "<Nombre>"`: crea una materia desde `apuntes/<id>/`.
+  - `/actualizar-materia <id> [unidades y material]`: agrega material nuevo sin romper el progreso.
+  - `node .claude/skills/actualizar-materia/verificar.js <id>`: revisa ids, secciones y que lo ya
+    publicado siga intacto respecto de `HEAD`.
+- Cambios al `motor/` (por ejemplo, modo oscuro) van en un pull request separado de los de contenido.
 
 ## Pendientes conocidos
 - U7: descuento y factoring (clase de profesora invitada; falta material). La edición de
