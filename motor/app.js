@@ -352,9 +352,6 @@
     ultimaDiapo = { u: u.id, i: i };
     var subs = subseccionesDe(s);
 
-    function fantasma(x, lado) {
-      return x ? '<div class="diapo-fantasma ' + lado + '" aria-hidden="true" inert><h2>' + esc(x.titulo) + '</h2>' + x.html + '</div>' : '';
-    }
     function flecha(x, lado) {
       return '<div class="diapo-lado ' + lado + '">' + (x
         ? '<a class="flecha" href="' + rutaSec(u, x) + '" aria-label="' + (lado === 'izq' ? 'Anterior: ' : 'Siguiente: ') + esc(x.titulo) + '" title="' + esc(x.titulo) + '">' + (lado === 'izq' ? '‹' : '›') + '</a>'
@@ -364,7 +361,7 @@
     if (u.lecturas && i === 0) html += '<div class="callout"><p><b>Material base:</b> ' + u.lecturas + '</p></div>';
     html += '<div class="diapo-barra">' + chipsIndice(u, d, s.id) +
       '<div class="diapo-acciones"><span class="small">' + (i + 1) + ' de ' + secs.length + '</span>' + botonModo('diapositivas') + '</div></div>';
-    html += '<div class="carrusel" id="carrusel">' + fantasma(ant, 'izq') + fantasma(sig, 'der') + flecha(ant, 'izq') +
+    html += '<div class="carrusel" id="carrusel">' + flecha(ant, 'izq') +
       '<section class="seccion diapo' + (dir ? ' entra-' + dir : '') + '" id="sec-' + s.id + '">' + cabeceraSeccion(u, s, d) +
       (subs.length ? '<nav class="subindice" aria-label="Subsecciones">' + subs.map(function (x) { return '<a href="' + rutaSec(u, s, x.id) + '">' + esc(x.titulo) + '</a>'; }).join('') + '</nav>' : '') +
       s.html + avisoInteractivos(u, s) +
