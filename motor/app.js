@@ -285,15 +285,21 @@
     return $$('[data-sub]', t.content).map(function (h) { return { id: h.getAttribute('data-sub'), titulo: h.textContent.trim() }; });
   }
   function rutaSec(u, s, sub) { return '#/u/' + u.id + '/contenido/' + s.id + (sub ? '/' + sub : ''); }
+  // Campo opcional de la sección: grupo:'1. Dinero' (punto principal del apunte). Agrupa el índice
+  // y se muestra sobre el título de la diapositiva.
   function chipsIndice(u, d, actual) {
+    var grupo = null;
     return '<div class="indice">' + u.secciones.map(function (s) {
       var leida = d.leidas[u.id + ':' + s.id];
-      return '<a href="' + rutaSec(u, s) + '" class="' + (leida ? 'leida' : '') + (actual === s.id ? ' actual' : '') + '"' + (actual === s.id ? ' aria-current="page"' : '') + '>' + (leida ? '✓ ' : '') + esc(s.titulo) + '</a>';
+      var cab = '';
+      if (s.grupo && s.grupo !== grupo) cab = '<span class="indice-grupo">' + esc(s.grupo) + '</span>';
+      grupo = s.grupo || null;
+      return cab + '<a href="' + rutaSec(u, s) + '" class="' + (leida ? 'leida' : '') + (actual === s.id ? ' actual' : '') + '"' + (actual === s.id ? ' aria-current="page"' : '') + '>' + (leida ? '✓ ' : '') + esc(s.titulo) + '</a>';
     }).join('') + '</div>';
   }
   function cabeceraSeccion(u, s, d) {
     var leida = d.leidas[u.id + ':' + s.id];
-    return '<h2><span>' + esc(s.titulo) + '</span><button class="marcar-leida' + (leida ? ' si' : '') + '" data-sec="' + s.id + '">' + (leida ? '✓ Leída' : 'Marcar como leída') + '</button></h2>';
+    return (s.grupo ? '<div class="kicker grupo-seccion">' + esc(s.grupo) + '</div>' : '') + '<h2><span>' + esc(s.titulo) + '</span><button class="marcar-leida' + (leida ? ' si' : '') + '" data-sec="' + s.id + '">' + (leida ? '✓ Leída' : 'Marcar como leída') + '</button></h2>';
   }
   function avisoInteractivos(u, s) {
     var inter = u.interactivos.filter(function (i) { return i.seccion === s.id; });
@@ -408,7 +414,7 @@
     var propias = u.preguntas.filter(function (q) { return q.seccion === s.id && q.tipo !== 'oral'; });
     var orales = u.preguntas.filter(function (q) { return q.seccion === s.id && q.tipo === 'oral'; });
     var grupos = subs.map(function (x) { return { id: x.id, titulo: x.titulo, preguntas: [] }; });
-    var general = { id: '', titulo: subs.length ? 'Preguntas generales de la sección' : 'Toda la sección', preguntas: [] };
+    var general = { id: '', titulo: subs.length ? s.titulo + ' · general' : 'Toda la sección', preguntas: [] };
     propias.forEach(function (q) { var k = orden.indexOf(q.sub); (k >= 0 ? grupos[k] : general).preguntas.push(q); });
     // Dentro de cada grupo: primero las preguntas escritas, después las del glosario.
     function ordenar(lista) { return lista.filter(function (q) { return !q.glosario; }).concat(lista.filter(function (q) { return q.glosario; })); }
@@ -421,7 +427,7 @@
         return;
       }
       var res = SRS.resumen(lista, d.preguntas);
-      var html = '<div class="kicker">Comprueba lo que leíste</div><h3 style="margin-top:0">' + lista.length + ' preguntas sobre esta sección</h3>' +
+      var html = '<div class="kicker">Comprueba lo que leíste</div><h3 style="margin-top:0">' + lista.length + (lista.length === 1 ? ' pregunta' : ' preguntas') + ' sobre esta sección</h3>' +
         '<p class="small" style="margin-top:0">' + res.dominada + ' dominadas · ' + (res.bien + res.aprendiendo) + ' en proceso · ' + res.nueva + ' sin ver</p>';
       if (todos.length > 1 || (todos.length === 1 && todos[0].id)) {
         html += '<div class="comprueba-grupos">' + todos.map(function (g, k) {

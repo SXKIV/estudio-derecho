@@ -105,6 +105,9 @@ materias/
    - `secciones`: `[{ id, titulo, html }]`. Cada sección es una diapositiva (con «Ver todo como
      lista» se ven todas seguidas). Al final de cada diapositiva aparece «Comprueba lo que leíste»
      con las preguntas cuyo `seccion` es esa sección.
+     - `grupo` (opcional): el punto principal del apunte al que pertenece la sección, p. ej.
+       `grupo: '1. Dinero'`. Agrupa el índice de pestañas y se muestra sobre el título.
+       Las secciones siguen el orden y la numeración del apunte completo de clases.
      - Subsecciones: los títulos internos llevan `data-sub` con un id único en la unidad y el número
        del apunte, p. ej. `<h3 data-sub="dinero-funciones">1.1.2. Funciones y naturaleza jurídica</h3>`.
        Se enlazan como `#/u/u1/contenido/dinero/dinero-funciones`.
