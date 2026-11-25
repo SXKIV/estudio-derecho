@@ -112,6 +112,9 @@ materias/
   por no escrita»), pero al explicarlo dice que el título «vale cero» / «no hay letra» (callout amarillo).
 - U7 11.2.2: el art. 102 N° 3 que transcribe el apunte dice que, sin lugar de pago, se paga en el lugar de expedición;
   al explicarlo agrega «el domicilio del suscriptor o el lugar de expedición» (callout amarillo).
+- U7 11.4: el art. 29 Ley 18.092 que transcribe el apunte dice que el endoso hecho por el endosatario en cobro «sólo
+  produce los efectos propios del endoso en cobranza»; el ejercicio del apunte dice que quien lo recibe es «nadie».
+  No se hicieron preguntas nuevas sobre ese cruce.
 - U10: el apunte ubica el período de bloqueo en el «art. 16 LMV» y no dice si los 30 días son
   corridos o hábiles.
 
