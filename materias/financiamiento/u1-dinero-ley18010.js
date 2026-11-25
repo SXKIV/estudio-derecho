@@ -378,10 +378,18 @@
       {
         id: 'moneda-extranjera', grupo: '3. Operación de crédito de dinero (Ley 18.010)', titulo: '3.13. Obligaciones en moneda extranjera',
         html: `
+<p>Hay dos formas de pactar una obligación en divisas, con reglas de cumplimiento muy distintas.</p>
+<div class="grid dos">
+  <div class="card"><h4 style="margin-top:0">Expresada en moneda extranjera</h4><p>La obligación se <b>valora</b> en divisas, pero se <b>paga en pesos</b>, según la equivalencia del <span class="norma">art. 20</span>. La divisa no es el objeto del pago: funciona como <b>unidad de reajuste</b> que protege al acreedor de la devaluación del peso.</p></div>
+  <div class="card"><h4 style="margin-top:0">Pagadera en moneda extranjera</h4><p>El objeto del pago es la <b>divisa misma</b> (p. ej. billetes de dólar). El deudor no puede obligar al acreedor a recibir pesos; para liberarse debe entregar la divisa pactada, salvo que el acreedor acepte voluntariamente pesos.</p></div>
+</div>
+<h3>Reglas para las obligaciones expresadas en moneda extranjera</h3>
 <ul>
-  <li><span class="norma">Art. 20</span>: se pagan por su equivalente en moneda nacional al <b>tipo de cambio vendedor del día del pago</b>. Si la obligación está vencida, se aplica el del día del vencimiento si es superior.</li>
+  <li><span class="norma">Art. 20</span>: se pagan por su equivalente en moneda nacional al <b>tipo de cambio vendedor del día del pago</b>. Si la obligación está vencida, se aplica el del día del vencimiento si es superior. Se usa el tipo de cambio vendedor que <b>certifique un banco de la plaza</b>.</li>
   <li><span class="norma">Art. 24</span>: si se pagan en moneda nacional, <b>no cabe otro reajuste</b> que el implícito en la fluctuación cambiaria. Acumular UF sobre el dólar sería un cobro doble.</li>
-</ul>`
+</ul>
+<div class="callout"><p><b>Ejemplo de clase («el dólar moroso»):</b> una empresa debía pagar US$ 10.000 el 15 de agosto (dólar vendedor a $950) y paga el 19 de agosto.<br>Si el dólar bajó a $930, se aplica el del vencimiento, que es superior: paga <b>$9.500.000</b>. No puede beneficiarse de su propia mora.<br>Si el dólar subió a $970, se aplica el del pago: paga <b>$9.700.000</b>. El acreedor queda cubierto de la devaluación ocurrida durante la mora.</p></div>
+<p>Para saber cuántos pesos pagar, el deudor puede pedir en cualquier banco de la plaza un certificado del tipo de cambio vendedor vigente y pagar según ese documento, que le sirve de respaldo ante el acreedor.</p>`
       },
       {
         id: 'credito-consumo', grupo: '3. Operación de crédito de dinero (Ley 18.010)', titulo: '3.14. Crédito al consumo',
