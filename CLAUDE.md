@@ -12,8 +12,10 @@ Se publica con GitHub Pages desde la rama `main` y se comparte con amigos.
 - No copiar párrafos de libros ni subir PDF de apuntes o lecturas: el contenido es una
   síntesis propia. Las citas textuales son solo de normas, de sentencias o frases breves.
 - Todo dato jurídico (artículos, cifras, fechas, casos) debe salir del material del curso
-  que entregó el usuario: el apunte completo del Prof. Gaspar, los apuntes y diapositivas
-  del Prof. Goldenberg y Sandoval, Derecho Comercial, tomo II (5ª ed., 2005). Lo que viene
+  que entregó el usuario: los apuntes completos de clases de ambos profesores
+  (`Financiamiento-Gol-Completo.pdf` y `Financiamiento-Gaspar Completo.pdf`), los apuntes y
+  diapositivas del Prof. Goldenberg y Sandoval, Derecho Comercial, tomo II (5ª ed., 2005).
+  No se nombra en la página ni en el repo a quien escribió los apuntes completos. Lo que viene
   de Sandoval va en secciones «Profundización (Sandoval)» o con la fuente indicada. No agregar
   normas ni artículos de memoria. Si algo no está en el material, se deja fuera o se marca
   como pendiente.
@@ -100,6 +102,62 @@ materias/
   el apunte completo mantiene la contradicción.
 - U10: el apunte ubica el período de bloqueo en el «art. 16 LMV» y no dice si los 30 días son
   corridos o hábiles.
+
+## Numerar una unidad según el apunte completo y completar sus preguntas
+Objetivo: que cada pestaña y subtítulo lleve el número del apunte completo de clases, para estudiar
+con el apunte al lado, y que cada subsección tenga preguntas propias en «Comprueba lo que leíste».
+Se hace **una unidad por pull request** (numeración + contenido + preguntas juntos), en la rama
+`actualizacion/financiamiento-uN-numeracion`, partiendo de `main` actualizado.
+
+**Estado:** U1–U4 listas (apunte de Goldenberg). Pendientes U5–U10 (apunte de Gaspar). El índice
+de Gaspar tiene dos partes que reinician la numeración: títulos de crédito (1–11: aprox. U5 = 1–9,
+U6 = 10 Letra de cambio, U7 = 11 Pagaré) y mercado de valores (1–9: U8–U10). Confirmarlo al leerlo.
+
+1. **Leer el apunte.** Índice con números de página:
+   `python -c "import pypdf; r=pypdf.PdfReader('apuntes/financiamiento/<pdf>'); ..."` recorriendo
+   `r.outline`. Texto de las páginas de la unidad: `pdftotext -f <ini> -l <fin> -layout <pdf> -`
+   (sale en latin1: pasarlo por `iconv -f latin1 -t utf-8`; quitar el pie de página con el nombre).
+   Guardar los textos en el scratchpad, nunca en el repo. Leer la unidad actual completa.
+2. **Calzar pestañas y puntos.** Hacer una tabla pestaña ↔ puntos del apunte.
+   - Si el orden ya coincide, solo se numera. Si no, se reordena para seguir el apunte (el usuario
+     eligió esa opción en U1); se pueden crear pestañas nuevas con texto ya publicado.
+   - Nunca cambiar el `id` de una sección existente (de él depende la marca de «leída»).
+   - Si el cambio es grande o ambiguo, mostrar la tabla y preguntar antes de editar.
+3. **Numerar.** En cada sección:
+   - `grupo`: el punto principal del apunte (p. ej. `'2. Operaciones bancarias'`).
+   - `titulo`: con su número; si junta puntos, un rango: `'2.3.3–2.3.6. Descuento, avales…'`.
+   - Subtítulos con `data-sub="<id-unico-en-la-unidad>"` y el número: `<h3>` para el primer nivel
+     dentro de la pestaña, `<h4>` para el siguiente. El elemento con `data-sub` debe tener **texto
+     corto** (un título), porque ese texto se muestra en el índice y en los grupos del cuestionario.
+   - Si el apunte numera mal (números repetidos o saltados), usar el número lógico y dejar una nota
+     `<p class="small">En el apunte aparece como …</p>`.
+   - Lo que no está en el apunte (p. ej. Sandoval en U5–U7) queda **sin número**, en secciones
+     «Profundización (Sandoval)» al final de la unidad, con su fuente.
+4. **Completar contenido.** Agregar lo que el apunte trata y la página no, como **síntesis propia**
+   (frases cortas, sin copiar párrafos). Contradicciones entre fuentes o dentro del apunte:
+   callout amarillo y anotar en «Pendientes conocidos»; un dato del apunte que no cuadra se omite.
+5. **Preguntas y glosario existentes.** Asignar `sub` (y cambiar `seccion` si el tema cambió de
+   pestaña) **en su mismo lugar**. Los ids de preguntas salen del orden (`uN-q1`…): no mover ni
+   borrar. Conviene un script que recorra las líneas `{ tipo: …, seccion: …` en orden, con una
+   palabra clave por pregunta para confirmar que cada número es la pregunta esperada.
+   Glosario: agregar `"sub"` al término.
+6. **Preguntas nuevas.** Al final del arreglo `preguntas` (después de las orales), con `seccion` y
+   `sub`, hasta que toda subsección con contenido propio tenga al menos una. Opciones sin «todas las
+   anteriores»; explicación con la norma o el ejemplo del apunte. Una oral nueva si hay un tema
+   grande sin oral. Términos nuevos del glosario, al final de `glosario`.
+7. **Cabecera de la unidad.** Agregar al comentario inicial y a `lecturas` que el orden y la
+   numeración siguen el apunte completo de clases.
+8. **Verificar.**
+   - `node .claude/skills/actualizar-materia/verificar.js financiamiento` (antes del commit compara
+     con `HEAD`; después, pasar `main` como segundo argumento). Debe decir «Todo bien»; las preguntas
+     que cambian de pestaña solo se informan.
+   - En el navegador (skill `browser-automation`): consola sin errores; recorrer todas las pestañas
+     y revisar que cada subsección con contenido tenga preguntas; responder alguna; el chat responde
+     un término; 390 px sin desborde.
+9. **Entregar.** Commit, push y pull request hacia `main` describiendo numeración, contenido nuevo,
+   preguntas y cambios de pestaña. Si `gh pr create` falla (error de GraphQL), crear el PR con
+   `gh api repos/<dueño>/<repo>/pulls -f title=… -f head=<rama> -f base=main -F body=@<archivo>`.
+   No sobrescribir ramas ya subidas (sin force push).
 
 ## Cómo agregar una unidad
 1. En `materias/<materia>/materia.js`, la unidad ya está listada; agrégale `archivo: 'uN-nombre.js'`.
