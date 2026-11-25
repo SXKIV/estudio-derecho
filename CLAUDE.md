@@ -55,7 +55,7 @@ materias/
     u6-letra-cambio.js        (punto 10 del apunte de Gaspar; al final, Profundización (Sandoval))
     u7-pagare-factura.js      (punto 11 del apunte de Gaspar; factura y factoring sin número; al final,
                               Profundización (Sandoval); descuento y factoring: pendiente)
-    u8-mercado-valores-1.js
+    u8-mercado-valores-1.js   (puntos 1-6 de «Mercado de valores» del apunte de Gaspar)
     u9-mercado-valores-2.js   (caso Almacenes París: pendiente, no está en el apunte)
     u10-mercado-valores-3.js  (completa con el apunte completo de Gaspar)
 ```
@@ -120,9 +120,9 @@ con el apunte al lado, y que cada subsección tenga preguntas propias en «Compr
 Se hace **una unidad por pull request** (numeración + contenido + preguntas juntos), en la rama
 `actualizacion/financiamiento-uN-numeracion`, partiendo de `main` actualizado.
 
-**Estado:** U1–U4 listas (apunte de Goldenberg) y U5–U7 listas (apunte de Gaspar). Pendientes U8–U10. El índice
+**Estado:** U1–U4 listas (apunte de Goldenberg) y U5–U8 listas (apunte de Gaspar). Pendientes U9–U10. El índice
 de Gaspar tiene dos partes que reinician la numeración: títulos de crédito (1–11: U5 = 1–9 y U6 = 10 Letra de cambio
-(confirmados), U7 = 11 Pagaré (confirmado)) y mercado de valores (1–9: U8–U10). Confirmarlo al leerlo.
+(confirmados), U7 = 11 Pagaré (confirmado)) y mercado de valores (1–9: U8 = 1–6 (confirmado); U9–U10 = 7–9). Confirmarlo al leerlo.
 
 1. **Leer el apunte.** Índice con números de página:
    `python -c "import pypdf; r=pypdf.PdfReader('apuntes/financiamiento/<pdf>'); ..."` recorriendo
