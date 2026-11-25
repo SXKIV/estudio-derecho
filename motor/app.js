@@ -81,12 +81,12 @@
         for (var k = 0; distractores.length < 3 && k < otros.length; k++) distractores.push(otros[(i * 7 + k * 3) % otros.length].termino);
         distractores = distractores.filter(function (d, j, arr) { return arr.indexOf(d) === j; });
         while (distractores.length < 3) { var cand = otros[(distractores.length * 5 + i) % otros.length].termino; if (distractores.indexOf(cand) < 0) distractores.push(cand); else break; }
-        u.preguntas.push({ id: t.id + '-a', unidad: u.id, seccion: t.seccion, glosario: true, tipo: 'alternativas',
+        u.preguntas.push({ id: t.id + '-a', unidad: u.id, seccion: t.seccion, sub: t.sub, glosario: true, tipo: 'alternativas',
           enunciado: '¿Qué concepto se define así? «' + t.definicion + '»', opciones: [t.termino].concat(distractores), correcta: 0,
           explicacion: t.termino + (t.fuente ? ' (' + t.fuente + ').' : '.') });
       }
       // 2) concepto → definición (tarjeta: defínelo y autoevalúate)
-      u.preguntas.push({ id: t.id + '-d', unidad: u.id, seccion: t.seccion, glosario: true, tipo: 'definicion',
+      u.preguntas.push({ id: t.id + '-d', unidad: u.id, seccion: t.seccion, sub: t.sub, glosario: true, tipo: 'definicion',
         enunciado: 'Define: ' + t.termino, termino: t.termino, definicion: t.definicion, fuente: t.fuente, literal: t.literal });
     });
   }
@@ -202,15 +202,15 @@
   }
 
   /* ---------------- enrutador ---------------- */
-  var limpieza = null;
+  var limpieza = [];
   function enrutar() {
-    if (limpieza) { limpieza(); limpieza = null; }
+    limpieza.forEach(function (fn) { try { fn(); } catch (e) { /* nada */ } }); limpieza = [];
     var partes = (location.hash || '#/inicio').slice(2).split('/');
     var vista = $('#vista');
     $('#lateral').classList.remove('abierto');
     pintarLateral();
     window.scrollTo(0, 0);
-    if (partes[0] === 'u' && E.unidad(partes[1])) return vistaUnidad(vista, E.unidad(partes[1]), partes[2] || 'contenido', partes[3]);
+    if (partes[0] === 'u' && E.unidad(partes[1])) return vistaUnidad(vista, E.unidad(partes[1]), partes[2] || 'contenido', partes[3], partes[4]);
     if (partes[0] === 'repaso') return vistaRepaso(vista);
     if (partes[0] === 'kahoot') return vistaKahoot(vista);
     if (partes[0] === 'oral') return vistaOral(vista);
@@ -218,7 +218,7 @@
     if (partes[0] === 'glosario') return vistaGlosario(vista, decodeURIComponent(partes[1] || ''));
     return vistaInicio(vista);
   }
-  E.alSalir = function (fn) { limpieza = fn; };
+  E.alSalir = function (fn) { limpieza.push(fn); };
 
   /* ---------------- vistas ---------------- */
   function barraGrande(res) {
@@ -251,7 +251,7 @@
     v.innerHTML = html;
   }
 
-  function vistaUnidad(v, u, pestana, ancla) {
+  function vistaUnidad(v, u, pestana, ancla, sub) {
     var d = E.datos();
     var r = SRS.resumen(u.preguntas, d.preguntas);
     var orales = u.preguntas.filter(function (q) { return q.tipo === 'oral'; });
@@ -267,25 +267,39 @@
     if (pestana === 'interactivos') return pintarInteractivos(c, u);
     if (pestana === 'practicar') return Quiz.selector(c, u.preguntas.filter(function (q) { return q.tipo !== 'oral'; }), { titulo: 'Practicar la unidad ' + u.numero });
     if (pestana === 'oral') return Quiz.oral(c, orales, {});
-    pintarContenido(c, u, ancla);
+    pintarContenido(c, u, ancla, sub);
   }
 
-  function pintarContenido(c, u, ancla) {
-    var d = E.datos();
-    var html = '';
-    if (u.lecturas) html += '<div class="callout"><p><b>Material base:</b> ' + u.lecturas + '</p></div>';
-    html += '<div class="indice">' + u.secciones.map(function (s) {
-      return '<a href="#/u/' + u.id + '/contenido/' + s.id + '" class="' + (d.leidas[u.id + ':' + s.id] ? 'leida' : '') + '">' + (d.leidas[u.id + ':' + s.id] ? '✓ ' : '') + esc(s.titulo) + '</a>';
-    }).join('') + '</div>';
-    u.secciones.forEach(function (s) {
+  /* ---------------- contenido: diapositivas o lista ----------------
+     Ruta: #/u/<unidad>/contenido/<sección>[/<subsección>]
+     Subsecciones: en el html de la sección, un título con data-sub="<id>"
+       (p. ej. <h3 data-sub="dinero-funciones">1.1.2. Funciones…</h3>).
+     Preguntas: campo opcional sub:'<id>' para agruparlas bajo esa subsección. */
+  var CLAVE_VISTA = 'estudio-vista-contenido';
+  function modoVista() { try { return localStorage.getItem(CLAVE_VISTA) === 'lista' ? 'lista' : 'diapositivas'; } catch (e) { return 'diapositivas'; } }
+  function guardarModoVista(m) { try { localStorage.setItem(CLAVE_VISTA, m); } catch (e) { /* sin almacenamiento */ } }
+  var ultimaDiapo = { u: null, i: -1 };
+
+  function subseccionesDe(s) {
+    var t = document.createElement('template'); t.innerHTML = s.html;
+    return $$('[data-sub]', t.content).map(function (h) { return { id: h.getAttribute('data-sub'), titulo: h.textContent.trim() }; });
+  }
+  function rutaSec(u, s, sub) { return '#/u/' + u.id + '/contenido/' + s.id + (sub ? '/' + sub : ''); }
+  function chipsIndice(u, d, actual) {
+    return '<div class="indice">' + u.secciones.map(function (s) {
       var leida = d.leidas[u.id + ':' + s.id];
-      var inter = u.interactivos.filter(function (i) { return i.seccion === s.id; });
-      html += '<section class="seccion" id="sec-' + s.id + '"><h2><span>' + esc(s.titulo) + '</span><button class="marcar-leida' + (leida ? ' si' : '') + '" data-sec="' + s.id + '">' + (leida ? '✓ Leída' : 'Marcar como leída') + '</button></h2>' + s.html +
-        (inter.length ? '<div class="callout green"><p>🧪 Ejemplo interactivo: ' + inter.map(function (i) { return '<a href="#/u/' + u.id + '/interactivos/' + i.id + '">' + esc(i.titulo) + '</a>'; }).join(' · ') + '</p></div>' : '') +
-        '</section>';
-    });
-    html += '<div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" style="text-decoration:none" href="#/u/' + u.id + '/practicar">Practicar esta unidad</a><a class="btn sec" style="text-decoration:none" href="#/u/' + u.id + '/oral">Preguntas orales</a></div>';
-    c.innerHTML = html;
+      return '<a href="' + rutaSec(u, s) + '" class="' + (leida ? 'leida' : '') + (actual === s.id ? ' actual' : '') + '"' + (actual === s.id ? ' aria-current="page"' : '') + '>' + (leida ? '✓ ' : '') + esc(s.titulo) + '</a>';
+    }).join('') + '</div>';
+  }
+  function cabeceraSeccion(u, s, d) {
+    var leida = d.leidas[u.id + ':' + s.id];
+    return '<h2><span>' + esc(s.titulo) + '</span><button class="marcar-leida' + (leida ? ' si' : '') + '" data-sec="' + s.id + '">' + (leida ? '✓ Leída' : 'Marcar como leída') + '</button></h2>';
+  }
+  function avisoInteractivos(u, s) {
+    var inter = u.interactivos.filter(function (i) { return i.seccion === s.id; });
+    return inter.length ? '<div class="callout green"><p>🧪 Ejemplo interactivo: ' + inter.map(function (i) { return '<a href="#/u/' + u.id + '/interactivos/' + i.id + '">' + esc(i.titulo) + '</a>'; }).join(' · ') + '</p></div>' : '';
+  }
+  function conectarLeidas(c, u) {
     $$('.marcar-leida', c).forEach(function (b) {
       b.onclick = function () {
         var d2 = E.datos(), k = u.id + ':' + b.dataset.sec;
@@ -296,7 +310,143 @@
         if (chip) { chip.classList.toggle('leida', !!d2.leidas[k]); chip.textContent = (d2.leidas[k] ? '✓ ' : '') + chip.textContent.replace(/^✓ /, ''); }
       };
     });
-    if (ancla) { var s = $('#sec-' + ancla); if (s) setTimeout(function () { s.scrollIntoView({ behavior: 'smooth' }); }, 30); }
+  }
+  function botonModo(modo) {
+    return modo === 'lista'
+      ? '<button class="btn ghost" id="cambiar-vista" data-modo="diapositivas">▭ Ver como diapositivas</button>'
+      : '<button class="btn ghost" id="cambiar-vista" data-modo="lista">☰ Ver todo como lista</button>';
+  }
+  function irAlElemento(el, suave) {
+    if (el) setTimeout(function () { el.scrollIntoView({ behavior: suave ? 'smooth' : 'auto', block: 'start' }); }, 30);
+  }
+
+  function pintarContenido(c, u, ancla, sub) {
+    if (modoVista() === 'lista') pintarLista(c, u, ancla, sub); else pintarDiapositivas(c, u, ancla, sub);
+    var b = $('#cambiar-vista', c);
+    if (b) b.onclick = function () { guardarModoVista(b.dataset.modo); ultimaDiapo = { u: null, i: -1 }; pintarContenido(c, u, ancla, sub); };
+  }
+
+  function pintarLista(c, u, ancla, sub) {
+    var d = E.datos();
+    var html = '';
+    if (u.lecturas) html += '<div class="callout"><p><b>Material base:</b> ' + u.lecturas + '</p></div>';
+    html += '<div class="diapo-barra">' + chipsIndice(u, d, null) + '<div class="diapo-acciones">' + botonModo('lista') + '</div></div>';
+    u.secciones.forEach(function (s) {
+      html += '<section class="seccion" id="sec-' + s.id + '">' + cabeceraSeccion(u, s, d) + s.html + avisoInteractivos(u, s) + '</section>';
+    });
+    html += '<div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" style="text-decoration:none" href="#/u/' + u.id + '/practicar">Practicar esta unidad</a><a class="btn sec" style="text-decoration:none" href="#/u/' + u.id + '/oral">Preguntas orales</a></div>';
+    c.innerHTML = html;
+    conectarLeidas(c, u);
+    if (ancla) {
+      var s = $('#sec-' + ancla, c);
+      irAlElemento((sub && s && $('[data-sub="' + sub + '"]', s)) || s, true);
+    }
+  }
+
+  function pintarDiapositivas(c, u, ancla, sub) {
+    var d = E.datos(), secs = u.secciones;
+    if (!secs.length) { c.innerHTML = '<p class="muted">Esta unidad todavía no tiene contenido.</p>'; return; }
+    var i = Math.max(0, secs.map(function (s) { return s.id; }).indexOf(ancla));
+    var s = secs[i], ant = secs[i - 1], sig = secs[i + 1];
+    var dir = ultimaDiapo.u === u.id && ultimaDiapo.i !== i ? (i > ultimaDiapo.i ? 'der' : 'izq') : '';
+    ultimaDiapo = { u: u.id, i: i };
+    var subs = subseccionesDe(s);
+
+    function fantasma(x, lado) {
+      return x ? '<div class="diapo-fantasma ' + lado + '" aria-hidden="true" inert><h2>' + esc(x.titulo) + '</h2>' + x.html + '</div>' : '';
+    }
+    function flecha(x, lado) {
+      return '<div class="diapo-lado ' + lado + '">' + (x
+        ? '<a class="flecha" href="' + rutaSec(u, x) + '" aria-label="' + (lado === 'izq' ? 'Anterior: ' : 'Siguiente: ') + esc(x.titulo) + '" title="' + esc(x.titulo) + '">' + (lado === 'izq' ? '‹' : '›') + '</a>'
+        : '') + '</div>';
+    }
+    var html = '';
+    if (u.lecturas && i === 0) html += '<div class="callout"><p><b>Material base:</b> ' + u.lecturas + '</p></div>';
+    html += '<div class="diapo-barra">' + chipsIndice(u, d, s.id) +
+      '<div class="diapo-acciones"><span class="small">' + (i + 1) + ' de ' + secs.length + '</span>' + botonModo('diapositivas') + '</div></div>';
+    html += '<div class="carrusel" id="carrusel">' + fantasma(ant, 'izq') + fantasma(sig, 'der') + flecha(ant, 'izq') +
+      '<section class="seccion diapo' + (dir ? ' entra-' + dir : '') + '" id="sec-' + s.id + '">' + cabeceraSeccion(u, s, d) +
+      (subs.length ? '<nav class="subindice" aria-label="Subsecciones">' + subs.map(function (x) { return '<a href="' + rutaSec(u, s, x.id) + '">' + esc(x.titulo) + '</a>'; }).join('') + '</nav>' : '') +
+      s.html + avisoInteractivos(u, s) +
+      '<div class="comprueba" id="comprueba"></div>' +
+      '<nav class="diapo-nav">' +
+        (ant ? '<a class="btn sec" href="' + rutaSec(u, ant) + '">← ' + esc(ant.titulo) + '</a>' : '<span></span>') +
+        (sig ? '<a class="btn" href="' + rutaSec(u, sig) + '">' + esc(sig.titulo) + ' →</a>'
+             : '<span class="diapo-fin"><a class="btn" href="#/u/' + u.id + '/practicar">Practicar esta unidad</a><a class="btn sec" href="#/u/' + u.id + '/oral">Preguntas orales</a></span>') +
+      '</nav></section>' + flecha(sig, 'der') + '</div>';
+    c.innerHTML = html;
+    conectarLeidas(c, u);
+    pintarComprueba($('#comprueba', c), u, s, subs);
+
+    // Al cambiar de diapositiva, llevar al inicio de la diapositiva (o a la subsección pedida).
+    if (sub) irAlElemento($('[data-sub="' + sub + '"]', $('#sec-' + s.id, c)), true);
+    else if (ancla) irAlElemento($('#carrusel', c), false);
+
+    // Teclado (← →) y deslizar con el dedo.
+    function ir(x) { if (x) location.hash = rutaSec(u, x); }
+    function alTeclado(e) {
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      if (/^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || '') || (e.target && e.target.isContentEditable)) return;
+      if (document.querySelector('.velo') || document.querySelector('.chat-panel:not(.oculto)')) return;
+      if (e.key === 'ArrowLeft') ir(ant); else if (e.key === 'ArrowRight') ir(sig);
+    }
+    document.addEventListener('keydown', alTeclado);
+    E.alSalir(function () { document.removeEventListener('keydown', alTeclado); });
+    var diapo = $('#sec-' + s.id, c), x0 = null, y0 = null;
+    diapo.addEventListener('touchstart', function (e) {
+      if (e.target.closest('.tabla, .comprueba, .interactivo, input, select, textarea, figure')) { x0 = null; return; }
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+    }, { passive: true });
+    diapo.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+      if (Math.abs(dx) > 70 && Math.abs(dy) < 50) ir(dx < 0 ? sig : ant);
+    }, { passive: true });
+  }
+
+  /* Cuestionario al final de cada diapositiva: preguntas de esa sección, agrupadas por subsección. */
+  function pintarComprueba(caja, u, s, subs) {
+    var d = E.datos();
+    var orden = subs.map(function (x) { return x.id; });
+    var propias = u.preguntas.filter(function (q) { return q.seccion === s.id && q.tipo !== 'oral'; });
+    var orales = u.preguntas.filter(function (q) { return q.seccion === s.id && q.tipo === 'oral'; });
+    var grupos = subs.map(function (x) { return { id: x.id, titulo: x.titulo, preguntas: [] }; });
+    var general = { id: '', titulo: subs.length ? 'Preguntas generales de la sección' : 'Toda la sección', preguntas: [] };
+    propias.forEach(function (q) { var k = orden.indexOf(q.sub); (k >= 0 ? grupos[k] : general).preguntas.push(q); });
+    // Dentro de cada grupo: primero las preguntas escritas, después las del glosario.
+    function ordenar(lista) { return lista.filter(function (q) { return !q.glosario; }).concat(lista.filter(function (q) { return q.glosario; })); }
+    var todos = grupos.concat(general.preguntas.length ? [general] : []).filter(function (g) { return g.preguntas.length; });
+    var lista = todos.reduce(function (a, g) { return a.concat(ordenar(g.preguntas)); }, []);
+
+    function inicio() {
+      if (!lista.length) {
+        caja.innerHTML = '<div class="kicker">Comprueba lo que leíste</div><p class="muted" style="margin:0">Esta sección todavía no tiene preguntas propias.</p>';
+        return;
+      }
+      var res = SRS.resumen(lista, d.preguntas);
+      var html = '<div class="kicker">Comprueba lo que leíste</div><h3 style="margin-top:0">' + lista.length + ' preguntas sobre esta sección</h3>' +
+        '<p class="small" style="margin-top:0">' + res.dominada + ' dominadas · ' + (res.bien + res.aprendiendo) + ' en proceso · ' + res.nueva + ' sin ver</p>';
+      if (todos.length > 1 || (todos.length === 1 && todos[0].id)) {
+        html += '<div class="comprueba-grupos">' + todos.map(function (g, k) {
+          var r = SRS.resumen(g.preguntas, d.preguntas);
+          return '<div class="comprueba-grupo"><span><b>' + esc(g.titulo) + '</b><span class="small"> · ' + g.preguntas.length + (g.preguntas.length === 1 ? ' pregunta · ' : ' preguntas · ') + r.porcentaje + '% dominio</span></span>' +
+            '<button class="btn ghost" data-grupo="' + k + '">Practicar</button></div>';
+        }).join('') + '</div>';
+      }
+      html += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn" id="comp-todas">Empezar (' + lista.length + ')</button>' +
+        (orales.length ? '<a class="btn sec" href="#/u/' + u.id + '/oral">🎙️ ' + 'Modo oral (' + orales.length + (orales.length === 1 ? ' pregunta' : ' preguntas') + ' de esta sección)</a>' : '') + '</div>';
+      caja.innerHTML = html;
+      $('#comp-todas', caja).onclick = function () { empezar(lista, 'Sección: ' + s.titulo); };
+      $$('[data-grupo]', caja).forEach(function (b) {
+        b.onclick = function () { var g = todos[+b.dataset.grupo]; empezar(ordenar(g.preguntas), g.titulo); };
+      });
+    }
+    function empezar(qs, titulo) {
+      caja.innerHTML = '<div class="comprueba-zona"></div>';
+      Quiz.sesion($('.comprueba-zona', caja), qs, { titulo: titulo, alVolver: function () { d = E.datos(); inicio(); } });
+      caja.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    inicio();
   }
 
   function pintarInteractivos(c, u, ancla) {

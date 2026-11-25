@@ -102,7 +102,16 @@ materias/
 ## Cómo agregar una unidad
 1. En `materias/<materia>/materia.js`, la unidad ya está listada; agrégale `archivo: 'uN-nombre.js'`.
 2. Crea ese archivo con `Estudio.registrarUnidad({...})`. Copia la forma de `u1-dinero-ley18010.js`:
-   - `secciones`: `[{ id, titulo, html }]`. El HTML puede usar las clases de estilos.css:
+   - `secciones`: `[{ id, titulo, html }]`. Cada sección es una diapositiva (con «Ver todo como
+     lista» se ven todas seguidas). Al final de cada diapositiva aparece «Comprueba lo que leíste»
+     con las preguntas cuyo `seccion` es esa sección.
+     - Subsecciones: los títulos internos llevan `data-sub` con un id único en la unidad y el número
+       del apunte, p. ej. `<h3 data-sub="dinero-funciones">1.1.2. Funciones y naturaleza jurídica</h3>`.
+       Se enlazan como `#/u/u1/contenido/dinero/dinero-funciones`.
+     - Preguntas y términos del glosario pueden llevar `sub: 'dinero-funciones'` para agruparse
+       bajo esa subsección. Agregar `sub` a una pregunta ya publicada no rompe el progreso
+       (`verificar.js` lo permite y revisa que el `data-sub` exista).
+     El HTML puede usar las clases de estilos.css:
      `card`, `grid`, `grid dos`, `callout` (`yellow`, `red`, `green`), `cita` + `fuente`,
      `tabla`, `norma`, `etiqueta`, `flow` + `node` + `arrow`, `figure.diagrama` con un `<svg>`.
    - `interactivos`: `[{ id, titulo, descripcion, seccion, montar: function (el) {…} }]`.
