@@ -427,7 +427,7 @@
         return;
       }
       var res = SRS.resumen(lista, d.preguntas);
-      var html = '<div class="kicker">Comprueba lo que leíste</div><h3 style="margin-top:0">' + lista.length + ' preguntas sobre esta sección</h3>' +
+      var html = '<div class="kicker">Comprueba lo que leíste</div><h3 style="margin-top:0">' + lista.length + (lista.length === 1 ? ' pregunta' : ' preguntas') + ' sobre esta sección</h3>' +
         '<p class="small" style="margin-top:0">' + res.dominada + ' dominadas · ' + (res.bien + res.aprendiendo) + ' en proceso · ' + res.nueva + ' sin ver</p>';
       if (todos.length > 1 || (todos.length === 1 && todos[0].id)) {
         html += '<div class="comprueba-grupos">' + todos.map(function (g, k) {
