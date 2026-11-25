@@ -414,7 +414,7 @@
     var propias = u.preguntas.filter(function (q) { return q.seccion === s.id && q.tipo !== 'oral'; });
     var orales = u.preguntas.filter(function (q) { return q.seccion === s.id && q.tipo === 'oral'; });
     var grupos = subs.map(function (x) { return { id: x.id, titulo: x.titulo, preguntas: [] }; });
-    var general = { id: '', titulo: subs.length ? 'Preguntas generales de la sección' : 'Toda la sección', preguntas: [] };
+    var general = { id: '', titulo: subs.length ? s.titulo + ' · general' : 'Toda la sección', preguntas: [] };
     propias.forEach(function (q) { var k = orden.indexOf(q.sub); (k >= 0 ? grupos[k] : general).preguntas.push(q); });
     // Dentro de cada grupo: primero las preguntas escritas, después las del glosario.
     function ordenar(lista) { return lista.filter(function (q) { return !q.glosario; }).concat(lista.filter(function (q) { return q.glosario; })); }
