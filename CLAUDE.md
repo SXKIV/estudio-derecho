@@ -169,7 +169,7 @@ U6 = 10 Letra de cambio, U7 = 11 Pagaré) y mercado de valores (1–9: U8–U10)
 Se generan con `/importar-preguntas <id> <unidad>` (ver `.claude/skills/importar-preguntas/SKILL.md`):
 NotebookLM redacta, Claude Code revisa cada dato contra el apunte y agrega solo lo que sirve.
 
-**Estado:** U1 (#12), U2 (#15) y U3 (#16) listas. Siguen U4 y U5, que ya están numeradas.
+**Estado:** U1 (#12), U2 (#15), U3 (#16) y U4 (#18) listas. Sigue U5, que ya está numerada.
 U6–U10: primero su pull request de numeración (sección anterior) y después el de NotebookLM, porque
 los `sub` se definen al numerar. Nunca dos pull requests abiertos sobre la misma unidad.
 Fuente por unidad (opción `-s`): apunte de Goldenberg para U1–U4; apunte de Gaspar para U5–U10.
