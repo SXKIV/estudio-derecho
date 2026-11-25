@@ -36,8 +36,10 @@ Si el usuario ya entregó un `quiz.json`, saltar al paso 2.
      -s <fuente> --difficulty hard --quantity more --wait --timeout 600 --retry 2 --json
    notebooklm -p estudio download quiz --format json apuntes/$id/notebooklm/$unidad-quiz-<n>.json
    ```
-   Si hay varios quiz en el cuaderno, usar `--latest` o el id del artefacto. Generar con moderación:
-   Google limita el uso por cuenta.
+   El cuaderno acumula los quiz: descargar con `--latest` (o `--name`). Generar con moderación:
+   Google limita el uso por cuenta (un quiz por unidad cada vez).
+4. Elegir la fuente del profesor de la unidad (`-s`): en Financiamiento, Goldenberg para U1–U4 y
+   Gaspar para U5–U10 (ver «Preguntas de razonamiento con NotebookLM» en `CLAUDE.md`).
 
 ## 2. Hoja de revisión
 ```
@@ -45,6 +47,16 @@ node .claude/skills/importar-preguntas/preparar.js $id $unidad apuntes/$id/noteb
 ```
 Muestra secciones y subsecciones de la unidad y, por pregunta, opciones (✓/✗) con su explicación,
 pista y las preguntas ya publicadas que se le parecen. El JSON de NotebookLM **no trae citas**.
+
+Lecciones de U1–U3:
+- NotebookLM puede responder **en inglés** aunque el prompt pida español. Entonces la detección de
+  parecidas no funciona (compara palabras): listar las preguntas publicadas de la unidad y
+  compararlas a mano. Igual se redacta todo de nuevo en español.
+- En unidades con muchas preguntas, la mayoría sale repetida (U3: entraron 7 de 27). Rinde más en
+  unidades con pocas preguntas.
+- Errores típicos de la clave: contradecir otro numeral del mismo apunte (U3, art. 84 N°2 frente al
+  N°4), un enfoque que no está en el material (U3, standby) o una opción correcta marcada como
+  incorrecta (U1, multa de 50 UTM de la LPDC). Revisar también las opciones marcadas ✗.
 
 ## 3. Revisar contra el material (lo esencial)
 Por cada pregunta, buscar en el apunte (`pdftotext` sobre `apuntes/$id/`, sin copiar el texto fuera
