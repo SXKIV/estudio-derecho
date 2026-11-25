@@ -112,6 +112,9 @@ materias/
   por no escrita»), pero al explicarlo dice que el título «vale cero» / «no hay letra» (callout amarillo).
 - U7 11.2.2: el art. 102 N° 3 que transcribe el apunte dice que, sin lugar de pago, se paga en el lugar de expedición;
   al explicarlo agrega «el domicilio del suscriptor o el lugar de expedición» (callout amarillo).
+- U7 11.4: el art. 29 Ley 18.092 que transcribe el apunte dice que el endoso hecho por el endosatario en cobro «sólo
+  produce los efectos propios del endoso en cobranza»; el ejercicio del apunte dice que quien lo recibe es «nadie».
+  No se hicieron preguntas nuevas sobre ese cruce.
 - U10: el apunte ubica el período de bloqueo en el «art. 16 LMV» y no dice si los 30 días son
   corridos o hábiles.
 
@@ -175,10 +178,10 @@ de Gaspar tiene dos partes que reinician la numeración: títulos de crédito (1
 Se generan con `/importar-preguntas <id> <unidad>` (ver `.claude/skills/importar-preguntas/SKILL.md`):
 NotebookLM redacta, Claude Code revisa cada dato contra el apunte y agrega solo lo que sirve.
 
-**Estado:** U1 (#12), U2 (#15), U3 (#16), U4 (#18), U5 (#19) y U6 (#25) listas. En U4–U6 casi todo salió
-repetido (entraron 13 de 26, 2 de 27 y 5 de 26): conviene más en unidades con pocas preguntas.
+**Estado:** U1 (#12), U2 (#15), U3 (#16), U4 (#18), U5 (#19), U6 (#25) y U7 (#26) listas. En U4–U7 casi todo salió
+repetido (entraron 13 de 26, 2 de 27, 5 de 26 y 5 de 26): conviene más en unidades con pocas preguntas.
 Los quiz se generan con `--difficulty hard` (el nivel más alto de NotebookLM).
-U7–U10: la numeración ya está lista (sección anterior); falta su pull request de NotebookLM. Nunca dos pull requests abiertos sobre la misma unidad.
+U8–U10: la numeración ya está lista (sección anterior); falta su pull request de NotebookLM. Nunca dos pull requests abiertos sobre la misma unidad.
 Fuente por unidad (opción `-s`): apunte de Goldenberg para U1–U4; apunte de Gaspar para U5–U10.
 Sandoval no está en el cuaderno de NotebookLM.
 
