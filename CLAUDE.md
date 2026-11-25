@@ -100,6 +100,9 @@ materias/
 - U7: descuento y factoring (clase de profesora invitada; falta material). La edición de
   Sandoval que tenemos (2005) no trata estos temas.
 - U9: caso Almacenes París (no está en el apunte).
+- U3 3.2/3.3.2: el apunte de Goldenberg incluye a los directores entre los relacionados del art. 84 N°2
+  (crédito permitido en condiciones no más favorables) y, a la vez, el N°4 prohíbe «en ningún caso» el
+  crédito a directores y a sociedades en que participen. No se hicieron preguntas sobre ese cruce.
 - U8: número de la Ley Fintech (el apunte dice 21.521 y 21.236).
 - U9/U10: numeración del delito de información falsa y de oferta sin registro (arts. 59 A / 62 a);
   el apunte completo mantiene la contradicción.
