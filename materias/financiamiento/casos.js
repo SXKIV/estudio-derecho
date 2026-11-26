@@ -109,6 +109,52 @@
 <p class="small">Ojo: estas restituciones recaen sobre dinero que pagó Inverlink, no sobre los depósitos a plazo en manos de adquirentes de buena fe.</p>`
       },
       {
+        id: 'howey', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Howey (EE. UU., 1946)',
+        ficha: {
+          datos: [['Año', '1946'], ['Tribunal', 'Corte Suprema de EE. UU.'], ['Norma', 'Securities Act de 1933'], ['Apunte', 'Gaspar, «Mercado de valores», punto 3']],
+          enLaMateria: [
+            { u: 'u8', seccion: 'howey', sub: 'h-caso', nota: 'los hechos' },
+            { u: 'u8', seccion: 'howey', sub: 'h-test', nota: 'el test de Howey' },
+            { u: 'u8', seccion: 'howey', sub: 'h-aplicaciones', nota: 'Bitcoin, Herbalife y Endesa' },
+            { u: 'u8', seccion: 'howey', sub: 'h-chile', nota: 'por qué en Chile no sería valor' }
+          ],
+          fuentes: [
+            { titulo: 'SEC v. W. J. Howey Co., 328 U.S. 293 (1946): texto de la sentencia (Cornell LII, en inglés)', url: 'https://www.law.cornell.edu/supremecourt/text/328/293' }
+          ]
+        },
+        html: `
+<div class="callout green"><p><b>En una frase:</b> vender una parcela junto con un contrato para que otro la explote es un <b>contrato de inversión</b>. De ahí sale el test para saber cuándo algo atípico es un valor.</p></div>
+<p class="small">La unidad 8 lo trata en detalle; aquí está el resumen para el oral.</p>
+<h3 data-sub="howey-hechos">Hechos</h3>
+<ul>
+  <li>W. J. Howey Co. era dueña de grandes plantaciones de naranjas en Florida.</li>
+  <li>Vendía <b>parcelas pequeñas</b> a compradores de edad avanzada que vivían en el noreste de EE. UU. (Nueva York y Boston).</li>
+  <li>Junto con la parcela ofrecía un <b>contrato de administración</b>: Howey cultivaba, cosechaba y vendía las naranjas, y entregaba las utilidades netas a los compradores.</li>
+</ul>
+<h3 data-sub="howey-problema">Problema jurídico</h3>
+<p>¿Era una simple venta de terrenos o un <b>valor</b> (<i>security</i>) sujeto a las leyes bursátiles? La Securities Act de 1933 enumera instrumentos, pero con la salvedad «a menos que el contexto requiera lo contrario». Por eso, en EE. UU., la categoría de valor funciona como un «bolsillo de payaso».</p>
+<h3 data-sub="howey-decision">Cómo se resolvió</h3>
+<p>La Corte Suprema de EE. UU. resolvió que el esquema conjunto (terreno más contrato de servicio) era un <b>contrato de inversión</b> sujeto a las leyes bursátiles. De ahí surge el <b>test de Howey</b>:</p>
+<div class="flow">
+  <div class="node">1. Entrega de dinero<small>un aporte a cambio de un activo o derecho</small></div><div class="arrow">+</div>
+  <div class="node">2. Expectativa de ganancia<small>no es una donación</small></div><div class="arrow">+</div>
+  <div class="node hot">3. Ganancia por la actividad de un tercero<small>no por el esfuerzo propio</small></div>
+</div>
+<h3 data-sub="howey-importancia">Por qué importa en la materia</h3>
+<ul>
+  <li><b>Bitcoin:</b> hay dinero y ánimo de lucro, pero la ganancia depende de la especulación y no de la actividad de un tercero. No es valor bajo Howey.</li>
+  <li><b>Herbalife:</b> es un caso límite, porque mezcla la inversión con el trabajo de venta propio y de la red.</li>
+  <li><b>Endesa (capitalismo popular):</b> funcionarios públicos renunciaron a su indemnización por años de servicio a cambio de acciones. Ahí se cumplen los tres elementos.</li>
+  <li><b>En Chile</b> el esquema de Howey <b>no sería valor</b>: el art. 3° de la Ley 18.045 exige un título de crédito de inversión, con abstracción, autonomía y transferibilidad.</li>
+</ul>
+<h3 data-sub="howey-contexto">Contexto (fuente externa)</h3>
+<p class="small">Fuera del apunte. Datos del texto de la sentencia enlazado en la ficha.</p>
+<ul>
+  <li>La Corte Suprema de EE. UU. decidió el caso el <b>27 de mayo de 1946</b>. Revocó la decisión de los tribunales inferiores, que habían rechazado la acción de la SEC.</li>
+  <li>La sentencia define el contrato de inversión como un contrato, transacción o esquema en que una persona invierte su dinero en una empresa común y espera ganancias <b>solo del esfuerzo del promotor o de un tercero</b>.</li>
+</ul>`
+      },
+      {
         id: 'azul-azul', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Azul Azul (2024)',
         ficha: {
           datos: [['Años', '2021 (OPA del FIP) · 2024 (compra de cuotas)'], ['Órganos', 'CMF · Corte Suprema'], ['Normas', 'Arts. 54, 199 y 61 A LMV'], ['Apunte', 'Gaspar, 5.2.4–5.2.5 y 7.5.3 · «Pregunta de examen»']],
@@ -322,6 +368,134 @@
 </ul>`
       },
       {
+        id: 'chang', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Alberto Chang',
+        ficha: {
+          datos: [['Ilícito', 'Oferta pública de valores sin inscripción'], ['Norma', 'Art. 62 a) LMV (antes art. 59 A, según el apunte)'], ['Títulos', 'Pagarés'], ['Apunte', 'Gaspar, 7.4.1–7.4.2']],
+          enLaMateria: [
+            { u: 'u9', seccion: 'oferta', sub: 'of-inscripcion', nota: 'inscripción previa y control ex ante' },
+            { u: 'u9', seccion: 'oferta', sub: 'of-delito', nota: 'el delito de ofrecer sin inscripción' },
+            { u: 'u9', seccion: 'oferta', sub: 'of-nopublicas', nota: 'por qué no era oferta privada' }
+          ],
+          fuentes: [
+            { titulo: 'Emol: un tribunal de Malta rechaza la extradición de Alberto Chang (7 de abril de 2017)', url: 'https://www.emol.com/noticias/Nacional/2017/04/07/853132/Tribunal-de-Malta-rechazo-solicitud-de-extradicion-de-Alberto-Chang-y-quedo-en-libertad.html' },
+            { titulo: 'El Dínamo: la Corte de Malta confirma el rechazo de la extradición (6 de noviembre de 2018)', url: 'https://www.eldinamo.cl/pais/2018/11/06/corte-de-malta-rechaza-la-extradicion-de-alberto-chang/' }
+          ]
+        },
+        html: `
+<div class="callout green"><p><b>En una frase:</b> ofrecer pagarés al público en general sin inscribirse en el Registro de Valores es un <b>delito</b>, no una simple infracción reglamentaria.</p></div>
+<h3 data-sub="chang-hechos">Hechos</h3>
+<ul>
+  <li>Alberto Chang captaba dinero del público emitiendo <b>pagarés</b>, títulos de deuda del mercado de valores, con altas rentabilidades prometidas.</li>
+  <li>Proyectaba solvencia con fotos junto a figuras internacionales, como Richard Branson, y decía que invertía en grandes empresas tecnológicas.</li>
+  <li>No estaba inscrito en el Registro de Valores de la CMF y no sometió sus estados financieros a la revisión previa.</li>
+  <li>El esquema era piramidal. Cuando colapsó, Chang huyó a Malta.</li>
+</ul>
+<h3 data-sub="chang-problema">Problema jurídico</h3>
+<p>¿Era una oferta pública o una oferta privada exenta? La oferta privada (<i>safe harbor</i>) de la NCG 336, modificada por la NCG 452/2021, se limita a cuatro hipótesis: solo inversionistas calificados; hasta 250 calificados y 50 no calificados en 12 meses; hasta 50 no calificados; o instrumentos de 3.000 UF o más por unidad. La captación de Chang se dirigía al <b>público en general</b> y no calzaba en ninguna.</p>
+<h3 data-sub="chang-decision">Cómo se resolvió</h3>
+<ul>
+  <li>Era una <b>oferta pública masiva sin inscripción</b>. Según el apunte, el <span class="norma">art. 62 a) LMV</span>, que reubicó al antiguo art. 59 A, la tipifica como delito.</li>
+  <li>Chile pidió su extradición por delitos de la LMV y estafa. Según el apunte, Malta la denegó por falta de tratado de extradición y de reciprocidad.</li>
+  <li>En Chile, el proceso penal siguió contra quienes figuraban formalmente en sus sociedades. Es el caso emblemático de sanción penal por ofertas públicas no autorizadas.</li>
+</ul>
+<h3 data-sub="chang-importancia">Por qué importa en la materia</h3>
+<ul>
+  <li>Explica el sentido de la <b>inscripción previa</b> (control <i>ex ante</i>): no es una garantía estatal de solvencia, sino un resguardo contra el engaño y el ocultamiento de información.</li>
+  <li>Muestra por qué la oferta privada se reserva a quienes pueden defenderse solos, como los <b>inversionistas calificados</b>, y no al público <i>retail</i>.</li>
+</ul>
+<h3 data-sub="chang-contexto">Contexto (fuente externa)</h3>
+<p class="small">Fuera del apunte. Datos de las notas de prensa enlazadas en la ficha.</p>
+<ul>
+  <li>En abril de 2017, un tribunal de Malta rechazó la extradición y Chang quedó en libertad. Según Emol, Chile lo acusaba de presunta estafa e infracciones a la Ley General de Bancos y a la Ley de Mercado de Valores.</li>
+  <li>En noviembre de 2018, la Corte de Apelaciones de Malta confirmó el rechazo. Según El Dínamo, se basó en la falta de rigurosidad de la documentación presentada, porque las traducciones no se hicieron bajo juramento.</li>
+</ul>
+<div class="callout yellow"><p><b>Ojo con las fuentes:</b> el apunte dice que Malta denegó la extradición por falta de tratado y de reciprocidad. La nota de El Dínamo sobre la apelación de 2018 atribuye el rechazo a defectos de la documentación (traducciones sin juramento).</p></div>`
+      },
+      {
+        id: 'clinica-las-condes', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Clínica Las Condes (2025)',
+        ficha: {
+          datos: [['Año', '2025'], ['Tema', 'OPA y concepto de controlador'], ['Normas', 'Arts. 97 y 199 LMV'], ['Apunte', 'Gaspar, 7.5.3 y 7.5.4']],
+          enLaMateria: [
+            { u: 'u9', seccion: 'control', sub: 'ct-ejemplos', nota: 'venta sin OPA' },
+            { u: 'u9', seccion: 'controlador', sub: 'cr-hipotesis', nota: 'la sub-hipótesis del 25% al 40%' },
+            { u: 'u9', seccion: 'controlador', sub: 'cr-ejemplos', nota: 'Euroamérica pasa a ser controladora' }
+          ],
+          fuentes: [
+            { titulo: 'CNN Chile: Clínica Indisa y EuroAmerica son los nuevos dueños de Clínica Las Condes', url: 'https://www.cnnchile.com/pais/las-millonarias-cifras-tras-la-venta-de-clinica-las-condes-clinica-indisa-y-euroamerica-son-los-nuevos-duenos/' },
+            { titulo: 'Diario Financiero: EuroAmerica se convierte en la controladora de Clínica Las Condes tras el aumento de capital (8 de julio de 2025)', url: 'https://www.df.cl/empresas/salud/euroamerica-se-convierte-en-la-controladora-de-clinica-las-condes-tras' }
+          ]
+        },
+        html: `
+<div class="callout green"><p><b>En una frase:</b> dos compradores que, cada uno por separado y sin pacto, adquieren la mitad del control no tienen que hacer OPA. Más tarde, uno pasó a ser controlador por un aumento de capital, y tampoco hubo OPA.</p></div>
+<h3 data-sub="clc-hechos">Hechos</h3>
+<ul>
+  <li>Cecilia Karlezi controlaba Clínica Las Condes S.A., una sociedad anónima abierta, con cerca del <b>51%</b>. Había adquirido ese control haciendo una OPA.</li>
+  <li>Al decidir salir, vendió su paquete. Lo compraron, al mismo tiempo pero <b>por separado</b>, Euroamérica (cerca del 26,5%) e Indisa (cerca del 25,5%).</li>
+  <li>Entre ellos <b>no había pacto</b> de accionistas ni acuerdo de actuación conjunta.</li>
+</ul>
+<h3 data-sub="clc-problema">Problema jurídico</h3>
+<p>¿La venta del control a dos compradores obligaba a hacer OPA? Y luego: ¿qué pasa si uno de ellos se convierte en controlador sin comprar más acciones?</p>
+<h3 data-sub="clc-decision">Cómo se resolvió</h3>
+<ul>
+  <li><b>La venta no exigió OPA.</b> Ninguno de los dos compradores obtuvo el control por sí solo (50% + 1 o influencia decisiva) y no había pacto de control conjunto.</li>
+  <li><b>Después, Euroamérica pasó a ser controladora.</b> Por la sub-hipótesis del art. 97 LMV, es controlador quien tiene entre el 25% y el 40% de los votos si supera la suma de quienes tienen individualmente 5% o más.
+    <ul>
+      <li>Antes: Euroamérica 26,5% frente a Indisa 25,5% más un tercero con 6% (31,5%). No era controlador.</li>
+      <li>Hubo un aumento de capital. El tercero no suscribió y quedó con 4,5%. Bajo el 5%, sale de la comparación.</li>
+      <li>Después: Euroamérica 26,5% frente a Indisa 25,5%. Pasó a tener la influencia decisiva.</li>
+    </ul>
+  </li>
+  <li>Esa toma de control <b>tampoco exigió OPA</b>: se originó en la suscripción de un aumento de capital, que es una excepción legal.</li>
+</ul>
+<h3 data-sub="clc-importancia">Por qué importa en la materia</h3>
+<ul>
+  <li>Muestra que la OPA nace de <b>tomar el control</b>, no del tamaño de la compra (7.5.3).</li>
+  <li>Aplica el <b>concepto legal de controlador</b> del art. 97 y la regla de excluir a quienes tienen menos del 5% (7.5.4).</li>
+  <li>Sirve para contrastar con <b>Azul Azul</b> (control indirecto, sí exigía OPA) y con <b>LAN</b> (control por pacto, sin OPA).</li>
+</ul>
+<h3 data-sub="clc-contexto">Contexto (fuente externa)</h3>
+<p class="small">Fuera del apunte. Datos de las notas enlazadas en la ficha. El apunte usa cifras aproximadas («~»).</p>
+<ul>
+  <li>Según CNN Chile, Indisa y EuroAmerica se quedaron cada una con una mitad del paquete que controlaba el grupo de Karlezi (55,75%). Declararon a la CMF que son grupos empresariales separados y que no han suscrito acuerdo alguno sobre la gestión ni el control de la clínica.</li>
+  <li>Según Diario Financiero (8 de julio de 2025), antes del aumento de capital EuroAmerica tenía 28,66%, Indisa 27,87% y un tercer accionista 6,45%. El tercero bajó a 4,45%. Quedaron sobre el 5% solo EuroAmerica (29,6%) e Indisa (28,78%), y EuroAmerica pasó a ser la controladora.</li>
+</ul>`
+      },
+      {
+        id: 'pinera-lan', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Piñera con LAN (2007)',
+        ficha: {
+          datos: [['Año', '2007 (sanción de la SVS)'], ['Órganos', 'SVS (hoy CMF) · Corte Suprema'], ['Normas', 'Arts. 54, 164 y 199 LMV'], ['Apunte', 'Gaspar, 7.5.3 y 9.2.1']],
+          enLaMateria: [
+            { u: 'u9', seccion: 'control', sub: 'ct-ejemplos', nota: 'control por pacto, sin OPA' },
+            { u: 'u10', seccion: 'privilegiada', sub: 'pr-objeto', nota: 'los estados financieros como información privilegiada' }
+          ],
+          fuentes: [
+            { titulo: 'Cooperativa: Piñera pagará la multa de la SVS (6 de julio de 2007)', url: 'https://www.cooperativa.cl/noticias/site/artic/20070706/pags-amp/20070706181357.html' },
+            { titulo: 'Cooperativa: la Corte Suprema ratifica la multa contra Juan José Cueto (28 de noviembre de 2012)', url: 'https://www.cooperativa.cl/noticias/site/artic/20121128/pags-amp/20121128154834.html' }
+          ]
+        },
+        html: `
+<div class="callout green"><p><b>En una frase:</b> LAN aparece dos veces en el apunte. El control nacido de un <b>pacto</b> no exige OPA, y los <b>estados financieros aprobados</b> por el directorio son información privilegiada mientras no se entregan al mercado.</p></div>
+<h3 data-sub="lan-control">1. La toma de control sin OPA (7.5.3)</h3>
+<ul>
+  <li>Antes de la fusión que dio origen a LATAM, Sebastián Piñera y la familia Cueto asumieron el control de LAN mediante un <b>pacto de accionistas de actuación conjunta</b>.</li>
+  <li>Como el control nació de la firma de un pacto y no de una compra de acciones en ese momento, la operación quedó <b>exenta de OPA</b>.</li>
+  <li>Eso no la libera del <b>deber de informar</b> la toma de control (<span class="norma">art. 54 LMV</span>).</li>
+</ul>
+<h3 data-sub="lan-privilegiada">2. Los estados financieros como información privilegiada (9.2.1)</h3>
+<p>Según el apunte, el caso <b>Piñera con LAN (2007)</b> sentó la doctrina de que los estados financieros aprobados por el directorio son <b>información privilegiada</b> antes de entregarse al mercado. Quien los conoce no puede transar hasta que se divulguen.</p>
+<h3 data-sub="lan-importancia">Por qué importa en la materia</h3>
+<ul>
+  <li>Completa el cuadro de la OPA: compra directa o indirecta del control (Azul Azul, sí); dos compradores sin pacto (Clínica Las Condes, no); pacto entre accionistas (LAN, no, pero se informa).</li>
+  <li>Es el antecedente del <b>caso Blanco y Negro</b>: directores que transan tras aprobar estados financieros aún no publicados.</li>
+</ul>
+<h3 data-sub="lan-contexto">Contexto (fuente externa)</h3>
+<p class="small">Fuera del apunte. Datos de las notas de Cooperativa enlazadas en la ficha.</p>
+<ul>
+  <li>En julio de 2007, la SVS sancionó a Piñera porque no se abstuvo de operar con información privilegiada sobre los resultados de LAN. Había comprado, por medio de una sociedad, tres millones de acciones de LAN un día antes de que se publicaran resultados trimestrales favorables. La multa fue de <b>19.470 UF</b> (más de $363 millones), y él anunció que la pagaría.</li>
+  <li>Juan José Cueto sí reclamó. En noviembre de 2012, la Corte Suprema rechazó su casación y confirmó una multa de <b>1.620 UF</b> por no abstenerse de comprar acciones conociendo los estados financieros.</li>
+</ul>`
+      },
+      {
         id: 'cascadas', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Cascadas (2014)',
         ficha: {
           datos: [['Año', '2014 (sanción de la SVS)'], ['Órganos', 'SVS (hoy CMF) · Corte Suprema'], ['Ilícito', 'Operaciones ficticias y esquema fraudulento'], ['Apunte', 'Gaspar, 7.7.3 y 8.3 · «Pregunta de examen»']],
@@ -463,6 +637,48 @@
 </ul>`
       },
       {
+        id: 'blanco-y-negro', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Blanco y Negro (2018–2019)',
+        ficha: {
+          datos: [['Años', '2018 (operaciones) · 2019 (sanción de la CMF)'], ['Órganos', 'CMF · Corte de Apelaciones de Santiago'], ['Normas', 'Arts. 164 y 165 LMV'], ['Apunte', 'Gaspar, 9.2.1 y 9.2.3']],
+          enLaMateria: [
+            { u: 'u10', seccion: 'privilegiada', sub: 'pr-objeto', nota: 'estados financieros aprobados y no publicados' },
+            { u: 'u10', seccion: 'privilegiada', sub: 'pr-conductas', nota: 'uso frente a deber de abstención' }
+          ],
+          fuentes: [
+            { titulo: 'CMF: sanciones por uso de información privilegiada e infracción al deber de abstención a directores de Blanco y Negro S.A. (12 de noviembre de 2019)', url: 'https://www.cmfchile.cl/portal/prensa/625/w4-article-27810.html' },
+            { titulo: 'Poder Judicial: la Corte de Apelaciones de Santiago confirma la multa a un director de una sociedad anónima deportiva (28 de octubre de 2022)', url: 'https://www.pjud.cl/prensa-y-comunicaciones/noticias-del-poder-judicial/81420' }
+          ]
+        },
+        html: `
+<div class="callout green"><p><b>En una frase:</b> dos directores transaron el mismo día con el mismo balance negativo aún no publicado. Uno vendió para evitar una pérdida (<b>uso</b>); el otro compró para aumentar su control (<b>deber de abstención</b>).</p></div>
+<h3 data-sub="byn-hechos">Hechos</h3>
+<ul>
+  <li>El directorio de Blanco y Negro S.A. (concesionaria de Colo-Colo) aprobó estados financieros con <b>resultados deficitarios</b>.</li>
+  <li>Al día siguiente, antes de que se difundieran, un director <b>vendió</b> acciones y otro, Aníbal Mosa, <b>compró</b>.</li>
+</ul>
+<h3 data-sub="byn-problema">Problema jurídico</h3>
+<p>Los estados financieros aprobados y aún no enviados a la CMF son información privilegiada (doctrina del caso Piñera con LAN). ¿Qué conducta prohibida cometió cada director, si uno vendió y el otro compró?</p>
+<h3 data-sub="byn-decision">Cómo se resolvió (según el apunte)</h3>
+<ul>
+  <li><b>El director que vendió:</b> lo hizo para evitar una pérdida patrimonial. Es <b>uso de información privilegiada</b>: sanción de la CMF y delito penal.</li>
+  <li><b>Mosa, que compró:</b> no buscaba especular ni evitar una pérdida, sino aumentar su participación en Colo-Colo para hacer una OPA y tomar el control. Es <b>infracción al deber de abstención</b>: sanción de la CMF, pero no delito.</li>
+</ul>
+<div class="callout yellow"><p><b>Ojo con las fuentes:</b> el apunte llama «Gabriel Restle» al director que vendió y fecha el caso en 2020. El comunicado de la CMF (noviembre de 2019) nombra a Gabriel Ruiz-Tagle, ex presidente del directorio, y se refiere a estados financieros al 31 de marzo de 2018.</p></div>
+<h3 data-sub="byn-importancia">Por qué importa en la materia</h3>
+<ul>
+  <li>Es el ejemplo del apunte para distinguir <b>uso</b> y <b>deber de abstención</b> (9.2.3). La diferencia está en la finalidad de la operación, no en si se compra o se vende.</li>
+  <li>Aplica la doctrina de <b>Piñera con LAN</b>: los estados financieros aprobados son información privilegiada hasta que se divulgan (9.2.1).</li>
+</ul>
+<h3 data-sub="byn-contexto">Contexto (fuente externa)</h3>
+<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la noticia del Poder Judicial enlazados en la ficha.</p>
+<ul>
+  <li>La información eran los estados financieros de Blanco y Negro <b>al 31 de marzo de 2018</b>, aprobados por el directorio el día anterior y no publicados. Las operaciones fueron el 29 de mayo de 2018.</li>
+  <li><b>Ruiz-Tagle:</b> la CMF lo sancionó por infringir el deber de abstención y, por las ventas del mismo día, la prohibición de usar información privilegiada. Su multa de 15.000 UF se rebajó a <b>7.500 UF</b> por colaboración, con inhabilidad de cinco años, y la CMF remitió los antecedentes al Ministerio Público.</li>
+  <li><b>Mosa:</b> multa de <b>10.000 UF</b> por infringir el deber de abstención. La CMF descartó la hipótesis agravada de uso.</li>
+  <li>En octubre de 2022, la Corte de Apelaciones de Santiago rechazó por unanimidad el reclamo de Mosa. Dijo que la infracción al deber de abstención se configura solo por adquirir o enajenar valores con la información.</li>
+</ul>`
+      },
+      {
         id: 'navarrete', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Navarrete / CAP (2020)',
         ficha: {
           datos: [['Años', '2020 (compras) · 2022 (sanción)'], ['Órganos', 'CMF · Corte de Apelaciones · Corte Suprema'], ['Normas', 'Arts. 165 y 166 LMV'], ['Apunte', 'Gaspar, 9.2.3 · «Pregunta de examen»']],
@@ -560,7 +776,18 @@
       { tipo: 'alternativas', seccion: 'azul-azul', sub: 'azul-importancia', enunciado: 'Según el apunte, ¿cuál de estas operaciones obligaba a hacer una OPA?', opciones: ['Comprar el 90% restante de las cuotas del FIP que tenía el 63% de Azul Azul', 'Que Euroamérica e Indisa compraran por separado, sin pacto, el 51% de Clínica Las Condes', 'Que Piñera y la familia Cueto tomaran el control de LAN mediante un pacto de actuación conjunta', 'Ninguna de las tres: la OPA solo se exige al comprar acciones directamente en bolsa'], correcta: 0, explicacion: 'Azul Azul: adquisición indirecta del control (se «compró al accionista»). Clínica Las Condes: ningún comprador obtuvo el control por sí solo ni había pacto. LAN: el control nació de un pacto, no de una compra de acciones; bastaba informar (art. 54 LMV).' },
       { tipo: 'alternativas', seccion: 'subprime', sub: 'subprime-importancia', enunciado: 'Según el apunte, ¿qué diferencia el activo que respaldaba el bono securitizado de la UDP del que respaldaba los bonos subprime?', opciones: ['La UDP cedió un flujo constante y predecible de pagos de matrículas; los subprime dependían de hipotecas de deudores sin capacidad de pago, respaldadas solo por el valor de la casa', 'El bono de la UDP tenía garantía del Banco Central; los subprime no', 'La UDP securitizó su infraestructura; los subprime, flujos de matrículas', 'No hay diferencia: ambos se respaldaban en bienes raíces'], correcta: 0, explicacion: 'Apunte de Gaspar, 6.4: el principal activo de la UDP era el flujo de pagos de matrículas. En la crisis subprime, la banca reemplazó la evaluación de solvencia por la confianza en la garantía hipotecaria.' },
       { tipo: 'relacionar', seccion: 'la-polar', sub: 'polar-importancia', enunciado: 'Relaciona cada caso con el ilícito de mercado que ilustra, según el apunte.', pares: [['La Polar', 'Entrega de información falsa al mercado'], ['Cascadas', 'Manipulación de precios y transacciones ficticias'], ['Videla / Cencosud', 'Uso de información privilegiada (hecho reservado)'], ['Azul Azul', 'Tomar el control de una sociedad abierta sin OPA (art. 61 A LMV)']], explicacion: 'Apunte de Gaspar, 8.3, 9.2.1 y 7.5.3. La información falsa y la manipulación son ilícitos de doble persecución, administrativa y penal.' },
-      { tipo: 'alternativas', seccion: 'videla', sub: 'videla-decision', enunciado: 'Para sancionar a Videla por uso de información privilegiada, ¿cuál de estos elementos NO era necesario acreditar?', opciones: ['Que el precio de la acción de Cencosud subiera después de su compra', 'Que conociera un hecho reservado por su cargo de gerente general', 'Que comprara mientras la reserva estaba vigente', 'Que la información no estuviera divulgada al mercado'], correcta: 0, explicacion: 'La aptitud de la información se juzga ex ante: no se exige que el precio cambie después (apunte, 9.2.1). Además, el hecho reservado es información privilegiada per se (art. 164 LMV).' }
+      { tipo: 'alternativas', seccion: 'videla', sub: 'videla-decision', enunciado: 'Para sancionar a Videla por uso de información privilegiada, ¿cuál de estos elementos NO era necesario acreditar?', opciones: ['Que el precio de la acción de Cencosud subiera después de su compra', 'Que conociera un hecho reservado por su cargo de gerente general', 'Que comprara mientras la reserva estaba vigente', 'Que la información no estuviera divulgada al mercado'], correcta: 0, explicacion: 'La aptitud de la información se juzga ex ante: no se exige que el precio cambie después (apunte, 9.2.1). Además, el hecho reservado es información privilegiada per se (art. 164 LMV).' },
+      // Tercera tanda: Howey, Chang, Clínica Las Condes, Piñera con LAN, Blanco y Negro
+      { tipo: 'relacionar', seccion: 'howey', sub: 'howey-importancia', enunciado: 'Aplica el test de Howey a las acciones de Endesa que recibieron funcionarios públicos en el capitalismo popular: relaciona cada elemento con el hecho que lo cumple.', pares: [['Entrega de dinero', 'Renuncia a la indemnización por años de servicio'], ['Expectativa de ganancia', 'Utilidades y dividendos en el tiempo'], ['Ganancia por la actividad de un tercero', 'Gestión de las centrales hidroeléctricas por Endesa']], explicacion: 'Apunte de Gaspar, punto 3: el ejemplo del padre del profesor, médico en Talca. Los retornos no dependían de su esfuerzo, sino de la gestión de la empresa.' },
+      { tipo: 'alternativas', seccion: 'howey', sub: 'howey-importancia', enunciado: 'Según el apunte, ¿por qué Herbalife es un «caso límite» bajo el test de Howey?', opciones: ['Porque combina la inversión y la búsqueda de ganancia con el trabajo de venta propio y de la red', 'Porque no hay entrega de dinero', 'Porque sus productos son bienes corporales, como el oro', 'Porque es una sociedad anónima abierta chilena'], correcta: 0, explicacion: 'El tercer elemento exige que la ganancia venga de la actividad de un tercero. En una estructura multinivel, parte de la ganancia depende del esfuerzo propio.' },
+      { tipo: 'alternativas', seccion: 'chang', sub: 'chang-problema', enunciado: 'Alberto Chang ofrecía pagarés a cualquier interesado. ¿Por qué no podía ampararse en la oferta privada (safe harbor) de la NCG 336?', opciones: ['Porque se dirigía al público en general y no calzaba en ninguna de las cuatro hipótesis, como ofrecer solo a inversionistas calificados', 'Porque los pagarés nunca pueden ofrecerse en el mercado de valores', 'Porque la NCG 336 solo se aplica a acciones', 'Porque Chang no era chileno'], correcta: 0, explicacion: 'Apunte de Gaspar, 7.4.2: la oferta privada se reserva a quienes pueden evaluar riesgos y defenderse solos. Chang captaba del público retail: era oferta pública sin inscripción (art. 62 a) LMV, según el apunte).' },
+      { tipo: 'oral', seccion: 'chang', enunciado: 'Explique el caso Alberto Chang y su importancia en la materia.', puntos: ['Hechos: captaba dinero del público con pagarés y rentabilidades altas, sin inscribirse en el Registro de Valores; esquema piramidal; huyó a Malta.', 'Problema: ¿oferta pública u oferta privada? No calzaba en ninguna hipótesis de la NCG 336 (modificada por la NCG 452/2021).', 'Consecuencia: delito de oferta pública sin inscripción (art. 62 a) LMV, antes art. 59 A, según el apunte); extradición denegada por Malta.', 'Importancia: la inscripción previa (control ex ante) no garantiza la solvencia; protege al inversionista retail del engaño.'], norma: 'Art. 4° LMV; NCG 336 y 452; art. 62 a) LMV (según el apunte)' },
+      { tipo: 'vf', seccion: 'clinica-las-condes', sub: 'clc-decision', enunciado: 'Cuando Euroamérica pasó a ser controladora de Clínica Las Condes por el aumento de capital, quedó obligada a hacer una OPA.', respuesta: false, explicacion: 'Apunte de Gaspar, 7.5.4: la toma de control se originó en la suscripción de un aumento de capital, que es una excepción legal a la OPA.' },
+      { tipo: 'oral', seccion: 'clinica-las-condes', enunciado: 'Explique el caso Clínica Las Condes: por qué no hubo OPA en la venta del control ni cuando Euroamérica pasó a ser controladora.', puntos: ['Venta: Karlezi (cerca del 51%) vendió por separado a Euroamérica (26,5%) e Indisa (25,5%), sin pacto; ninguno tomó el control solo, así que no hubo OPA.', 'Controlador (art. 97): entre 25% y 40%, si se supera la suma de quienes tienen 5% o más; los de menos de 5% se excluyen.', 'Aumento de capital: el tercero bajó de 6% a 4,5% y salió de la comparación; Euroamérica pasó a tener la influencia decisiva frente a Indisa.', 'Sin OPA: la toma de control vino de suscribir un aumento de capital (excepción legal).', 'Contraste: Azul Azul (control indirecto, con OPA) y LAN (pacto, sin OPA).'], norma: 'Arts. 97 y 199 LMV' },
+      { tipo: 'alternativas', seccion: 'pinera-lan', sub: 'lan-privilegiada', enunciado: 'Un director compra acciones de su sociedad el día después de que el directorio aprobó estados financieros que aún no se entregan al mercado. Según la doctrina del caso Piñera con LAN, ¿qué ocurre?', opciones: ['Transa con información privilegiada: los estados financieros aprobados lo son hasta que se entregan al mercado', 'Nada, porque los estados financieros son información periódica y no un hecho esencial', 'Solo infringe si el precio de la acción sube después', 'Solo infringe si es gerente general'], correcta: 0, explicacion: 'Apunte de Gaspar, 9.2.1. Es la misma situación del caso Blanco y Negro.' },
+      { tipo: 'oral', seccion: 'pinera-lan', enunciado: 'Explique las dos enseñanzas del caso LAN en el apunte: la toma de control sin OPA y los estados financieros como información privilegiada.', puntos: ['Control: Piñera y la familia Cueto tomaron el control de LAN con un pacto de actuación conjunta; no hubo OPA porque el control nació de un pacto y no de una compra de acciones; sí debían informar (art. 54 LMV).', 'Información privilegiada: el caso Piñera con LAN (2007) sentó que los estados financieros aprobados por el directorio son información privilegiada antes de su entrega al mercado.', 'Conexión: es el antecedente de Blanco y Negro; contrasta con Azul Azul y Clínica Las Condes en materia de OPA.'], norma: 'Arts. 54, 164 y 199 LMV' },
+      { tipo: 'alternativas', seccion: 'blanco-y-negro', sub: 'byn-problema', enunciado: 'En Blanco y Negro, ¿qué información privilegiada tenían los directores cuando transaron?', opciones: ['Estados financieros con resultados deficitarios, aprobados por el directorio y aún no difundidos', 'Un hecho esencial reservado sobre la compra de otro club', 'La decisión de la CMF de sancionar a la sociedad', 'Una OPA lanzada por un tercero sobre Blanco y Negro'], correcta: 0, explicacion: 'Apunte de Gaspar, 9.2.1: transaron al día siguiente de la aprobación, antes de la difusión pública. Aplica la doctrina de Piñera con LAN.' },
+      { tipo: 'oral', seccion: 'blanco-y-negro', enunciado: 'Explique el caso Blanco y Negro y la diferencia entre uso de información privilegiada e infracción al deber de abstención.', puntos: ['Hechos: el directorio aprobó estados financieros deficitarios; al día siguiente, antes de difundirlos, un director vendió y otro (Mosa) compró.', 'Uso: vender para evitar una pérdida; sanción de la CMF y delito penal.', 'Deber de abstención: Mosa compró para aumentar su control (OPA), sin fin especulativo; solo sanción de la CMF.', 'Base: los estados financieros aprobados y no publicados son información privilegiada (Piñera con LAN).'], norma: 'Arts. 164, 165 y 166 LMV' }
     ],
 
     glosario: []
