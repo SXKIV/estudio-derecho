@@ -17,7 +17,8 @@ Estudio.registrarMateria({
     { id: 'u7', numero: 7, bloque: 'Prof. Gaspar', titulo: 'Pagaré, factura, descuento y factoring', archivo: 'u7-pagare-factura.js' },
     { id: 'u8', numero: 8, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores I: los valores', archivo: 'u8-mercado-valores-1.js' },
     { id: 'u9', numero: 9, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores II: oferta, OPA e intermediarios', archivo: 'u9-mercado-valores-2.js' },
-    { id: 'u10', numero: 10, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores III: información y CMF', archivo: 'u10-mercado-valores-3.js' }
+    { id: 'u10', numero: 10, bloque: 'Prof. Gaspar', titulo: 'Mercado de valores III: información y CMF', archivo: 'u10-mercado-valores-3.js' },
+    { id: 'casos', tipo: 'casos', icono: '⚖️', bloque: 'Casos', titulo: 'Casos vistos en clases', archivo: 'casos.js' }
   ],
   /* El chat suma estas palabras a la búsqueda cuando aparece la clave */
   sinonimos: {
