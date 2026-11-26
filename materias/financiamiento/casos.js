@@ -3,8 +3,8 @@
    unidades donde se menciona; el motor agrega en esas secciones el aviso «Caso relacionado».
    Fuentes:
    - «Lo que dice el apunte»: apunte completo de clases del Prof. Goldenberg (Cofisa, 3.3–3.4.2) y del
-     Prof. Gaspar (Inverlink, Azul Azul, Cascadas y La Polar). El apunte de Gaspar marca estos cuatro
-     casos con la nota «Pregunta de examen».
+     Prof. Gaspar (Inverlink, Azul Azul, Cascadas y La Polar). El apunte de Gaspar marca con la nota
+     «Pregunta de examen» los casos que pregunta en el oral (lo indica la ficha de cada caso).
    - «Contexto (fuente externa)»: solo datos confirmados en las páginas enlazadas en la ficha
      (revisadas en noviembre de 2026).
    Pendientes: Chispas y D&S/Falabella (ver CLAUDE.md). */
@@ -161,8 +161,165 @@
   <li>Según la CMF, el 13 de diciembre de 2024 Inversiones Antumalal compró a Asesorías e Inversiones Sartor cuotas equivalentes al <b>90,07%</b> del FIP Tactical Sport. El FIP tenía el <b>63,07% de las acciones Serie B</b> de Azul Azul, lo que le daba el control.</li>
   <li>En octubre de 2026, el Consejo de la CMF multó a Michael Clark con <b>UF 20.000</b> por no hacer la OPA que exige el art. 199 LMV.</li>
   <li>Según CNN Chile, la CMF rechazó en enero de 2025 una reposición de Clark contra la OPA. En septiembre de 2025, la Corte de Apelaciones de Santiago rechazó un reclamo de ilegalidad suyo y él apeló a la Corte Suprema. En 2026, el Tribunal Constitucional declaró inadmisibles dos requerimientos de inaplicabilidad.</li>
+  <li>La misma nota menciona una multa anterior de 65.000 UF a Clark: es la que le aplicó la CMF como ex director de Sartor AGF (ver <b>caso Sartor</b>).</li>
 </ul>
-<div class="callout yellow"><p><b>Ojo con las fuentes:</b> el apunte dice que la Corte Suprema confirmó, con fallo ejecutoriado, que había obligación de OPA. La nota de CNN Chile (octubre de 2026) dice que una multa anterior de 65.000 UF «se encuentra en reclamación judicial» y no informa qué resolvió la Corte Suprema. No pudimos confirmar ese fallo en una fuente externa.</p></div>`
+<div class="callout yellow"><p><b>Ojo con las fuentes:</b> el apunte dice que la Corte Suprema confirmó, con fallo ejecutoriado, que había obligación de OPA. Según CNN Chile (octubre de 2026), Clark apeló a la Corte Suprema después de perder ante la Corte de Apelaciones en septiembre de 2025, pero la nota no informa qué resolvió. No pudimos confirmar ese fallo en una fuente externa.</p></div>`
+      },
+      {
+        id: 'aurus', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Aurus (2016)',
+        ficha: {
+          datos: [['Año', '2016 (descubrimiento) · 2018 (sanción)'], ['Órgano', 'SVS (hoy CMF)'], ['Deber', 'Diligencia de la AGF (Ley Única de Fondos)'], ['Apunte', 'Gaspar, 5.2.5 · «Pregunta de examen (salvavidas)»']],
+          enLaMateria: [
+            { u: 'u8', seccion: 'acciones-fondos', sub: 'f-agf', nota: 'la AGF administra dinero ajeno' },
+            { u: 'u8', seccion: 'acciones-fondos', sub: 'f-casos', nota: 'caso I del apunte' }
+          ],
+          fuentes: [
+            { titulo: 'CMF: sanción a Aurus Capital AGF y sus ex ejecutivos y ex directores (3 de mayo de 2018)', url: 'https://www.cmfchile.cl/portal/prensa/625/w4-article-24878.html' },
+            { titulo: 'La Tercera: la Corte rechaza el recurso de Peña y confirma la multa de la CMF (14 de noviembre de 2018)', url: 'https://www.latercera.com/pulso/noticia/aurus-corte-rechaza-recurso-pena-confirma-multa-cmf/400826/' }
+          ]
+        },
+        html: `
+<div class="callout green"><p><b>En una frase:</b> un director desvió por años el dinero de dos fondos y el resto del directorio confió en él sin controlar. Es el caso del <b>deber de diligencia</b> de quien administra dinero ajeno.</p></div>
+<h3 data-sub="aurus-hechos">Hechos</h3>
+<ul>
+  <li>Ocurrió en Aurus AGF y afectó sobre todo a los fondos de inversión <b>Insignia</b> y <b>Global</b>.</li>
+  <li>El director Mauricio Peña desvió fondos tras aducir graves problemas médicos familiares. Para tapar los retiros fue a apostar al casino Monticello, y las pérdidas crecieron.</li>
+  <li>La pérdida acumulada llegó a unos <b>US$30 millones</b>. No ocurrió de un día para otro: se fue armando durante casi 5 años.</li>
+  <li>La AGF no tenía controles de gestión eficaces. Peña hacía informes falsos con grandes inversiones en acciones de empresas de Perú.</li>
+  <li>Cuando las auditoras consultaban y las empresas peruanas no reconocían esas acciones, las auditoras le preguntaban a Peña. Él entregaba cartas falsas que hablaban de «errores de registro», y las auditoras las aceptaban <b>sin verificar con la fuente directa</b>.</li>
+  <li>Los otros cuatro directores no participaron ni sabían. Confiaban en Peña, no exigían arqueos e ignoraban las alarmas.</li>
+</ul>
+<h3 data-sub="aurus-descubrimiento">Cómo se descubrió</h3>
+<ul>
+  <li>En mayo de 2016, la SVS fiscalizó Aurus en terreno. No detectó el déficit, porque las auditoras lo habían certificado, pero sí vio que los controles internos no funcionaban y formuló observaciones.</li>
+  <li>Para cumplirlas, Aurus nombró a un encargado de control interno. En septiembre de 2016, esa persona descubrió que los activos eran falsos, y en octubre lo informó a la autoridad.</li>
+</ul>
+<h3 data-sub="aurus-problema">Problema jurídico</h3>
+<p>¿Responden los directores que no participaron del fraude? En una AGF, el directorio maneja <b>dinero ajeno</b>, no bienes de la propia compañía. Por eso la Ley Única de Fondos intensifica los deberes fiduciarios de diligencia y lealtad.</p>
+<h3 data-sub="aurus-decision">Cómo se resolvió</h3>
+<ul>
+  <li>Peña fue procesado por estafa y por entrega de información falsa al mercado. Llegó a un acuerdo condenatorio en el proceso penal.</li>
+  <li>En 2017, los demás directores acordaron una transacción con las víctimas. Vendieron patrimonio personal e indemnizaron unos <b>US$20 millones</b>, cerca de dos tercios de la pérdida. Además disolvieron o vendieron la administración de los fondos y cerraron la AGF.</li>
+  <li>En 2018, la CMF sancionó al directorio <b>solo por negligencia</b>, no por dolo. La multa se acotó a <b>1.000 UF por director</b>, porque habían compensado con su propio patrimonio y dejado el mercado voluntariamente.</li>
+</ul>
+<h3 data-sub="aurus-importancia">Por qué importa en la materia</h3>
+<ul>
+  <li>Muestra el <b>deber de diligencia</b> intensificado de los directores de una AGF: confiar a ciegas no basta.</li>
+  <li>Muestra la falla de los <b>auditores</b>, que no verificaron con la fuente directa, y el valor del <b>control interno</b>: fue el auditor interno quien descubrió el fraude.</li>
+  <li>Se estudia junto al <b>caso Sartor</b>: en Aurus hubo negligencia e indemnización voluntaria; en Sartor, cargos por deslealtad y sin compensación.</li>
+</ul>
+<h3 data-sub="aurus-contexto">Contexto (fuente externa)</h3>
+<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la nota de La Tercera enlazados en la ficha.</p>
+<ul>
+  <li>La CMF informó la sanción el 3 de mayo de 2018 (Resolución Exenta N° 1653, de 27 de abril de 2018). El procedimiento se inició en 2016 por la errónea valorización, contabilización, custodia y registro de las inversiones de los fondos Insignia y Global.</li>
+  <li>Peña, director de la AGF y gerente de inversiones de ambos fondos, recibió <b>UF 10.000</b> por conductas que el Consejo calificó de «gravísimas». Cuatro directores recibieron UF 1.000 cada uno; otro, UF 200; el gerente general, UF 900; y la propia AGF, UF 1.000.</li>
+  <li>Al 3 de octubre de 2016, los fondos tenían un patrimonio de US$110,9 millones. El detrimento fue de 32% en Insignia y de 26% en Global.</li>
+  <li>En noviembre de 2018, la Corte de Apelaciones de Santiago rechazó el recurso de Peña. Él alegaba que ya había sido condenado penalmente por lo mismo; la Corte dijo que la sanción administrativa no guarda relación con los hechos sancionados penalmente.</li>
+</ul>`
+      },
+      {
+        id: 'sartor', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Sartor (2024)',
+        ficha: {
+          datos: [['Años', '2024 (intervención) · 2025 (sanción)'], ['Órganos', 'CMF · Ministerio Público'], ['Deber', 'Lealtad de la AGF (según el apunte)'], ['Apunte', 'Gaspar, 5.2.5 y 8.3 · «Pregunta de examen (salvavidas)»']],
+          enLaMateria: [
+            { u: 'u8', seccion: 'acciones-fondos', sub: 'f-casos', nota: 'caso II del apunte' },
+            { u: 'u8', seccion: 'acciones-fondos', sub: 'f-agf', nota: 'el FIP Tactical Sport y los créditos de Sartor' },
+            { u: 'u10', seccion: 'infracciones', sub: 'in-penal', nota: 'información falsa: doble persecución' }
+          ],
+          fuentes: [
+            { titulo: 'CMF: inicio del procedimiento sancionatorio contra Sartor AGF y sus ex directores (15 de abril de 2025)', url: 'https://www.cmfchile.cl/portal/prensa/625/w4-article-93467.html' },
+            { titulo: 'CMF: sanciones por 367.500 UF a ex directores de Sartor AGF y a su ex gerente general (18 de noviembre de 2025)', url: 'https://www.cmfchile.cl/portal/prensa/625/w4-article-100710.html' }
+          ]
+        },
+        html: `
+<div class="callout green"><p><b>En una frase:</b> la AGF sacaba el dinero del mercado público hacia vehículos opacos y lo prestaba sin garantías a empresas de sus propios dueños. Es el caso del <b>deber de lealtad</b>.</p></div>
+<h3 data-sub="sartor-hechos">Hechos</h3>
+<ul>
+  <li>Sartor AGF captaba dinero del mercado público de valores y lo derivaba a <b>fondos de inversión privados (FIP)</b>, a sociedades anónimas cerradas o a entidades extranjeras.</li>
+  <li>Al salir de la oferta pública, <b>desaparecían los deberes de información</b> transparente.</li>
+  <li>Los FIP y otros vehículos daban préstamos cruzados <b>sin garantías</b> a sociedades de los mismos dueños de la AGF.</li>
+  <li>Con préstamos del fondo se financiaron proyectos inmobiliarios privados, como One River Point en Miami. El fondo no era dueño del activo, sino un acreedor sin resguardo.</li>
+  <li>El FIP Tactical Sport compró el 63% de Azul Azul con créditos de un fondo público de Sartor que no tenían prenda. Ante el no pago, el fondo tuvo que pedir un embargo de esas acciones (ver <b>caso Azul Azul</b>).</li>
+</ul>
+<h3 data-sub="sartor-descubrimiento">Cómo se descubrió</h3>
+<p>En 2024, la CMF detectó una grave opacidad en la cadena de financiamiento. Los deudores del fondo eran empresas vinculadas a los administradores, y los préstamos no se cobraban: se renovaban una y otra vez sin garantías reales. La pérdida estimada fue de entre el <b>50% y el 70%</b> del valor de las cuotas.</p>
+<h3 data-sub="sartor-problema">Problema jurídico</h3>
+<p>Una AGF debe gestionar los fondos en interés de los aportantes. ¿Qué pasa cuando los administradores los usan en beneficio propio y en abierto conflicto de interés?</p>
+<h3 data-sub="sartor-decision">Cómo se resolvió</h3>
+<ul>
+  <li>A diferencia de Aurus, los dueños y administradores <b>no indemnizaron</b> a los aportantes.</li>
+  <li>A fines de 2024, la CMF <b>intervino</b> Sartor AGF: removió a la administración privada y asumió la gestión directa de los fondos para cobrar las acreencias.</li>
+  <li>La CMF formuló cargos severos por vulneración del <b>deber de lealtad</b>: la gestión se hizo deliberadamente en beneficio propio de los administradores.</li>
+  <li>El Ministerio Público levantó el secreto bancario para seguir el dinero. Los principales ejecutivos (los hermanos Larraín y Michael Clark, entre otros) fueron formalizados, con prisión preventiva y arresto domiciliario como medidas cautelares.</li>
+</ul>
+<h3 data-sub="sartor-importancia">Por qué importa en la materia</h3>
+<ul>
+  <li>Es el contrapunto de Aurus: <b>lealtad</b> (beneficio propio) frente a <b>diligencia</b> (falta de control).</li>
+  <li>Muestra cómo los <b>FIP</b> y las sociedades cerradas pueden usarse para salir de la fiscalización del mercado público.</li>
+  <li>El apunte lo cita como ejemplo de <b>información falsa</b> perseguida a la vez en sede administrativa y penal (8.3).</li>
+  <li>Conecta con <b>Azul Azul</b>: el mismo grupo financió la toma de control del club.</li>
+</ul>
+<h3 data-sub="sartor-contexto">Contexto (fuente externa)</h3>
+<p class="small">Fuera del apunte. Datos de los comunicados de la CMF enlazados en la ficha.</p>
+<ul>
+  <li>El 15 de abril de 2025, la CMF inició un procedimiento sancionatorio y formuló cargos contra Sartor AGF, en liquidación, y sus ex directores y ejecutivos, por hechos anteriores a la intervención de fines de 2024.</li>
+  <li>El 18 de noviembre de 2025 (Resolución N° 11.869), la CMF aplicó multas por un total de <b>367.500 UF</b> a ex directores y al ex gerente general, en su mayoría con <b>inhabilidad de 5 años</b>, y <b>revocó la autorización de existencia</b> de Sartor AGF.</li>
+  <li>Las infracciones fueron a la Ley Única de Fondos y a la Ley de Mercado de Valores. Entre ellas: invertir en entidades relacionadas con los directores, privilegiando el interés de esas empresas, e información falsa en los estados financieros de dos fondos. La CMF remitió los antecedentes al Ministerio Público.</li>
+  <li>Entre los sancionados está Michael Clark, como ex director, con <b>UF 65.000</b>: es la misma persona del caso Azul Azul.</li>
+</ul>`
+      },
+      {
+        id: 'subprime', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Crisis subprime (2008)',
+        ficha: {
+          datos: [['Años', '2006–2008'], ['Lugar', 'Estados Unidos, con efectos globales'], ['Tema', 'Bonos securitizados y riesgo de solvencia'], ['Apunte', 'Gaspar, 6.4 · «Pregunta de examen»']],
+          enLaMateria: [
+            { u: 'u8', seccion: 'deuda', sub: 'd-securitizacion', nota: 'cómo funciona la securitización hipotecaria' },
+            { u: 'u8', seccion: 'deuda', sub: 'd-subprime', nota: 'la crisis en el apunte' },
+            { u: 'u8', seccion: 'intro', sub: 'mv-solvencia', nota: 'riesgo de solvencia' },
+            { u: 'u10', seccion: 'suficiencia', sub: 'su-clasificadoras', nota: 'errores de las clasificadoras' }
+          ],
+          fuentes: [
+            { titulo: 'Federal Reserve History: «Subprime Mortgage Crisis», 2007–2010 (en inglés)', url: 'https://www.federalreservehistory.org/essays/subprime-mortgage-crisis' }
+          ]
+        },
+        html: `
+<div class="callout green"><p><b>En una frase:</b> los bancos prestaron a deudores sin capacidad de pago confiando solo en la hipoteca, y vendieron esos créditos como bonos. Cuando cayeron los precios de las casas, los bonos perdieron su valor y la crisis se volvió mundial.</p></div>
+<p class="small">No es un juicio: es un caso de mercado que el apunte usa para explicar la securitización y el riesgo de solvencia.</p>
+<h3 data-sub="subprime-mecanismo">Antes: la securitización hipotecaria</h3>
+<div class="flow">
+  <div class="node">Banco<small>cede su cartera de créditos hipotecarios</small></div><div class="arrow">→</div>
+  <div class="node hot">Patrimonio separado<small>lo administra una securitizadora; emite bonos</small></div><div class="arrow">→</div>
+  <div class="node">Inversionistas<small>compran los bonos; con eso se paga al banco</small></div>
+</div>
+<p>Un crédito hipotecario inmoviliza el capital del banco por 20 o 30 años. Al securitizar la cartera, el banco recupera dinero de inmediato y vuelve a prestar. El ciclo se repite.</p>
+<h3 data-sub="subprime-hechos">Hechos</h3>
+<ul>
+  <li>Para mantener la máquina de préstamos, la banca de EE. UU. agotó a los clientes solventes (<i>prime</i>). Entonces bajó sus exigencias y prestó a deudores de alto riesgo: los <b>NINJA</b> (<i>No Income, No Job, No Assets</i>: sin ingresos, sin empleo y sin activos).</li>
+  <li>En vez de evaluar la solvencia del deudor, la banca confió a ciegas en la <b>garantía hipotecaria</b>. Había un boom inmobiliario y los precios no paraban de subir.</li>
+  <li>Se llegó a prestar hasta el <b>110%</b> del valor de la vivienda, sin pie.</li>
+</ul>
+<div class="callout"><p><b>Ejemplo del apunte:</b> el banco presta US$110.000 a un deudor NINJA para una casa de US$100.000. Supone que en un año la casa valdrá US$130.000 y que su remate cubrirá la deuda. Pero la casa cae a US$60.000: el remate no alcanza, el deudor abandona la casa y el bono respaldado por esa hipoteca pierde todo su valor.</p></div>
+<h3 data-sub="subprime-problema">Qué falló</h3>
+<ul>
+  <li>Hacia 2006-2007, las autoridades monetarias <b>subieron las tasas</b> para controlar la inflación. El crédito se encareció, bajó la demanda de viviendas y sus precios se desplomaron.</li>
+  <li>Las garantías ya no cubrían las deudas, y los deudores <i>subprime</i> dejaron de pagar en masa.</li>
+  <li>Sin ese flujo de pagos, los <b>bonos securitizados</b> perdieron su valor y cayeron en cesación de pagos. Como se habían vendido en todo el mundo, la crisis se propagó a la banca internacional: «si EE. UU. se resfría, al mundo le da una pulmonía».</li>
+</ul>
+<h3 data-sub="subprime-chile">Cómo lo enfrentó Chile</h3>
+<p>Chile evitó un colapso sistémico, a diferencia de Grecia o Islandia. Lo logró gracias a la gestión de las <b>reservas internacionales</b> del Fisco (bajo el ministro Andrés Velasco), que se usaron para inyectar liquidez al mercado interno cuando se paralizó el crédito externo.</p>
+<h3 data-sub="subprime-importancia">Por qué importa en la materia</h3>
+<ul>
+  <li>Muestra el <b>riesgo de solvencia</b> en los instrumentos de deuda: un bono vale lo que valen los flujos que lo respaldan.</li>
+  <li>Explica la <b>securitización</b>: es útil para dar liquidez, pero puede trasladar el riesgo al mercado.</li>
+  <li>Las <b>clasificadoras de riesgo</b> tuvieron errores de evaluación cuestionados en esta crisis (7.8.3).</li>
+</ul>
+<h3 data-sub="subprime-contexto">Contexto (fuente externa)</h3>
+<p class="small">Fuera del apunte. Datos del ensayo de Federal Reserve History (escrito al 22 de noviembre de 2013), enlazado en la ficha.</p>
+<ul>
+  <li>Describe la crisis como un período de turbulencia financiera entre <b>2007 y 2010</b>, causado por la expansión de las hipotecas a deudores de alto riesgo junto con el alza de los precios de las viviendas.</li>
+  <li>Los prestamistas agrupaban las hipotecas en carteras que vendían a inversionistas. Los bonos respaldados por hipotecas emitidos por privados financiaban la mayor parte de los créditos <i>subprime</i>.</li>
+  <li>Cuando los precios dejaron de subir, aumentó la morosidad. En <b>abril de 2007</b> quebró New Century Financial, uno de los principales prestamistas <i>subprime</i>.</li>
+</ul>`
       },
       {
         id: 'cascadas', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Cascadas (2014)',
@@ -260,6 +417,96 @@
   <li>Esa noticia cita, para calcular el daño, una sentencia de la Corte Suprema de 3 de septiembre de 2021 (rol 8.429-2018, «AFP Provida S.A. con Price Waterhouse Coopers»).</li>
 </ul>
 <p class="small">El apunte ubica el fallo contra PwC «hacia 2020»; la sentencia que cita el Poder Judicial es de septiembre de 2021.</p>`
+      },
+      {
+        id: 'videla', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Matías Videla / Cencosud (2023)',
+        ficha: {
+          datos: [['Años', '2022 (compra) · 2023 (sanción)'], ['Órganos', 'CMF · Corte de Apelaciones · Corte Suprema'], ['Normas', 'Arts. 10, 164 y 165 LMV'], ['Apunte', 'Gaspar, 9.2.1 · «Pregunta de examen»']],
+          enLaMateria: [
+            { u: 'u10', seccion: 'privilegiada', sub: 'pr-objeto', nota: 'el objeto: información privilegiada per se' },
+            { u: 'u10', seccion: 'oportunidad', sub: 'opo-reservado', nota: 'hecho esencial reservado' }
+          ],
+          fuentes: [
+            { titulo: 'CMF: sanción de UF 15.000 a Matías Videla por uso de información privilegiada (4 de octubre de 2023)', url: 'https://www.cmfchile.cl/portal/prensa/625/w4-article-73907.html' },
+            { titulo: 'Diario Financiero: la Corte Suprema ratifica íntegramente la multa (6 de febrero de 2026)', url: 'https://www.df.cl/mercados/bolsa-monedas/corte-suprema-ratifica-integramente-la-multa-que-aplico-la-cmf-a-matias' }
+          ]
+        },
+        html: `
+<div class="callout green"><p><b>En una frase:</b> un hecho reservado es <b>información privilegiada por definición legal</b>. Quien lo conoce no puede transar, aunque la operación después no se concrete.</p></div>
+<h3 data-sub="videla-hechos">Hechos</h3>
+<ul>
+  <li>Cencosud negociaba la compra de una cadena de supermercados en <b>Brasil</b>.</li>
+  <li>Comunicó el proceso a la CMF como <b>hecho reservado</b>, en una comunicación firmada por Matías Videla, su gerente general.</li>
+  <li>Mientras la reserva estaba vigente, Videla <b>compró acciones de Cencosud</b>.</li>
+  <li>Después la operación se cayó.</li>
+</ul>
+<h3 data-sub="videla-problema">Problema jurídico</h3>
+<p>¿Hay uso de información privilegiada si el negocio nunca se concretó? La aptitud de la información para influir en un inversionista se juzga <b>ex ante</b>, al momento del hecho, igual que la tentativa penal. No se exige que el precio cambie después.</p>
+<h3 data-sub="videla-decision">Cómo se resolvió</h3>
+<ul>
+  <li>La CMF lo sancionó por <b>uso de información privilegiada</b>.</li>
+  <li>La Corte de Apelaciones y la Corte Suprema confirmaron la multa, con una severa <b>condena en costas</b>.</li>
+  <li>La razón: Videla no tenía ningún motivo plausible para litigar. Un hecho reservado es información privilegiada <b>per se</b> por mandato del <span class="norma">art. 164 LMV</span>.</li>
+</ul>
+<h3 data-sub="videla-importancia">Por qué importa en la materia</h3>
+<ul>
+  <li>Es el ejemplo del <b>objeto</b> de la información privilegiada (9.2.1): cuando el directorio comunica un hecho esencial como reservado (<span class="norma">art. 10 LMV</span>), la información pasa a ser privilegiada de forma automática.</li>
+  <li>Muestra la tensión de los <b>hechos reservados</b>: se protege el interés social al no divulgar, pero quien conoce la reserva queda obligado a no transar.</li>
+</ul>
+<h3 data-sub="videla-contexto">Contexto (fuente externa)</h3>
+<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la nota de Diario Financiero enlazados en la ficha.</p>
+<ul>
+  <li>La CMF aplicó a Videla una multa de <b>UF 15.000</b> (Resolución N° 7222, informada el 4 de octubre de 2023) por infringir el art. 165 LMV.</li>
+  <li>El hecho reservado era del <b>3 de febrero de 2022</b>. Cencosud, por medio de Cencosud Brasil, había firmado un memorándum de entendimiento para analizar y eventualmente comprar Torre y Cía. Supermercados, una cadena de Río de Janeiro.</li>
+  <li>El <b>13 de mayo de 2022</b>, Videla compró 613.026 acciones de Cencosud por unos $800 millones.</li>
+  <li>Según Diario Financiero (6 de febrero de 2026), la Corte Suprema ratificó íntegramente la multa y le cobró costas.</li>
+</ul>`
+      },
+      {
+        id: 'navarrete', grupo: 'Prof. Gaspar · mercado de valores', titulo: 'Caso Navarrete / CAP (2020)',
+        ficha: {
+          datos: [['Años', '2020 (compras) · 2022 (sanción)'], ['Órganos', 'CMF · Corte de Apelaciones · Corte Suprema'], ['Normas', 'Arts. 165 y 166 LMV'], ['Apunte', 'Gaspar, 9.2.3 · «Pregunta de examen»']],
+          enLaMateria: [
+            { u: 'u10', seccion: 'privilegiada', sub: 'pr-conductas', nota: 'las tres conductas prohibidas' }
+          ],
+          fuentes: [
+            { titulo: 'CMF: sanciones por uso de información privilegiada e infracciones al deber de abstención (18 de julio de 2022)', url: 'https://www.cmfchile.cl/portal/prensa/625/w4-article-51678.html' },
+            { titulo: 'La Tercera: la Corte Suprema ratifica la multa a los hermanos Navarrete (23 de julio de 2024)', url: 'https://www.latercera.com/pulso/noticia/corte-suprema-ratifica-multa-a-hermanos-navarrete-por-uso-de-informacion-privilegiada/V3IO5HWISNCOZARWTRETZOZGTM/' }
+          ]
+        },
+        html: `
+<div class="callout green"><p><b>En una frase:</b> un director contó en un almuerzo familiar lo que sabía por su cargo, y sus hermanas compraron acciones ahí mismo. Sirve para distinguir <b>uso</b>, <b>revelación</b> y <b>deber de abstención</b>.</p></div>
+<p class="small">En el apunte aparece como «Ibercap»; la CMF dice «Invercap».</p>
+<h3 data-sub="navarrete-hechos">Hechos</h3>
+<ul>
+  <li>Felipe Navarrete era director en Invercap. Por su cargo sabía que Invercap haría una reestructuración para <b>aumentar su participación en CAP</b> y obtener un director adicional.</li>
+  <li><b>El almuerzo en el Tiramisú:</b> en un almuerzo familiar en esa pizzería de El Golf, con sus hermanas, para coordinar trámites de una herencia, les reveló la información o les recomendó comprar.</li>
+  <li>Durante el mismo almuerzo, las hermanas dieron instrucciones por teléfono a sus corredores para <b>comprar acciones de CAP</b>.</li>
+</ul>
+<h3 data-sub="navarrete-problema">Problema jurídico</h3>
+<p>¿Qué conducta prohibida comete cada uno? El apunte distingue tres:</p>
+<table class="tabla">
+<tr><th>Conducta</th><th>Qué es</th><th>Sanción</th></tr>
+<tr><td>Uso de información privilegiada</td><td>Comprar o vender valores para ganar o evitar una pérdida</td><td>CMF y delito penal</td></tr>
+<tr><td>Infracción al deber de abstención</td><td>Transar teniendo la información, sin fin especulativo</td><td>CMF; no es delito</td></tr>
+<tr><td>Revelación o comunicación</td><td>Transmitir la información o recomendar o inducir a comprar o vender</td><td>CMF y delito penal</td></tr>
+</table>
+<h3 data-sub="navarrete-decision">Cómo se resolvió</h3>
+<p>Según el apunte, se sancionó a Felipe y a sus hermanas por infringir las prohibiciones de <b>revelación e inducción</b>, y los tribunales ratificaron la sanción.</p>
+<div class="callout yellow"><p><b>Ojo con las fuentes:</b> según el comunicado de la CMF, Felipe Navarrete fue sancionado por <b>uso</b> de información privilegiada y por infringir su deber de reserva al contarla. Sus hermanas fueron sancionadas por <b>no abstenerse</b> de operar teniendo la información. El apunte dice que a los tres se los sancionó por revelación e inducción.</p></div>
+<h3 data-sub="navarrete-importancia">Por qué importa en la materia</h3>
+<ul>
+  <li>Es el ejemplo de las <b>conductas prohibidas</b> (9.2.3): no solo infringe quien compra, sino también quien revela o recomienda.</li>
+  <li>Se estudia junto al <b>caso Blanco y Negro</b> (2020), que el apunte usa para distinguir el uso (Restle vendió para evitar una pérdida) de la infracción al deber de abstención (Mosa compró para aumentar su control, sin fin especulativo).</li>
+</ul>
+<h3 data-sub="navarrete-contexto">Contexto (fuente externa)</h3>
+<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la nota de La Tercera enlazados en la ficha.</p>
+<ul>
+  <li>La información era un acuerdo del directorio de Invercap del <b>4 de diciembre de 2020</b>: comprar el <b>6,77% de las acciones de CAP</b>. Esa compra podía darle a Invercap la elección de cuatro de los siete directores de CAP.</li>
+  <li>Según la CMF, Felipe Navarrete compró acciones de CAP el 7 de diciembre de 2020. Sus hermanas dieron la orden de compra el 4 de enero de 2021, en un almuerzo.</li>
+  <li>Multas de la CMF (18 de julio de 2022): <b>UF 10.000</b> a Felipe Navarrete y <b>UF 2.000</b> a cada una de sus hermanas. La CMF además lo denunció al Ministerio Público por posibles delitos del art. 60 LMV.</li>
+  <li>Según La Tercera (23 de julio de 2024), la Corte Suprema confirmó la sentencia de la Corte de Apelaciones de Santiago (27 de diciembre de 2023) que mantuvo las multas.</li>
+</ul>`
       }
     ],
 
@@ -286,7 +533,27 @@
       // La Polar
       { tipo: 'alternativas', seccion: 'la-polar', sub: 'polar-hechos', enunciado: 'Según el apunte, ¿qué hacía sospechosos los resultados de La Polar durante la crisis de 2007-2008?', opciones: ['Reportaba utilidades espectaculares mientras el resto del retail caía', 'Había dejado de pagar dividendos', 'Su acción cayó antes que la de sus competidores', 'Cambiaba de auditora cada año'], correcta: 0, explicacion: 'Falabella, Ripley y Cencosud cayeron con la crisis; La Polar mostraba resultados «espectaculares» y su acción superó los $2.400.' },
       { tipo: 'relacionar', seccion: 'la-polar', sub: 'polar-importancia', enunciado: 'Relaciona cada punto del apunte con lo que muestra el caso La Polar.', pares: [['7.8.2 Veracidad', 'Repactaciones unilaterales que inflaban las utilidades'], ['7.8.3 Suficiencia', 'Clasificadoras que mantuvieron clasificaciones óptimas'], ['8.1 Responsabilidad civil', 'Demandas de las AFP y Moneda AGF contra PwC'], ['8.3 Responsabilidad penal', 'Información falsa perseguida en sede administrativa y penal']], explicacion: 'El apunte de Gaspar usa La Polar en 7.8.2, 7.8.3, 8.1 y 8.3.' },
-      { tipo: 'oral', seccion: 'la-polar', enunciado: 'Explique el caso La Polar y su importancia en la materia: información, auditores y responsabilidades.', puntos: ['Incentivo: stock options de los ejecutivos (2005).', 'Mecanismo: repactaciones unilaterales nocturnas de créditos morosos; se evitaba el castigo y se registraban créditos nuevos mayores, con utilidades artificiales.', 'Colapso: junio de 2011, tras el reclamo de un inversionista ante la SVS y la SBIF; la acción cayó más de 99%.', 'Deber infringido: información veraz (arts. 9° y 59 a) LMV); falla de gobierno corporativo.', 'Auditores: PwC sancionada; la Corte Suprema rechazó la excusa del engaño (escepticismo profesional) y acogió las demandas de las AFP; acuerdo con seguros y utilidades futuras.'], norma: 'Arts. 9° y 59 a) LMV (según el apunte)' }
+      { tipo: 'oral', seccion: 'la-polar', enunciado: 'Explique el caso La Polar y su importancia en la materia: información, auditores y responsabilidades.', puntos: ['Incentivo: stock options de los ejecutivos (2005).', 'Mecanismo: repactaciones unilaterales nocturnas de créditos morosos; se evitaba el castigo y se registraban créditos nuevos mayores, con utilidades artificiales.', 'Colapso: junio de 2011, tras el reclamo de un inversionista ante la SVS y la SBIF; la acción cayó más de 99%.', 'Deber infringido: información veraz (arts. 9° y 59 a) LMV); falla de gobierno corporativo.', 'Auditores: PwC sancionada; la Corte Suprema rechazó la excusa del engaño (escepticismo profesional) y acogió las demandas de las AFP; acuerdo con seguros y utilidades futuras.'], norma: 'Arts. 9° y 59 a) LMV (según el apunte)' },
+      // Aurus
+      { tipo: 'alternativas', seccion: 'aurus', sub: 'aurus-descubrimiento', enunciado: 'Según el apunte, ¿quién descubrió finalmente que los activos de los fondos de Aurus eran falsos?', opciones: ['El encargado de control interno que Aurus nombró para cumplir las observaciones de la SVS', 'Las auditoras externas, al consultar a las empresas peruanas', 'La SVS, en su fiscalización en terreno de mayo de 2016', 'Los aportantes del fondo Insignia'], correcta: 0, explicacion: 'La SVS no detectó el déficit, pero sí vio que no había control interno. Aurus nombró a un encargado, que en septiembre de 2016 descubrió la falsedad y la informó en octubre.' },
+      { tipo: 'vf', seccion: 'aurus', sub: 'aurus-decision', enunciado: 'En Aurus, la CMF tomó en cuenta que los demás directores indemnizaron con su patrimonio y dejaron el mercado, y acotó su multa a 1.000 UF por director.', respuesta: true, explicacion: 'Apunte de Gaspar, 5.2.5: en 2018 la CMF los sancionó solo por negligencia, ponderando la indemnización de unos US$20 millones y su salida voluntaria.' },
+      { tipo: 'oral', seccion: 'aurus', enunciado: 'Explique el caso Aurus y su importancia en la materia.', puntos: ['Hechos: un director (Peña) desvió dinero de los fondos Insignia y Global durante casi 5 años y lo tapó con informes falsos de inversiones en Perú; pérdida de unos US$30 millones.', 'Fallas: no había control interno; las auditoras aceptaron cartas falsas sin verificar con la fuente; los demás directores confiaron a ciegas.', 'Descubrimiento: tras la fiscalización de la SVS (2016), el nuevo encargado de control interno detectó la falsedad.', 'Resultado: Peña con acuerdo condenatorio; los demás directores indemnizaron unos US$20 millones y cerraron la AGF; la CMF los multó solo por negligencia (1.000 UF cada uno).', 'Importancia: deber de diligencia intensificado de la AGF, que administra dinero ajeno; contraste con Sartor (lealtad).'], norma: 'Ley Única de Fondos (deberes de la AGF)' },
+      // Sartor
+      { tipo: 'alternativas', seccion: 'sartor', sub: 'sartor-decision', enunciado: 'Según el apunte, ¿qué diferencia la respuesta en el caso Sartor de la del caso Aurus?', opciones: ['En Sartor no se indemnizó a los aportantes; la CMF intervino la AGF y formuló cargos por deber de lealtad', 'En Sartor la CMF solo sancionó negligencia, igual que en Aurus', 'En Sartor los directores vendieron su patrimonio para indemnizar', 'En Sartor no hubo pérdida para los aportantes'], correcta: 0, explicacion: 'Aurus: negligencia, indemnización voluntaria y multas acotadas. Sartor: gestión en beneficio propio, sin compensación, intervención de la CMF y formalizaciones penales.' },
+      { tipo: 'vf', seccion: 'sartor', sub: 'sartor-hechos', enunciado: 'En Sartor, al derivar el dinero a FIP, sociedades cerradas o entidades extranjeras, los recursos salían de la oferta pública y desaparecían los deberes de información transparente.', respuesta: true, explicacion: 'Apunte de Gaspar, 5.2.5: por eso la CMF detectó opacidad en la cadena de financiamiento.' },
+      { tipo: 'oral', seccion: 'sartor', enunciado: 'Explique el caso Sartor, compárelo con Aurus y relaciónelo con Azul Azul.', puntos: ['Hechos: Sartor AGF llevaba dinero del mercado público a FIP y sociedades cerradas, que prestaban sin garantías a empresas de sus propios dueños; préstamos renovados sin cobrar; pérdida del 50% al 70% de las cuotas.', 'Deber infringido: lealtad (gestión en beneficio propio y en conflicto de interés).', 'Resultado: sin indemnización; intervención de la CMF a fines de 2024; cargos; formalizaciones con prisión preventiva y arresto domiciliario.', 'Contraste con Aurus: diligencia frente a lealtad; indemnización voluntaria frente a ninguna.', 'Relación con Azul Azul: el FIP Tactical Sport compró el control con créditos sin prenda de un fondo de Sartor.'], norma: 'Ley Única de Fondos; LMV' },
+      // Crisis subprime
+      { tipo: 'alternativas', seccion: 'subprime', sub: 'subprime-chile', enunciado: 'Según el apunte, ¿cómo evitó Chile un colapso sistémico en la crisis subprime?', opciones: ['Usó las reservas internacionales del Fisco para inyectar liquidez al mercado interno', 'Prohibió la securitización de créditos hipotecarios', 'Subió la tasa máxima convencional', 'Nacionalizó la banca'], correcta: 0, explicacion: 'Con la gestión de las reservas internacionales (ministro Andrés Velasco) se suplió la paralización del crédito externo.' },
+      { tipo: 'alternativas', seccion: 'subprime', sub: 'subprime-hechos', enunciado: 'En el ejemplo del apunte, un banco presta US$110.000 a un deudor NINJA para comprar una casa de US$100.000. ¿En qué confiaba el banco?', opciones: ['En que la casa subiría de valor y su remate cubriría la deuda', 'En los ingresos futuros del deudor', 'En un seguro estatal de depósitos', 'En la garantía personal de un aval'], correcta: 0, explicacion: 'La banca reemplazó la evaluación de solvencia por la confianza en la garantía hipotecaria. Al caer la casa a US$60.000, el remate no alcanzó.' },
+      { tipo: 'oral', seccion: 'subprime', enunciado: 'Explique la crisis subprime y por qué importa para el mercado de valores.', puntos: ['Securitización: el banco cede su cartera hipotecaria a un patrimonio separado que emite bonos; recupera liquidez y vuelve a prestar.', 'Causa: préstamos a deudores NINJA, confianza ciega en la garantía, créditos de hasta el 110% del valor en pleno boom inmobiliario.', 'Detonante: alza de tasas (2006-2007), caída de precios, no pago masivo; los bonos securitizados perdieron valor y la crisis se volvió global.', 'Chile: evitó el colapso con las reservas internacionales del Fisco.', 'Importancia: riesgo de solvencia de los instrumentos de deuda y errores de las clasificadoras.'], norma: 'Apunte de Gaspar, 6.4 (bonos securitizados)' },
+      // Videla / Cencosud
+      { tipo: 'vf', seccion: 'videla', sub: 'videla-problema', enunciado: 'Como la compra de la cadena de supermercados en Brasil no se concretó, la información que tenía Videla no era privilegiada.', respuesta: false, explicacion: 'La aptitud se juzga ex ante, al momento del hecho; no se exige que el precio cambie después. Además, un hecho reservado es información privilegiada per se (art. 164 LMV).' },
+      { tipo: 'alternativas', seccion: 'videla', sub: 'videla-decision', enunciado: '¿Por qué un hecho esencial reservado es información privilegiada «per se»?', opciones: ['Porque el art. 164 LMV lo califica así por mandato legal', 'Porque la CMF lo publica en su sitio web', 'Porque el precio de la acción siempre sube después', 'Porque lo aprueba la junta de accionistas'], correcta: 0, explicacion: 'Apunte de Gaspar, 9.2.1: cuando el directorio comunica reservadamente un hecho esencial a la CMF (art. 10 LMV), la materia se transforma automáticamente en información privilegiada.' },
+      { tipo: 'oral', seccion: 'videla', enunciado: 'Explique el caso Matías Videla (Cencosud) y su importancia en la materia.', puntos: ['Hechos: Cencosud negociaba comprar una cadena de supermercados en Brasil y lo comunicó a la CMF como hecho reservado, firmado por Videla; durante la reserva, él compró acciones de Cencosud; la operación se cayó.', 'Problema: ¿era información privilegiada si no se concretó? La aptitud se juzga ex ante.', 'Decisión: la CMF lo multó por uso de información privilegiada; la Corte de Apelaciones y la Corte Suprema confirmaron, con condena en costas, porque no había motivo plausible para litigar.', 'Importancia: el hecho reservado es información privilegiada per se (arts. 10 y 164 LMV).'], norma: 'Arts. 10, 164 y 165 LMV' },
+      // Navarrete / CAP
+      { tipo: 'relacionar', seccion: 'navarrete', sub: 'navarrete-problema', enunciado: 'Relaciona cada conducta prohibida con su descripción y su sanción, según el apunte.', pares: [['Uso de información privilegiada', 'Transar para ganar o evitar una pérdida: sanción de la CMF y delito'], ['Infracción al deber de abstención', 'Transar con la información sin fin especulativo: solo sanción de la CMF'], ['Revelación o comunicación', 'Transmitir la información o inducir a comprar: sanción de la CMF y delito']], explicacion: 'Apunte de Gaspar, 9.2.3 (arts. 165 y 166 LMV).' },
+      { tipo: 'alternativas', seccion: 'navarrete', sub: 'navarrete-hechos', enunciado: 'En el caso Navarrete, ¿qué información conocía Felipe Navarrete por su cargo?', opciones: ['Que su sociedad aumentaría su participación en CAP y obtendría un director adicional', 'Que CAP haría una OPA por Azul Azul', 'Los estados financieros deficitarios de Blanco y Negro', 'Que la CMF sancionaría a CAP'], correcta: 0, explicacion: 'Lo reveló en un almuerzo familiar, y sus hermanas compraron acciones de CAP durante ese mismo almuerzo.' },
+      { tipo: 'oral', seccion: 'navarrete', enunciado: 'Explique el caso Navarrete (CAP) y qué conductas prohibidas ilustra.', puntos: ['Hechos: un director sabía que su sociedad aumentaría su participación en CAP; en un almuerzo familiar se lo contó a sus hermanas, que compraron acciones de CAP en ese momento.', 'Conductas: uso (transar para ganar o evitar pérdida), deber de abstención (transar sin fin especulativo) y revelación o inducción.', 'Sanción: la CMF sancionó al director y a sus hermanas, y los tribunales lo ratificaron.', 'Importancia: no solo infringe quien compra; también quien revela o recomienda. Comparar con Blanco y Negro (uso frente a abstención).'], norma: 'Arts. 165 y 166 LMV' }
     ],
 
     glosario: []

@@ -108,8 +108,12 @@ materias/
   falta confirmar en qué materia) y D&S/Falabella (D&S no está en los apuntes; Falabella aparece una
   vez en el de Gaspar). No se publican hasta tener material.
 - Casos / Azul Azul: el apunte dice que la Corte Suprema confirmó, con fallo ejecutoriado, la obligación
-  de OPA. No se pudo confirmar en una fuente externa; según CNN Chile (oct. 2026), una multa anterior de
-  65.000 UF sigue en reclamación judicial (callout amarillo).
+  de OPA. No se pudo confirmar en una fuente externa: según CNN Chile (oct. 2026), Clark apeló a la Corte
+  Suprema, pero la nota no dice qué resolvió (callout amarillo). La multa de 65.000 UF a Clark que menciona
+  esa nota es la del caso Sartor (CMF, Res. N° 11.869 de 2025).
+- Casos / Navarrete: el apunte dice que se sancionó a los tres hermanos por revelación e inducción; la CMF
+  sancionó al director por uso y por infringir su deber de reserva, y a sus hermanas por no abstenerse
+  (callout amarillo). El apunte escribe «Ibercap»; la CMF, «Invercap».
 - Casos / La Polar: el apunte ubica el fallo de la Corte Suprema contra PwC «hacia 2020»; el Poder Judicial
   cita una sentencia de 3 de septiembre de 2021 (rol 8.429-2018). Nota en la página.
 - U3 3.2/3.3.2: el apunte de Goldenberg incluye a los directores entre los relacionados del art. 84 N°2
@@ -259,13 +263,14 @@ sección. Así heredan diapositivas, «Comprueba lo que leíste», modo oral, re
 5. `verificar.js` revisa que `enLaMateria` apunte a unidades, secciones y subsecciones existentes
    y que las fuentes sean links https con título.
 
-**Estado (financiamiento):** `casos.js` tiene Cofisa, Inverlink, Azul Azul, Cascadas y La Polar. Cada caso
-tiene subsecciones `<id>-hechos`, `-problema`, `-decision`, `-importancia` y `-contexto`; Azul Azul
-tiene además `azul-aristas`. El apunte de Gaspar marca con la nota «Pregunta de examen» los casos que
-pregunta en el oral. **Próxima tanda** (marcados así y aún sin página propia): Aurus y Sartor (5.2.5,
-«salvavidas»), Crisis Subprime (6.4), Matías Videla / Cencosud (9.2.1) y hermanos Navarrete / CAP
-(9.2.3). Otros casos mencionados en las unidades: Chang, Real Fondo, Howey, UDP, STF, Enron, Quiñenco,
-CMPC. Para las preguntas de NotebookLM: `/importar-preguntas financiamiento casos`.
+**Estado (financiamiento):** `casos.js` tiene, en el orden del apunte, Cofisa, Inverlink, Azul Azul, Aurus,
+Sartor, Crisis subprime, Cascadas, La Polar, Videla/Cencosud y Navarrete/CAP: todos los casos que el apunte
+de Gaspar marca con la nota «Pregunta de examen». Cada caso tiene subsecciones `<id>-hechos`,
+`-problema`, `-decision`, `-importancia` y `-contexto` (algunos, además, `-descubrimiento`,
+`-mecanismo`, `-chile` o `azul-aristas`). Las secciones se pueden reordenar (su `id` no cambia); las
+preguntas, solo al final. Otros casos mencionados en las unidades, sin página propia: Blanco y Negro,
+Piñera/LAN, Chang, Real Fondo, Howey, UDP, STF, Enron, Quiñenco, CMPC, Clínica Las Condes. Para las
+preguntas de NotebookLM: `/importar-preguntas financiamiento casos`.
 
 ## Cómo agregar una materia
 1. Agrega una línea en `materias/registro.js` con `activa: true`.
