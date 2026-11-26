@@ -59,6 +59,8 @@ materias/
     u9-mercado-valores-2.js   (puntos 7.1-7.7 de «Mercado de valores»; caso Almacenes París: pendiente,
                               no está en el apunte)
     u10-mercado-valores-3.js  (puntos 7.8-9 de «Mercado de valores» del apunte de Gaspar)
+    casos.js                  unidad especial de casos (tipo:'casos'): un caso por sección, con ficha
+                              (ver «Casos vistos en clases»)
 ```
 
 ## Plan de trabajo (seguir siempre este orden)
@@ -105,6 +107,11 @@ materias/
 - Casos: Chispas (al parecer se vio en clases, pero no está en ninguno de los dos apuntes completos;
   falta confirmar en qué materia) y D&S/Falabella (D&S no está en los apuntes; Falabella aparece una
   vez en el de Gaspar). No se publican hasta tener material.
+- Casos / Azul Azul: el apunte dice que la Corte Suprema confirmó, con fallo ejecutoriado, la obligación
+  de OPA. No se pudo confirmar en una fuente externa; según CNN Chile (oct. 2026), una multa anterior de
+  65.000 UF sigue en reclamación judicial (callout amarillo).
+- Casos / La Polar: el apunte ubica el fallo de la Corte Suprema contra PwC «hacia 2020»; el Poder Judicial
+  cita una sentencia de 3 de septiembre de 2021 (rol 8.429-2018). Nota en la página.
 - U3 3.2/3.3.2: el apunte de Goldenberg incluye a los directores entre los relacionados del art. 84 N°2
   (crédito permitido en condiciones no más favorables) y, a la vez, el N°4 prohíbe «en ningún caso» el
   crédito a directores y a sociedades en que participen. No se hicieron preguntas sobre ese cruce.
@@ -251,6 +258,14 @@ sección. Así heredan diapositivas, «Comprueba lo que leíste», modo oral, re
    Se agregan al final, como en cualquier unidad.
 5. `verificar.js` revisa que `enLaMateria` apunte a unidades, secciones y subsecciones existentes
    y que las fuentes sean links https con título.
+
+**Estado (financiamiento):** `casos.js` tiene Cofisa, Inverlink, Azul Azul, Cascadas y La Polar. Cada caso
+tiene subsecciones `<id>-hechos`, `-problema`, `-decision`, `-importancia` y `-contexto`; Azul Azul
+tiene además `azul-aristas`. El apunte de Gaspar marca con la nota «Pregunta de examen» los casos que
+pregunta en el oral. **Próxima tanda** (marcados así y aún sin página propia): Aurus y Sartor (5.2.5,
+«salvavidas»), Crisis Subprime (6.4), Matías Videla / Cencosud (9.2.1) y hermanos Navarrete / CAP
+(9.2.3). Otros casos mencionados en las unidades: Chang, Real Fondo, Howey, UDP, STF, Enron, Quiñenco,
+CMPC. Para las preguntas de NotebookLM: `/importar-preguntas financiamiento casos`.
 
 ## Cómo agregar una materia
 1. Agrega una línea en `materias/registro.js` con `activa: true`.
