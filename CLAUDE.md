@@ -200,7 +200,9 @@ NotebookLM redacta, Claude Code revisa cada dato contra el apunte y agrega solo 
 
 **Estado:** U1 (#12), U2 (#15), U3 (#16), U4 (#18), U5 (#19), U6 (#25), U7 (#26), U8 (#27), U9 (#28), U10 y casos listas. En U4–U10 casi
 todo salió repetido (entraron 13 de 26, 2 de 27, 5 de 26, 5 de 26, 8 de 26, 4 de 26 y 3 de 26): conviene más en unidades con pocas preguntas.
-En casos (fuente: apunte de Gaspar; Cofisa queda fuera) entraron 6 de 26: rinden las que comparan casos entre sí.
+En casos (fuente: apunte de Gaspar; Cofisa queda fuera) entraron 6 de 26 y, en la segunda tanda (Howey, Chang,
+Clínica Las Condes, LAN, Blanco y Negro), 3 de 26: rinden las que comparan casos entre sí. La clave de NotebookLM
+repite «Restle» y atribuye al apunte reglas de nulidad por omitir la OPA que no contiene.
 Los quiz se generan con `--difficulty hard` (el nivel más alto de NotebookLM).
 Nunca dos pull requests abiertos sobre la misma unidad.
 Fuente por unidad (opción `-s`): apunte de Goldenberg para U1–U4; apunte de Gaspar para U5–U10.
