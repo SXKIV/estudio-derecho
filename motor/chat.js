@@ -169,7 +169,7 @@
           var defs = conceptos.lista.slice(0, 3);
           var html = (defs.length > 1 ? 'Estas son las definiciones del glosario:' : 'Definición del glosario:') + defs.map(function (g) {
             return '<div class="frag"><div><b>' + esc(g.termino) + '</b></div><div>' + (g.literal ? '«' + esc(g.definicion) + '»' : esc(g.definicion)) + '</div>' +
-              '<div class="small">' + (g.fuente ? esc(g.fuente) + ' · ' : '') + esc(g.unidad.numero + '. ' + g.unidad.titulo) + '</div>' +
+              '<div class="small">' + (g.fuente ? esc(g.fuente) + ' · ' : '') + esc(E.nombreUnidad(g.unidad)) + '</div>' +
               '<div><a href="#/u/' + g.unidad.id + '/contenido/' + g.seccion + '">Ir a la sección →</a> · <a href="#/glosario/' + encodeURIComponent(g.id) + '">Ver en el glosario →</a></div></div>';
           }).join('');
           if (defs.length > 1) {
@@ -186,7 +186,7 @@
         }
         agregar('Esto es lo que dice la página:' + r.map(function (x) {
           var d = x.d, etiqueta = d.tipo === 'oral' ? 'Pauta oral' : d.tipo === 'expl' ? 'Explicación de pregunta' : d.tipo === 'glosario' ? 'Glosario' : 'Contenido';
-          return '<div class="frag"><div class="small"><b>' + esc(d.u.numero + '. ' + d.u.titulo) + '</b> › ' + esc(d.s.titulo) + ' · ' + etiqueta + '</div>' + resaltar(recortar(d.texto, 520), q) +
+          return '<div class="frag"><div class="small"><b>' + esc(E.nombreUnidad(d.u)) + '</b> › ' + esc(d.s.titulo) + ' · ' + etiqueta + '</div>' + resaltar(recortar(d.texto, 520), q) +
             (d.s.id ? '<div><a href="#/u/' + d.u.id + '/contenido/' + d.s.id + '">Ir a la sección →</a></div>' : '') + '</div>';
         }).join(''), 'bot');
       }

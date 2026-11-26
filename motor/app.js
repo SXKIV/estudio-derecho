@@ -30,6 +30,9 @@
       document.body.appendChild(s);
     });
   }
+  // Nombre visible de una unidad: «9. Mercado de valores II». Las unidades sin número
+  // (p. ej. la de casos, tipo:'casos') muestran solo su ícono y título.
+  function nombreUnidad(u) { return (u.icono ? u.icono + ' ' : '') + (u.numero != null ? u.numero + '. ' : '') + u.titulo; }
   function hoy() { var d = new Date(); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
 
   /* ---------------- registro de contenido ---------------- */
@@ -37,6 +40,7 @@
     materia: null,
     unidades: [],
     util: { esc: esc, $: $, $$: $$, el: el, toast: toast, modal: modal },
+    nombreUnidad: nombreUnidad,
     registrarMateria: function (cfg) { E.materia = cfg; },
     registrarUnidad: function (u) {
       u.secciones = u.secciones || []; u.interactivos = u.interactivos || []; u.preguntas = u.preguntas || [];
@@ -190,10 +194,10 @@
     E.materia.unidades.forEach(function (meta) {
       if (meta.bloque !== bloque) { bloque = meta.bloque; html += '<div class="lat-titulo">' + esc(bloque) + '</div>'; }
       var u = E.unidad(meta.id);
-      if (!u) { html += '<span class="lat-link pronto">' + esc(meta.numero + '. ' + meta.titulo) + '<span class="sub">Próximamente</span></span>'; return; }
+      if (!u) { html += '<span class="lat-link pronto">' + esc(nombreUnidad(meta)) + '<span class="sub">Próximamente</span></span>'; return; }
       var res = SRS.resumen(u.preguntas, d.preguntas);
       var activo = ruta === '#/u/' + u.id || ruta.indexOf('#/u/' + u.id + '/') === 0;
-      html += '<a class="lat-link' + (activo ? ' activo' : '') + '" href="#/u/' + u.id + '">' + esc(u.numero + '. ' + u.titulo) +
+      html += '<a class="lat-link' + (activo ? ' activo' : '') + '" href="#/u/' + u.id + '">' + esc(nombreUnidad(u)) +
         '<span class="sub">' + res.porcentaje + '% dominio · ' + res.total + ' preguntas</span>' + minibarra(res) + '</a>';
     });
     $('#lateral').innerHTML = html;
@@ -239,12 +243,12 @@
     E.materia.unidades.forEach(function (meta) {
       var u = E.unidad(meta.id);
       if (!u) {
-        html += '<div class="card" style="opacity:.6"><div class="kicker">' + esc(meta.bloque) + '</div><h3 style="margin-top:0">' + esc(meta.numero + '. ' + meta.titulo) + '</h3><span class="etiqueta">Próximamente</span></div>';
+        html += '<div class="card" style="opacity:.6"><div class="kicker">' + esc(meta.bloque) + '</div><h3 style="margin-top:0">' + esc(nombreUnidad(meta)) + '</h3><span class="etiqueta">Próximamente</span></div>';
         return;
       }
       var r = SRS.resumen(u.preguntas, d.preguntas);
       var leidas = u.secciones.filter(function (s) { return d.leidas[u.id + ':' + s.id]; }).length;
-      html += '<a class="card materia-card" href="#/u/' + u.id + '"><div class="kicker">' + esc(meta.bloque) + '</div><h3 style="margin-top:0">' + esc(u.numero + '. ' + u.titulo) + '</h3>' +
+      html += '<a class="card materia-card" href="#/u/' + u.id + '"><div class="kicker">' + esc(meta.bloque) + '</div><h3 style="margin-top:0">' + esc(nombreUnidad(u)) + '</h3>' +
         '<p class="small">' + leidas + ' de ' + u.secciones.length + ' secciones leídas · ' + r.porcentaje + '% dominio</p>' + minibarra(r) + '</a>';
     });
     html += '</div><div class="callout yellow" style="margin-top:26px"><p><b>Cómo estudiar con esta página:</b> lee la sección, prueba el ejemplo interactivo, practica las preguntas y explica en voz alta en el modo oral. El repaso del día te vuelve a preguntar lo que fallaste, como Anki.</p></div>';
@@ -256,7 +260,7 @@
     var r = SRS.resumen(u.preguntas, d.preguntas);
     var orales = u.preguntas.filter(function (q) { return q.tipo === 'oral'; });
     var html = '<div class="kicker">' + esc(u.bloque || (u.profesor ? 'Prof. ' + u.profesor : '')) + '</div>' +
-      '<h1>' + esc(u.numero + '. ' + u.titulo) + '</h1><p class="lead">' + esc(u.resumen || '') + '</p>' +
+      '<h1>' + esc(nombreUnidad(u)) + '</h1><p class="lead">' + esc(u.resumen || '') + '</p>' +
       '<div style="max-width:520px;margin-top:10px">' + barraGrande(r) + '</div>' +
       '<nav class="tabs">' +
       [['contenido', '📖 Contenido'], ['interactivos', '🧪 Ejemplos interactivos (' + u.interactivos.length + ')'], ['practicar', '✍️ Practicar (' + (u.preguntas.length - orales.length) + ')'], ['oral', '🎙️ Oral (' + orales.length + ')']].map(function (t) {
@@ -265,7 +269,7 @@
     v.innerHTML = html;
     var c = $('#cuerpo-unidad');
     if (pestana === 'interactivos') return pintarInteractivos(c, u);
-    if (pestana === 'practicar') return Quiz.selector(c, u.preguntas.filter(function (q) { return q.tipo !== 'oral'; }), { titulo: 'Practicar la unidad ' + u.numero });
+    if (pestana === 'practicar') return Quiz.selector(c, u.preguntas.filter(function (q) { return q.tipo !== 'oral'; }), { titulo: u.numero != null ? 'Practicar la unidad ' + u.numero : 'Practicar: ' + u.titulo });
     if (pestana === 'oral') return Quiz.oral(c, orales, {});
     pintarContenido(c, u, ancla, sub);
   }
@@ -305,6 +309,47 @@
     var inter = u.interactivos.filter(function (i) { return i.seccion === s.id; });
     return inter.length ? '<div class="callout green"><p>🧪 Ejemplo interactivo: ' + inter.map(function (i) { return '<a href="#/u/' + u.id + '/interactivos/' + i.id + '">' + esc(i.titulo) + '</a>'; }).join(' · ') + '</p></div>' : '';
   }
+  /* ---------------- casos ----------------
+     Una sección puede llevar una ficha (pensada para la unidad de casos, tipo:'casos'):
+       ficha: {
+         datos: [['Año', '2011'], ['Órgano', 'SVS (hoy CMF)']],              // filas libres
+         enLaMateria: [{ u: 'u9', seccion: '<id>', sub: '<data-sub>', nota: '…' }], // dónde se menciona
+         fuentes: [{ titulo: '…', url: 'https://…' }]                        // links externos
+       }
+     El motor dibuja la ficha sobre el html de la sección y, en cada sección nombrada en
+     enLaMateria, un aviso «Caso relacionado» que lleva de vuelta al caso. */
+  function buscarSeccion(uid, sid) {
+    var u = E.unidad(uid), s = u && u.secciones.filter(function (x) { return x.id === sid; })[0];
+    return s ? { u: u, s: s } : null;
+  }
+  function fichaCaso(s) {
+    var f = s.ficha; if (!f) return '';
+    var html = '<div class="ficha-caso">';
+    if (f.datos && f.datos.length) html += '<dl class="ficha-datos">' + f.datos.map(function (p) { return '<div><dt>' + esc(p[0]) + '</dt><dd>' + esc(p[1]) + '</dd></div>'; }).join('') + '</dl>';
+    var refs = (f.enLaMateria || []).map(function (r) {
+      var x = buscarSeccion(r.u, r.seccion); if (!x) return '';
+      var sub = r.sub && subseccionesDe(x.s).filter(function (y) { return y.id === r.sub; })[0];
+      return '<li><a href="' + rutaSec(x.u, x.s, sub && sub.id) + '">' + esc(nombreUnidad(x.u)) + ' › ' + esc(x.s.titulo) + (sub ? ' › ' + esc(sub.titulo) : '') + '</a>' +
+        (r.nota ? ' <span class="small">— ' + esc(r.nota) + '</span>' : '') + '</li>';
+    }).join('');
+    if (refs) html += '<div class="ficha-bloque"><div class="kicker">📍 Dónde se ve en la materia</div><ul>' + refs + '</ul></div>';
+    var fuentes = (f.fuentes || []).filter(function (x) { return /^https:\/\//.test(x.url || ''); }).map(function (x) {
+      return '<li><a href="' + esc(x.url) + '" target="_blank" rel="noopener noreferrer">' + esc(x.titulo) + ' ↗</a></li>';
+    }).join('');
+    if (fuentes) html += '<div class="ficha-bloque"><div class="kicker">🔗 Para saber más (fuentes externas)</div><ul>' + fuentes + '</ul></div>';
+    return html + '</div>';
+  }
+  function avisoCasos(u, s) {
+    var links = [];
+    E.unidades.forEach(function (cu) {
+      if (cu === u) return;
+      cu.secciones.forEach(function (cs) {
+        var refs = (cs.ficha && cs.ficha.enLaMateria) || [];
+        if (refs.some(function (r) { return r.u === u.id && r.seccion === s.id; })) links.push('<a href="' + rutaSec(cu, cs) + '">' + esc(cs.titulo) + '</a>');
+      });
+    });
+    return links.length ? '<div class="callout caso-relacionado"><p>⚖️ ' + (links.length === 1 ? 'Caso relacionado: ' : 'Casos relacionados: ') + links.join(' · ') + '</p></div>' : '';
+  }
   function conectarLeidas(c, u) {
     $$('.marcar-leida', c).forEach(function (b) {
       b.onclick = function () {
@@ -338,7 +383,7 @@
     if (u.lecturas) html += '<div class="callout"><p><b>Material base:</b> ' + u.lecturas + '</p></div>';
     html += '<div class="diapo-barra">' + chipsIndice(u, d, null) + '<div class="diapo-acciones">' + botonModo('lista') + '</div></div>';
     u.secciones.forEach(function (s) {
-      html += '<section class="seccion" id="sec-' + s.id + '">' + cabeceraSeccion(u, s, d) + s.html + avisoInteractivos(u, s) + '</section>';
+      html += '<section class="seccion" id="sec-' + s.id + '">' + cabeceraSeccion(u, s, d) + fichaCaso(s) + s.html + avisoInteractivos(u, s) + avisoCasos(u, s) + '</section>';
     });
     html += '<div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" style="text-decoration:none" href="#/u/' + u.id + '/practicar">Practicar esta unidad</a><a class="btn sec" style="text-decoration:none" href="#/u/' + u.id + '/oral">Preguntas orales</a></div>';
     c.innerHTML = html;
@@ -368,9 +413,9 @@
     html += '<div class="diapo-barra">' + chipsIndice(u, d, s.id) +
       '<div class="diapo-acciones"><span class="small">' + (i + 1) + ' de ' + secs.length + '</span>' + botonModo('diapositivas') + '</div></div>';
     html += '<div class="carrusel" id="carrusel">' + flecha(ant, 'izq') +
-      '<section class="seccion diapo' + (dir ? ' entra-' + dir : '') + '" id="sec-' + s.id + '">' + cabeceraSeccion(u, s, d) +
+      '<section class="seccion diapo' + (dir ? ' entra-' + dir : '') + '" id="sec-' + s.id + '">' + cabeceraSeccion(u, s, d) + fichaCaso(s) +
       (subs.length ? '<nav class="subindice" aria-label="Subsecciones">' + subs.map(function (x) { return '<a href="' + rutaSec(u, s, x.id) + '">' + esc(x.titulo) + '</a>'; }).join('') + '</nav>' : '') +
-      s.html + avisoInteractivos(u, s) +
+      s.html + avisoInteractivos(u, s) + avisoCasos(u, s) +
       '<div class="comprueba" id="comprueba"></div>' +
       '<nav class="diapo-nav">' +
         (ant ? '<a class="btn sec" href="' + rutaSec(u, ant) + '">← ' + esc(ant.titulo) + '</a>' : '<span></span>') +
@@ -474,7 +519,7 @@
   }
   function vistaKahoot(v) {
     var preguntas = E.todasLasPreguntas().filter(function (q) { return q.tipo === 'alternativas' || q.tipo === 'vf'; });
-    var opciones = E.unidades.map(function (u) { return '<option value="' + u.id + '">' + esc(u.numero + '. ' + u.titulo) + '</option>'; }).join('');
+    var opciones = E.unidades.map(function (u) { return '<option value="' + u.id + '">' + esc(nombreUnidad(u)) + '</option>'; }).join('');
     v.innerHTML = '<div class="kicker">Juego</div><h1>Modo Kahoot</h1><p class="lead">20 segundos por pregunta. Más rápido, más puntos; las rachas suman bonus. Tu récord queda guardado en tu perfil.</p>' +
       '<div class="interactivo"><div class="fila"><div class="campo"><label>Unidades</label><select id="k-uni"><option value="">Todas las unidades</option>' + opciones + '</select></div>' +
       '<div class="campo"><label>Preguntas</label><select id="k-n"><option>10</option><option selected>15</option><option>25</option></select></div><button class="btn" id="k-ir">¡Jugar!</button></div>' +
@@ -498,7 +543,7 @@
     var d = E.datos(), todos = E.glosario();
     var html = '<div class="kicker">Definiciones</div><h1>Glosario</h1><p class="lead">Los conceptos definidos en los apuntes, las diapositivas y las normas del curso. Las definiciones entre comillas son textuales de la norma o de la fuente citada; las demás son síntesis del material.</p>' +
       '<div class="interactivo" style="padding:16px 18px"><div class="fila" style="margin:0"><div class="campo" style="flex:1;min-width:220px"><label>Buscar concepto</label><input id="g-buscar" placeholder="Ej: anatocismo, prenda, OCD…" autocomplete="off"></div>' +
-      '<div class="campo"><label>Unidad</label><select id="g-uni"><option value="">Todas</option>' + E.unidades.filter(function (u) { return u.glosario.length; }).map(function (u) { return '<option value="' + u.id + '">' + esc(u.numero + '. ' + u.titulo) + '</option>'; }).join('') + '</select></div>' +
+      '<div class="campo"><label>Unidad</label><select id="g-uni"><option value="">Todas</option>' + E.unidades.filter(function (u) { return u.glosario.length; }).map(function (u) { return '<option value="' + u.id + '">' + esc(nombreUnidad(u)) + '</option>'; }).join('') + '</select></div>' +
       '<button class="btn" id="g-def">Practicar definiciones</button><button class="btn sec" id="g-alt">Adivina el concepto</button></div><div class="indice" id="g-letras" style="margin:12px 0 0"></div></div><div id="g-zona"></div><div id="g-lista"></div>';
     v.innerHTML = html;
     function estadoDe(t) {
@@ -524,7 +569,7 @@
         if (l !== actual) { actual = l; cab = '<h2 data-letra="' + l + '" style="margin:22px 0 10px;scroll-margin-top:90px">' + l + '</h2>'; }
         return cab + '<div class="card glosa" id="g-' + t.id + '" style="margin-bottom:10px;scroll-margin-top:90px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><h3 style="margin:0">' + esc(t.termino) + '</h3>' + estadoDe(t) + '</div>' +
           '<p style="margin:8px 0">' + (t.literal ? '«' + esc(t.definicion) + '»' : esc(t.definicion)) + '</p>' +
-          '<p class="small" style="margin:0">' + (t.fuente ? '<span class="norma">' + esc(t.fuente) + '</span> · ' : '') + '<a href="#/u/' + t.unidad.id + '/contenido/' + t.seccion + '">' + esc(t.unidad.numero + '. ' + t.unidad.titulo) + ' →</a></p></div>';
+          '<p class="small" style="margin:0">' + (t.fuente ? '<span class="norma">' + esc(t.fuente) + '</span> · ' : '') + '<a href="#/u/' + t.unidad.id + '/contenido/' + t.seccion + '">' + esc(nombreUnidad(t.unidad)) + ' →</a></p></div>';
       }).join('') : '<p class="muted">No hay conceptos que coincidan.</p>';
     }
     function practicar(tipo) {
@@ -548,7 +593,7 @@
       '<table class="tabla"><tr><th>Unidad / tema</th><th>Preguntas</th><th>Dominio</th><th>Estado</th></tr>';
     E.unidades.forEach(function (u) {
       var r = SRS.resumen(u.preguntas, d.preguntas);
-      html += '<tr><td><b><a href="#/u/' + u.id + '">' + esc(u.numero + '. ' + u.titulo) + '</a></b></td><td>' + r.total + '</td><td>' + r.porcentaje + '%</td><td style="min-width:160px">' + minibarra(r) + '</td></tr>';
+      html += '<tr><td><b><a href="#/u/' + u.id + '">' + esc(nombreUnidad(u)) + '</a></b></td><td>' + r.total + '</td><td>' + r.porcentaje + '%</td><td style="min-width:160px">' + minibarra(r) + '</td></tr>';
       u.secciones.forEach(function (s) {
         var qs = u.preguntas.filter(function (q) { return q.seccion === s.id; });
         if (!qs.length) return;
