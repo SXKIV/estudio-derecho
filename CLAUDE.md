@@ -114,6 +114,12 @@ materias/
 - Casos / Navarrete: el apunte dice que se sancionó a los tres hermanos por revelación e inducción; la CMF
   sancionó al director por uso y por infringir su deber de reserva, y a sus hermanas por no abstenerse
   (callout amarillo). El apunte escribe «Ibercap»; la CMF, «Invercap».
+- Casos / Chang: el apunte dice que Malta denegó la extradición por falta de tratado y de reciprocidad; según
+  El Dínamo (2018), la apelación se rechazó por defectos de la documentación (callout amarillo).
+- Casos / Blanco y Negro: el apunte llama «Gabriel Restle» al director que vendió y fecha el caso en 2020;
+  la CMF (nov. 2019) nombra a Gabriel Ruiz-Tagle y estados financieros al 31 de marzo de 2018 (callout
+  amarillo). La pregunta de NotebookLM ya publicada (Mosa, sección Navarrete) dice «Restle» en su
+  explicación: no se cambió para no alterar una pregunta publicada.
 - Casos / La Polar: el apunte ubica el fallo de la Corte Suprema contra PwC «hacia 2020»; el Poder Judicial
   cita una sentencia de 3 de septiembre de 2021 (rol 8.429-2018). Nota en la página.
 - U3 3.2/3.3.2: el apunte de Goldenberg incluye a los directores entre los relacionados del art. 84 N°2
@@ -264,14 +270,15 @@ sección. Así heredan diapositivas, «Comprueba lo que leíste», modo oral, re
 5. `verificar.js` revisa que `enLaMateria` apunte a unidades, secciones y subsecciones existentes
    y que las fuentes sean links https con título.
 
-**Estado (financiamiento):** `casos.js` tiene, en el orden del apunte, Cofisa, Inverlink, Azul Azul, Aurus,
-Sartor, Crisis subprime, Cascadas, La Polar, Videla/Cencosud y Navarrete/CAP: todos los casos que el apunte
-de Gaspar marca con la nota «Pregunta de examen». Cada caso tiene subsecciones `<id>-hechos`,
-`-problema`, `-decision`, `-importancia` y `-contexto` (algunos, además, `-descubrimiento`,
-`-mecanismo`, `-chile` o `azul-aristas`). Las secciones se pueden reordenar (su `id` no cambia); las
-preguntas, solo al final. Otros casos mencionados en las unidades, sin página propia: Blanco y Negro,
-Piñera/LAN, Chang, Real Fondo, Howey, UDP, STF, Enron, Quiñenco, CMPC, Clínica Las Condes. Para las
-preguntas de NotebookLM: `/importar-preguntas financiamiento casos`.
+**Estado (financiamiento):** `casos.js` tiene 15 casos, en el orden del apunte: Cofisa, Inverlink, Howey,
+Azul Azul, Aurus, Sartor, Crisis subprime, Chang, Clínica Las Condes, Piñera/LAN, Cascadas, La Polar,
+Videla/Cencosud, Blanco y Negro y Navarrete/CAP. Incluye todos los que el apunte de Gaspar marca con la
+nota «Pregunta de examen». Cada caso tiene subsecciones `<id>-hechos`, `-problema`, `-decision`,
+`-importancia` y `-contexto` (algunos con otras; los prefijos cortos son `clc-`, `lan-` y `byn-`). Las
+secciones se pueden reordenar (su `id` no cambia); las preguntas, solo al final. Otros casos mencionados
+en el apunte, sin página propia (son ejemplos breves): Real Fondo Capital (7.3), STF (7.6.3.3), Enron
+(7.8.2), Arcano (8.3), UDP (6.4, dentro de Subprime). Para las preguntas de NotebookLM:
+`/importar-preguntas financiamiento casos`.
 
 ## Cómo agregar una materia
 1. Agrega una línea en `materias/registro.js` con `activa: true`.
