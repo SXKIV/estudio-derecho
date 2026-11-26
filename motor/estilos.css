@@ -300,3 +300,14 @@ footer.pie{border-top:1px solid var(--line);padding:16px 22px;font-size:12.5px;c
   .marca b{font-size:12px;letter-spacing:.1em}
   .tema-btn{width:36px;height:36px}
 }
+
+/* Casos: ficha al inicio del caso y aviso «Caso relacionado» en las unidades (ver app.js) */
+.ficha-caso{border:1px solid var(--line);background:var(--superficie);border-radius:14px;padding:14px 16px;margin:4px 0 18px}
+.ficha-datos{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0 0 6px}
+.ficha-datos dt{font-size:11px;letter-spacing:.1em;font-weight:900;color:var(--muted);text-transform:uppercase}
+.ficha-datos dd{margin:2px 0 0;font-weight:750}
+.ficha-bloque{margin-top:10px}
+.ficha-bloque .kicker{margin-bottom:4px}
+.ficha-bloque ul{margin:0;padding-left:20px}
+.ficha-bloque li{margin:3px 0;line-height:1.45;overflow-wrap:anywhere}
+.callout.caso-relacionado{border-color:var(--ucdark);background:var(--azul-suave)}

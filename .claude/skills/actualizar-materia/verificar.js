@@ -13,7 +13,7 @@ let fallas = 0; const falla = m => { fallas++; console.log('  ✗ ' + m); };
 
 function cargar(leer) {
   const unidades = []; let materia = null;
-  const ctx = { Estudio: { registrarMateria: m => { materia = m; }, registrarUnidad: u => unidades.push(u) }, console, Number, Math, Date };
+  const ctx = { Estudio: { registrarMateria: m => { materia = m; }, registrarUnidad: u => unidades.push(Object.assign({ secciones: [], preguntas: [], glosario: [], interactivos: [] }, u)) }, console, Number, Math, Date };
   vm.createContext(ctx);
   const codigoMateria = leer(path.join(dir, 'materia.js'));
   if (codigoMateria == null) return null;
@@ -73,5 +73,21 @@ for (const meta of actual.materia.unidades) {
     a.secciones.forEach(s => { if (!secs.has(s.id)) console.log(`  ! ${u.id}: ya no existe la sección '${s.id}' (solo se pierde su marca de «leída»; justifícalo en el commit)`); });
   }
 }
+// Fichas de casos (campo 'ficha' de una sección): enLaMateria debe apuntar a unidad, sección y
+// subsección existentes; las fuentes deben ser links https con título.
+for (const u of actual.unidades) {
+  for (const s of u.secciones.filter(x => x.ficha)) {
+    const f = s.ficha;
+    (f.enLaMateria || []).forEach(r => {
+      const du = actual.unidades.find(x => x.id === r.u);
+      const ds = du && du.secciones.find(x => x.id === r.seccion);
+      if (!ds) return falla(`${u.id}/${s.id}: la ficha apunta a '${r.u}/${r.seccion}', que no existe`);
+      if (r.sub && !String(ds.html || '').includes(`data-sub="${r.sub}"`)) falla(`${u.id}/${s.id}: la ficha apunta a la subsección '${r.sub}', que no está en '${r.u}/${r.seccion}'`);
+    });
+    (f.fuentes || []).forEach(x => { if (!/^https:\/\//.test(x.url || '') || !x.titulo) falla(`${u.id}/${s.id}: fuente sin título o sin link https (${x.url || 'sin url'})`); });
+    (f.datos || []).forEach(p => { if (!Array.isArray(p) || p.length !== 2) falla(`${u.id}/${s.id}: cada fila de 'datos' debe ser [etiqueta, valor]`); });
+  }
+}
+
 console.log(fallas ? `\n${fallas} problema(s).` : `\nTodo bien${anterior ? ' (comparado con ' + ref + ')' : ''}.`);
 process.exit(fallas ? 1 : 0);

@@ -102,6 +102,9 @@ materias/
 - U7: descuento y factoring (clase de profesora invitada; falta material). La edición de
   Sandoval que tenemos (2005) no trata estos temas.
 - U9: caso Almacenes París (no está en el apunte).
+- Casos: Chispas (al parecer se vio en clases, pero no está en ninguno de los dos apuntes completos;
+  falta confirmar en qué materia) y D&S/Falabella (D&S no está en los apuntes; Falabella aparece una
+  vez en el de Gaspar). No se publican hasta tener material.
 - U3 3.2/3.3.2: el apunte de Goldenberg incluye a los directores entre los relacionados del art. 84 N°2
   (crédito permitido en condiciones no más favorables) y, a la vez, el N°4 prohíbe «en ningún caso» el
   crédito a directores y a sociedades en que participen. No se hicieron preguntas sobre ese cruce.
@@ -221,6 +224,33 @@ Sandoval no está en el cuaderno de NotebookLM.
    - Las opciones se muestran desordenadas; no uses «todas las anteriores».
    - Los `id` de preguntas se generan solos (`u1-q1`, …). No reordenes preguntas ya
      publicadas: el progreso guardado depende del orden. Agrega las nuevas al final.
+
+## Casos vistos en clases
+Los casos de una materia van en una **unidad especial**, `materias/<materia>/casos.js`: un caso por
+sección. Así heredan diapositivas, «Comprueba lo que leíste», modo oral, repaso y progreso.
+1. En `materia.js`, al final de `unidades`:
+   `{ id: 'casos', tipo: 'casos', icono: '⚖️', bloque: 'Casos', titulo: 'Casos vistos en clases', archivo: 'casos.js' }`
+   (sin `numero`: el motor muestra solo el ícono y el título). En `casos.js`, los mismos campos en
+   `Estudio.registrarUnidad({...})`.
+2. Cada caso es una sección con `id` fijo (`azul-azul`, `cofisa`…) y un campo `ficha` que dibuja el motor:
+   ```js
+   ficha: {
+     datos: [['Año', '…'], ['Órgano', '…']],                                // filas libres
+     enLaMateria: [{ u: 'u9', seccion: 'control', sub: 'ct-opa', nota: '…' }], // dónde se menciona
+     fuentes: [{ titulo: '…', url: 'https://…' }]                          // solo links https
+   }
+   ```
+   Cada sección nombrada en `enLaMateria` muestra sola un aviso «⚖️ Caso relacionado» con un link
+   al caso: no hay que editar las unidades.
+3. Contenido de cada caso: primero «Lo que dice el apunte» (con el número del punto); después
+   «Contexto (fuente externa)», separado y solo con datos confirmados en la fuente enlazada.
+   Imágenes: SVG propios o archivos en `materias/<materia>/casos/img/`, nunca fotos de prensa.
+   Sin videos incrustados (servicio externo).
+4. Preguntas: una oral por caso («Explique el caso X y su importancia en la materia»: hechos,
+   problema jurídico, norma, cómo se resolvió, por qué importa) y luego alternativas o V/F.
+   Se agregan al final, como en cualquier unidad.
+5. `verificar.js` revisa que `enLaMateria` apunte a unidades, secciones y subsecciones existentes
+   y que las fuentes sean links https con título.
 
 ## Cómo agregar una materia
 1. Agrega una línea en `materias/registro.js` con `activa: true`.
