@@ -266,6 +266,13 @@ sección. Así heredan diapositivas, «Comprueba lo que leíste», modo oral, re
    «Contexto (fuente externa)», separado y solo con datos confirmados en la fuente enlazada.
    Imágenes: SVG propios o archivos en `materias/<materia>/casos/img/`, nunca fotos de prensa.
    Sin videos incrustados (servicio externo).
+   **Infografías:** SVG en línea dentro de `<figure class="diagrama" style="max-width:440px;margin:16px auto">`
+   con `figcaption`, `role="img"` y `aria-label`. Usar `viewBox` de **320 de ancho** y diseño vertical (así
+   el texto de 12 px se lee a 390 px) y solo los colores que `estilos.css` adapta al modo oscuro (`#fff`,
+   `#eaf4fb`, `#eaf7f0`, `#fff7f7`, `#fff8cc`, `#fffdf0`, `#637386`, `#b9c7d4`; bordes `#1479c9`, `#c9a400`,
+   `#20845c`, `#c62828`). Los `marker` llevan id único (`m-<caso>`), porque en «Ver todo como lista» se ven
+   todos juntos. Para comparaciones, mejor HTML (`grid dos`, `tabla`, `flow`), que se adapta solo al celular.
+   Solo datos del apunte; si el esquema usa cifras de ejemplo, decirlo en el `figcaption`.
 4. Preguntas: una oral por caso («Explique el caso X y su importancia en la materia»: hechos,
    problema jurídico, norma, cómo se resolvió, por qué importa) y luego alternativas o V/F.
    Se agregan al final, como en cualquier unidad.
