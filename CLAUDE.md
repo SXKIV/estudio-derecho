@@ -33,6 +33,8 @@ Se publica con GitHub Pages desde la rama `main` y se comparte con amigos.
 ```
 index.html                  portada: lista de materias
 materia.html                la app (se abre como materia.html?m=<id>)
+docs/                       planes y propuestas (no se publican en la página)
+  plan-infografias-notebooklm.md   propuesta: NotebookLM hace el guion con citas, Claude verifica y dibuja SVG
 motor/                      igual para todas las materias — no depende del contenido
   estilos.css                 colores y diseño (paleta UC: azul #1479c9, amarillo #ffdd00);
                               los colores son variables de :root y se redefinen en
