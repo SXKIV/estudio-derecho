@@ -47,6 +47,30 @@
   <li>Sumado a la tasa pactada, Cofisa cobraba <b>por sobre la tasa máxima convencional</b>.</li>
   <li>El pacto de ese cobro se tuvo <b>por no escrito</b>.</li>
 </ul>
+<figure class="diagrama" style="max-width:440px;margin:16px auto">
+<svg viewBox="0 0 320 300" role="img" aria-label="Caso Cofisa: el interés informado estaba bajo la tasa máxima convencional; sumado a la AVM, la superaba">
+<g font-family="Inter,Segoe UI,Arial" font-size="12" text-anchor="middle">
+<line x1="20" y1="200" x2="300" y2="200" stroke="#b9c7d4" stroke-width="1.5"/>
+<rect x="40" y="140" width="90" height="60" rx="6" fill="#eaf4fb" stroke="#1479c9" stroke-width="2"/>
+<text x="85" y="175" font-weight="700">Interés</text>
+<rect x="190" y="140" width="90" height="60" fill="#eaf4fb" stroke="#1479c9" stroke-width="2"/>
+<text x="235" y="175" font-weight="700">Interés</text>
+<rect x="190" y="70" width="90" height="70" fill="#fff7f7" stroke="#c62828" stroke-width="2"/>
+<text x="235" y="92" font-weight="800" fill="#c62828">AVM</text>
+<text x="235" y="128" font-size="10.5" fill="#637386">monto × cuotas</text>
+<line x1="20" y1="110" x2="300" y2="110" stroke="#c9a400" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="22" y="103" text-anchor="start" font-size="11.5" font-weight="700" fill="#637386">Tasa máxima convencional</text>
+<text x="85" y="220" font-weight="700">Lo informado</text>
+<text x="85" y="236" font-size="11" fill="#637386">bajo la máxima</text>
+<text x="235" y="220" font-weight="700">Lo cobrado</text>
+<text x="235" y="236" font-size="11" fill="#c62828">sobre la máxima</text>
+<rect x="20" y="252" width="280" height="42" rx="10" fill="#eaf7f0" stroke="#20845c" stroke-width="2"/>
+<text x="160" y="269" font-size="11.5" font-weight="700">La AVM es interés (art. 2° Ley 18.010):</text>
+<text x="160" y="286" font-size="11.5">la cláusula se tiene por no escrita</text>
+</g>
+</svg>
+<figcaption>La «comisión» crecía con el número de cuotas: era interés. Esquema ilustrativo, sin cifras reales.</figcaption>
+</figure>
 <h3 data-sub="cofisa-importancia">Por qué importa en la materia</h3>
 <ul>
   <li>Muestra el <b>efecto expansivo del interés</b> (art. 2°): el nombre del cobro no decide.</li>
@@ -93,6 +117,36 @@
   <li>El <span class="norma">art. 28 Ley 18.092</span> (inoponibilidad de excepciones en el endoso traslaticio) protegió a los terceros. Los fraudes entre la Corfo e Inverlink les eran inoponibles.</li>
   <li>La Corfo y el Fisco no pudieron requisar los títulos en manos de tenedores de buena fe. Tuvieron que demandar <b>indemnización de perjuicios</b> a los primeros adquirentes y a las corredoras en que se probó mala fe.</li>
 </ul>
+<figure class="diagrama" style="max-width:440px;margin:16px auto">
+<svg viewBox="0 0 320 330" role="img" aria-label="Caso Inverlink: los depósitos de la Corfo pasaron por endoso a fondos mutuos de buena fe; la Corfo no pudo reivindicarlos">
+<defs><marker id="m-inv" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 z" fill="#637386"/></marker></defs>
+<g font-family="Inter,Segoe UI,Arial" font-size="12" text-anchor="middle">
+<rect x="40" y="8" width="240" height="46" rx="12" fill="#fff" stroke="#1479c9" stroke-width="2"/>
+<text x="160" y="28" font-weight="800">Corfo</text>
+<text x="160" y="45" font-size="11.5" fill="#637386">depósitos a plazo en papel</text>
+<line x1="160" y1="55" x2="160" y2="86" stroke="#637386" stroke-width="1.6" marker-end="url(#m-inv)"/>
+<text x="170" y="75" text-anchor="start" font-size="11" fill="#c62828">endoso con fraude</text>
+<rect x="40" y="88" width="240" height="46" rx="12" fill="#fff7f7" stroke="#c62828" stroke-width="2"/>
+<text x="160" y="108" font-weight="800">Inverlink</text>
+<text x="160" y="125" font-size="11.5" fill="#637386">los recibe con un vicio de origen</text>
+<line x1="160" y1="135" x2="160" y2="166" stroke="#637386" stroke-width="1.6" marker-end="url(#m-inv)"/>
+<text x="170" y="155" text-anchor="start" font-size="11" font-weight="700" fill="#20845c">endosos: art. 28</text>
+<rect x="40" y="168" width="240" height="46" rx="12" fill="#eaf7f0" stroke="#20845c" stroke-width="2"/>
+<text x="160" y="188" font-weight="800">Fondos mutuos de buena fe</text>
+<text x="160" y="205" font-size="11.5" fill="#637386">derecho propio, limpio del vicio</text>
+<text x="160" y="240" font-weight="800">¿Qué podía hacer la Corfo?</text>
+<rect x="10" y="250" width="145" height="70" rx="10" fill="#fff7f7" stroke="#c62828" stroke-width="2"/>
+<text x="82.5" y="270" font-weight="800" fill="#c62828">✗ Reivindicar</text>
+<text x="82.5" y="287" font-size="11">«jarrón de la abuela»</text>
+<text x="82.5" y="303" font-size="11" fill="#637386">no procede</text>
+<rect x="165" y="250" width="145" height="70" rx="10" fill="#eaf7f0" stroke="#20845c" stroke-width="2"/>
+<text x="237.5" y="270" font-weight="800" fill="#20845c">✓ Indemnización</text>
+<text x="237.5" y="287" font-size="11">contra quienes</text>
+<text x="237.5" y="303" font-size="11">actuaron de mala fe</text>
+</g>
+</svg>
+<figcaption>Autonomía e inoponibilidad de excepciones (art. 28 Ley 18.092): el vicio no pasa al adquirente de buena fe.</figcaption>
+</figure>
 <h3 data-sub="inverlink-importancia">Por qué importa en la materia</h3>
 <ul>
   <li>Según el profesor, la idea del «jarrón» fue un <b>grave error conceptual</b>: aplicaba una regla reivindicatoria civil a títulos de crédito, que son autónomos.</li>
@@ -305,6 +359,10 @@
   <li>El apunte lo cita como ejemplo de <b>información falsa</b> perseguida a la vez en sede administrativa y penal (8.3).</li>
   <li>Conecta con <b>Azul Azul</b>: el mismo grupo financió la toma de control del club.</li>
 </ul>
+<div class="grid dos">
+<div class="card"><div class="kicker">Aurus (2016)</div><h4 style="margin:4px 0 8px">Deber de diligencia</h4><ul style="margin:0;padding-left:18px"><li>Un director defraudó; el resto <b>no controló</b>.</li><li>Los directores <b>indemnizaron</b> unos US$20 millones y cerraron la AGF.</li><li>Multa por negligencia: <b>1.000 UF</b> por director.</li></ul></div>
+<div class="card"><div class="kicker">Sartor (2024)</div><h4 style="margin:4px 0 8px">Deber de lealtad</h4><ul style="margin:0;padding-left:18px"><li>Préstamos sin garantías a empresas de <b>los propios dueños</b>.</li><li><b>Sin indemnización</b>: pérdida del 50% al 70% de las cuotas.</li><li>Intervención de la CMF y <b>formalizaciones</b> penales.</li></ul></div>
+</div>
 <h3 data-sub="sartor-contexto">Contexto (fuente externa)</h3>
 <p class="small">Fuera del apunte. Datos de los comunicados de la CMF enlazados en la ficha.</p>
 <ul>
@@ -345,6 +403,31 @@
   <li>Se llegó a prestar hasta el <b>110%</b> del valor de la vivienda, sin pie.</li>
 </ul>
 <div class="callout"><p><b>Ejemplo del apunte:</b> el banco presta US$110.000 a un deudor NINJA para una casa de US$100.000. Supone que en un año la casa valdrá US$130.000 y que su remate cubrirá la deuda. Pero la casa cae a US$60.000: el remate no alcanza, el deudor abandona la casa y el bono respaldado por esa hipoteca pierde todo su valor.</p></div>
+<figure class="diagrama" style="max-width:440px;margin:16px auto">
+<svg viewBox="0 0 320 232" role="img" aria-label="Ejemplo del apunte: préstamo de 110.000 dólares por una casa de 100.000 que se esperaba valiera 130.000 y terminó valiendo 60.000">
+<g font-family="Inter,Segoe UI,Arial" font-size="12" text-anchor="middle">
+<text x="10" y="16" text-anchor="start" font-weight="800">Ejemplo del apunte (en US$)</text>
+<text x="86" y="46" text-anchor="end">Préstamo</text>
+<rect x="92" y="28" width="160" height="26" rx="4" fill="#fff7f7" stroke="#c62828" stroke-width="1.5"/>
+<text x="98" y="46" text-anchor="start" font-weight="700">110.000</text>
+<text x="86" y="80" text-anchor="end">Casa hoy</text>
+<rect x="92" y="62" width="145" height="26" rx="4" fill="#eaf4fb" stroke="#1479c9" stroke-width="1.5"/>
+<text x="98" y="80" text-anchor="start" font-weight="700">100.000</text>
+<text x="86" y="114" text-anchor="end">Esperado</text>
+<rect x="92" y="96" width="189" height="26" rx="4" fill="#eaf7f0" stroke="#20845c" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="98" y="114" text-anchor="start" font-weight="700">130.000</text>
+<text x="86" y="148" text-anchor="end">Real</text>
+<rect x="92" y="130" width="87" height="26" rx="4" fill="#fff8cc" stroke="#c9a400" stroke-width="1.5"/>
+<text x="98" y="148" text-anchor="start" font-weight="700">60.000</text>
+<line x1="252" y1="24" x2="252" y2="162" stroke="#c62828" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="252" y="174" font-size="10.5" fill="#c62828">deuda</text>
+<rect x="8" y="184" width="304" height="42" rx="10" fill="#fff7f7" stroke="#c62828" stroke-width="2"/>
+<text x="160" y="201" font-size="11.5" font-weight="700">El remate no cubre la deuda:</text>
+<text x="160" y="218" font-size="11">el bono respaldado por esa hipoteca pierde valor</text>
+</g>
+</svg>
+<figcaption>La banca confió en que el precio de la casa seguiría subiendo, no en la capacidad de pago del deudor.</figcaption>
+</figure>
 <h3 data-sub="subprime-problema">Qué falló</h3>
 <ul>
   <li>Hacia 2006-2007, las autoridades monetarias <b>subieron las tasas</b> para controlar la inflación. El crédito se encareció, bajó la demanda de viviendas y sus precios se desplomaron.</li>
@@ -398,6 +481,41 @@
   <li>Chile pidió su extradición por delitos de la LMV y estafa. Según el apunte, Malta la denegó por falta de tratado de extradición y de reciprocidad.</li>
   <li>En Chile, el proceso penal siguió contra quienes figuraban formalmente en sus sociedades. Es el caso emblemático de sanción penal por ofertas públicas no autorizadas.</li>
 </ul>
+<figure class="diagrama" style="max-width:440px;margin:16px auto">
+<svg viewBox="0 0 320 300" role="img" aria-label="Árbol de decisión: si la oferta calza en una hipótesis de oferta privada no se inscribe; si no, es oferta pública y exige inscripción previa; ofrecer sin inscribirse es delito">
+<defs><marker id="m-cha" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 z" fill="#637386"/></marker></defs>
+<g font-family="Inter,Segoe UI,Arial" font-size="12" text-anchor="middle">
+<rect x="10" y="8" width="300" height="96" rx="12" fill="#fff" stroke="#1479c9" stroke-width="2"/>
+<text x="160" y="28" font-weight="800">¿Es oferta privada (NCG 336/452)?</text>
+<g text-anchor="start" font-size="10.5" fill="#637386">
+<text x="24" y="46">• solo a inversionistas calificados</text>
+<text x="24" y="60">• hasta 250 calificados y 50 no calificados</text>
+<text x="24" y="74">• hasta 50 no calificados</text>
+<text x="24" y="88">• instrumentos de 3.000 UF o más por unidad</text>
+</g>
+<line x1="110" y1="104" x2="82" y2="134" stroke="#637386" stroke-width="1.6" marker-end="url(#m-cha)"/>
+<text x="84" y="122" font-weight="800" fill="#20845c">Sí</text>
+<line x1="210" y1="104" x2="238" y2="134" stroke="#637386" stroke-width="1.6" marker-end="url(#m-cha)"/>
+<text x="238" y="122" font-weight="800" fill="#c62828">No</text>
+<rect x="10" y="136" width="140" height="52" rx="10" fill="#eaf7f0" stroke="#20845c" stroke-width="2"/>
+<text x="80" y="157" font-weight="800">Oferta privada</text>
+<text x="80" y="175" font-size="11" fill="#637386">sin inscripción</text>
+<rect x="170" y="136" width="140" height="52" rx="10" fill="#fff8cc" stroke="#c9a400" stroke-width="2"/>
+<text x="240" y="157" font-weight="800">Oferta pública</text>
+<text x="240" y="175" font-size="11" fill="#637386">inscripción previa</text>
+<text x="80" y="208" font-size="11" fill="#637386">Ej.: bonos de 3.500 UF</text>
+<text x="80" y="223" font-size="11" fill="#637386">o solo AFP y bancos</text>
+<line x1="240" y1="188" x2="240" y2="218" stroke="#637386" stroke-width="1.6" marker-end="url(#m-cha)"/>
+<text x="232" y="207" text-anchor="end" font-size="10.5" fill="#c62828">sin inscribirse</text>
+<rect x="170" y="220" width="140" height="74" rx="10" fill="#fff7f7" stroke="#c62828" stroke-width="2"/>
+<text x="240" y="240" font-weight="800" fill="#c62828">Delito</text>
+<text x="240" y="256" font-size="11">art. 62 a) LMV</text>
+<text x="240" y="272" font-size="11" fill="#637386">Chang: pagarés al</text>
+<text x="240" y="287" font-size="11" fill="#637386">público en general</text>
+</g>
+</svg>
+<figcaption>Hipótesis de la NCG 336, modificada por la NCG 452/2021 (apunte, 7.4.2). Número del artículo según el apunte.</figcaption>
+</figure>
 <h3 data-sub="chang-importancia">Por qué importa en la materia</h3>
 <ul>
   <li>Explica el sentido de la <b>inscripción previa</b> (control <i>ex ante</i>): no es una garantía estatal de solvencia, sino un resguardo contra el engaño y el ocultamiento de información.</li>
@@ -447,6 +565,36 @@
   </li>
   <li>Esa toma de control <b>tampoco exigió OPA</b>: se originó en la suscripción de un aumento de capital, que es una excepción legal.</li>
 </ul>
+<figure class="diagrama" style="max-width:440px;margin:16px auto">
+<svg viewBox="0 0 320 272" role="img" aria-label="Clínica Las Condes: antes del aumento de capital Euroamérica (26,5%) no superaba a Indisa más el tercero (31,5%); después, el tercero quedó bajo el 5% y Euroamérica pasó a ser controladora">
+<g font-family="Inter,Segoe UI,Arial" font-size="12" text-anchor="middle">
+<text x="10" y="16" text-anchor="start" font-weight="800">Antes del aumento de capital</text>
+<text x="94" y="40" text-anchor="end">Euroamérica</text>
+<rect x="100" y="26" width="146" height="20" rx="3" fill="#eaf4fb" stroke="#1479c9" stroke-width="1.5"/>
+<text x="252" y="40" text-anchor="start" font-weight="700">26,5%</text>
+<text x="94" y="66" text-anchor="end">Indisa</text>
+<rect x="100" y="52" width="140" height="20" rx="3" fill="#fff8cc" stroke="#c9a400" stroke-width="1.5"/>
+<rect x="240" y="52" width="33" height="20" rx="3" fill="#fffdf0" stroke="#c9a400" stroke-width="1.5" stroke-dasharray="4 2"/>
+<text x="256.5" y="66" font-size="10">6%</text>
+<text x="279" y="66" text-anchor="start" font-weight="700">31,5%</text>
+<text x="256.5" y="84" font-size="9.5" fill="#637386">tercero</text>
+<text x="160" y="104" font-weight="800" fill="#c62828">26,5% &lt; 31,5%: no es controlador</text>
+<text x="10" y="134" text-anchor="start" font-weight="800">Después: el tercero no suscribe</text>
+<text x="94" y="158" text-anchor="end">Euroamérica</text>
+<rect x="100" y="144" width="146" height="20" rx="3" fill="#eaf4fb" stroke="#1479c9" stroke-width="1.5"/>
+<text x="252" y="158" text-anchor="start" font-weight="700">26,5%</text>
+<text x="94" y="184" text-anchor="end">Indisa</text>
+<rect x="100" y="170" width="140" height="20" rx="3" fill="#fff8cc" stroke="#c9a400" stroke-width="1.5"/>
+<text x="246" y="184" text-anchor="start" font-weight="700">25,5%</text>
+<text x="94" y="210" text-anchor="end">Tercero</text>
+<rect x="100" y="196" width="25" height="20" rx="3" fill="#fff" stroke="#b9c7d4" stroke-width="1.5" stroke-dasharray="4 2"/>
+<text x="131" y="210" text-anchor="start" font-size="11" fill="#637386">4,5%: bajo el 5%, no cuenta</text>
+<text x="160" y="240" font-weight="800" fill="#20845c">26,5% &gt; 25,5%: es controlador (art. 97)</text>
+<text x="160" y="260" font-size="11" fill="#637386">Sin OPA: vino de un aumento de capital</text>
+</g>
+</svg>
+<figcaption>Cifras aproximadas del apunte (7.5.4). Sub-hipótesis del art. 97: entre 25% y 40%, frente a quienes tienen 5% o más.</figcaption>
+</figure>
 <h3 data-sub="clc-importancia">Por qué importa en la materia</h3>
 <ul>
   <li>Muestra que la OPA nace de <b>tomar el control</b>, no del tamaño de la compra (7.5.3).</li>
@@ -488,6 +636,13 @@
   <li>Completa el cuadro de la OPA: compra directa o indirecta del control (Azul Azul, sí); dos compradores sin pacto (Clínica Las Condes, no); pacto entre accionistas (LAN, no, pero se informa).</li>
   <li>Es el antecedente del <b>caso Blanco y Negro</b>: directores que transan tras aprobar estados financieros aún no publicados.</li>
 </ul>
+<table class="tabla">
+<tr><th>Caso</th><th>Cómo se obtuvo el control</th><th>¿OPA?</th></tr>
+<tr><td><b>Azul Azul</b></td><td>Compra indirecta: las cuotas del FIP que tenía cerca del 63%</td><td><span class="etiqueta roja">Sí</span></td></tr>
+<tr><td><b>Clínica Las Condes</b> (venta)</td><td>Dos compradores por separado y sin pacto: ninguno toma el control</td><td><span class="etiqueta verde">No</span></td></tr>
+<tr><td><b>Clínica Las Condes</b> (después)</td><td>Euroamérica pasa a controlar al suscribir un aumento de capital</td><td><span class="etiqueta verde">No</span> excepción legal</td></tr>
+<tr><td><b>LAN</b></td><td>Pacto de actuación conjunta, sin compra de acciones</td><td><span class="etiqueta verde">No</span> pero se informa (art. 54)</td></tr>
+</table>
 <h3 data-sub="lan-contexto">Contexto (fuente externa)</h3>
 <p class="small">Fuera del apunte. Datos de las notas de Cooperativa enlazadas en la ficha.</p>
 <ul>
@@ -568,6 +723,39 @@
   <li><b>La señal:</b> en la crisis de 2007-2008, el resto del retail (Falabella, Ripley, Cencosud) cayó. La Polar, en cambio, reportaba resultados «espectaculares». Su acción superó los $2.400.</li>
   <li><b>El colapso:</b> un inversionista, asesorado por abogados recién titulados de la UDP, cuestionó los números ante la SVS y la SBIF. La fiscalización hizo colapsar la burbuja en <b>junio de 2011</b>. La acción cayó a $20–30, una pérdida de más del 99%.</li>
 </ul>
+<figure class="diagrama" style="max-width:440px;margin:16px auto">
+<svg viewBox="0 0 320 305" role="img" aria-label="Ciclo de La Polar: cliente moroso, repactación unilateral, crédito nuevo al día y utilidades infladas que suben la acción">
+<defs><marker id="m-pol" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 z" fill="#637386"/></marker></defs>
+<g font-family="Inter,Segoe UI,Arial" font-size="12" text-anchor="middle">
+<rect x="8" y="10" width="138" height="70" rx="10" fill="#fff" stroke="#1479c9" stroke-width="2"/>
+<text x="77" y="32" font-weight="800">1. Cliente moroso</text>
+<text x="77" y="50" font-size="11" fill="#637386">el crédito debía</text>
+<text x="77" y="65" font-size="11" fill="#637386">castigarse</text>
+<rect x="174" y="10" width="138" height="70" rx="10" fill="#fff7f7" stroke="#c62828" stroke-width="2"/>
+<text x="243" y="32" font-weight="800" fill="#c62828">2. Repactación</text>
+<text x="243" y="50" font-size="11">unilateral, de noche,</text>
+<text x="243" y="65" font-size="11">sin consentimiento</text>
+<rect x="174" y="118" width="138" height="70" rx="10" fill="#fff" stroke="#1479c9" stroke-width="2"/>
+<text x="243" y="140" font-weight="800">3. Crédito nuevo</text>
+<text x="243" y="158" font-size="11" fill="#637386">mayor y «al día»</text>
+<text x="243" y="173" font-size="11" fill="#637386">sin castigo</text>
+<rect x="8" y="118" width="138" height="70" rx="10" fill="#fff8cc" stroke="#c9a400" stroke-width="2"/>
+<text x="77" y="140" font-weight="800">4. Utilidades</text>
+<text x="77" y="158" font-size="11">infladas: la acción</text>
+<text x="77" y="173" font-size="11">supera los $2.400</text>
+<line x1="146" y1="45" x2="172" y2="45" stroke="#637386" stroke-width="1.6" marker-end="url(#m-pol)"/>
+<line x1="243" y1="80" x2="243" y2="116" stroke="#637386" stroke-width="1.6" marker-end="url(#m-pol)"/>
+<line x1="174" y1="153" x2="148" y2="153" stroke="#637386" stroke-width="1.6" marker-end="url(#m-pol)"/>
+<line x1="77" y1="118" x2="77" y2="82" stroke="#637386" stroke-width="1.6" marker-end="url(#m-pol)"/>
+<rect x="8" y="208" width="304" height="90" rx="10" fill="#fffdf0" stroke="#c9a400" stroke-width="1.5"/>
+<text x="160" y="228" font-size="11.5" font-weight="800">Incentivo: stock options (2005)</text>
+<text x="160" y="246" font-size="11">Colapso: junio de 2011, tras la fiscalización</text>
+<text x="160" y="262" font-size="11">de la SVS; la acción cae más de 99%</text>
+<text x="160" y="280" font-size="11" fill="#637386">Auditora (PwC): faltó escepticismo profesional</text>
+</g>
+</svg>
+<figcaption>El mecanismo que describe el apunte (7.8.2): sin castigo de los morosos, las utilidades eran artificiales.</figcaption>
+</figure>
 <h3 data-sub="polar-problema">Problema jurídico</h3>
 <p>¿Quién responde cuando un emisor entrega información falsa al mercado? Además de los ejecutivos, ¿responden los <b>auditores externos</b> que certificaron esos estados financieros, aunque digan que también fueron engañados?</p>
 <h3 data-sub="polar-decision">Cómo se resolvió</h3>
@@ -622,6 +810,32 @@
   <li>La Corte de Apelaciones y la Corte Suprema confirmaron la multa, con una severa <b>condena en costas</b>.</li>
   <li>La razón: Videla no tenía ningún motivo plausible para litigar. Un hecho reservado es información privilegiada <b>per se</b> por mandato del <span class="norma">art. 164 LMV</span>.</li>
 </ul>
+<figure class="diagrama" style="max-width:440px;margin:16px auto">
+<svg viewBox="0 0 320 268" role="img" aria-label="Línea de tiempo del caso Videla: negociación en Brasil, hecho reservado, compra de acciones durante la reserva y negocio caído">
+<g font-family="Inter,Segoe UI,Arial" font-size="12" text-anchor="middle">
+<line x1="24" y1="18" x2="24" y2="190" stroke="#b9c7d4" stroke-width="3"/>
+<rect x="16" y="68" width="16" height="112" rx="8" fill="#fff8cc" stroke="#c9a400" stroke-width="1.5"/>
+<circle cx="24" cy="20" r="7" fill="#fff" stroke="#1479c9" stroke-width="2"/>
+<circle cx="24" cy="74" r="7" fill="#fff8cc" stroke="#c9a400" stroke-width="2"/>
+<circle cx="24" cy="124" r="7" fill="#c62828"/>
+<circle cx="24" cy="174" r="7" fill="#fff" stroke="#637386" stroke-width="2"/>
+<g text-anchor="start">
+<text x="44" y="22" font-weight="800">Cencosud negocia comprar</text>
+<text x="44" y="37" font-size="11" fill="#637386">una cadena de supermercados en Brasil</text>
+<text x="44" y="76" font-weight="800">Hecho reservado ante la CMF</text>
+<text x="44" y="91" font-size="11" fill="#637386">lo firma Videla, el gerente general</text>
+<text x="44" y="126" font-weight="800" fill="#c62828">Videla compra acciones</text>
+<text x="44" y="141" font-size="11">durante la reserva: privilegiada per se</text>
+<text x="44" y="176" font-weight="800">El negocio se cae</text>
+<text x="44" y="191" font-size="11" fill="#637386">no cambia nada: se juzga ex ante</text>
+</g>
+<rect x="8" y="208" width="304" height="52" rx="10" fill="#eaf7f0" stroke="#20845c" stroke-width="2"/>
+<text x="160" y="229" font-weight="800">Multa de la CMF, confirmada</text>
+<text x="160" y="246" font-size="11">por las Cortes, con condena en costas</text>
+</g>
+</svg>
+<figcaption>La franja amarilla es el período de reserva: información privilegiada per se (arts. 10 y 164 LMV).</figcaption>
+</figure>
 <h3 data-sub="videla-importancia">Por qué importa en la materia</h3>
 <ul>
   <li>Es el ejemplo del <b>objeto</b> de la información privilegiada (9.2.1): cuando el directorio comunica un hecho esencial como reservado (<span class="norma">art. 10 LMV</span>), la información pasa a ser privilegiada de forma automática.</li>
@@ -656,6 +870,34 @@
   <li>El directorio de Blanco y Negro S.A. (concesionaria de Colo-Colo) aprobó estados financieros con <b>resultados deficitarios</b>.</li>
   <li>Al día siguiente, antes de que se difundieran, un director <b>vendió</b> acciones y otro, Aníbal Mosa, <b>compró</b>.</li>
 </ul>
+<figure class="diagrama" style="max-width:440px;margin:16px auto">
+<svg viewBox="0 0 320 268" role="img" aria-label="Caso Blanco y Negro: tras aprobar un balance deficitario, un director vendió (uso) y Mosa compró (deber de abstención) antes de que se publicara">
+<defs><marker id="m-byn" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 z" fill="#637386"/></marker></defs>
+<g font-family="Inter,Segoe UI,Arial" font-size="12" text-anchor="middle">
+<rect x="30" y="8" width="260" height="46" rx="12" fill="#fff" stroke="#1479c9" stroke-width="2"/>
+<text x="160" y="27" font-weight="800">Directorio aprueba balance</text>
+<text x="160" y="44" font-size="11" fill="#637386">con resultados deficitarios</text>
+<text x="160" y="74" font-size="11" fill="#637386">Al día siguiente, antes de difundirlo:</text>
+<line x1="110" y1="82" x2="88" y2="100" stroke="#637386" stroke-width="1.6" marker-end="url(#m-byn)"/>
+<line x1="210" y1="82" x2="232" y2="100" stroke="#637386" stroke-width="1.6" marker-end="url(#m-byn)"/>
+<rect x="10" y="102" width="145" height="96" rx="10" fill="#fff7f7" stroke="#c62828" stroke-width="2"/>
+<text x="82.5" y="122" font-weight="800">Un director vende</text>
+<text x="82.5" y="139" font-size="11">para evitar la pérdida</text>
+<text x="82.5" y="162" font-weight="800" fill="#c62828">USO</text>
+<text x="82.5" y="180" font-size="11" fill="#637386">CMF + delito</text>
+<rect x="165" y="102" width="145" height="96" rx="10" fill="#fff8cc" stroke="#c9a400" stroke-width="2"/>
+<text x="237.5" y="122" font-weight="800">Mosa compra</text>
+<text x="237.5" y="139" font-size="10.5">para aumentar su control</text>
+<text x="237.5" y="162" font-weight="800">ABSTENCIÓN</text>
+<text x="237.5" y="180" font-size="11" fill="#637386">solo CMF, no delito</text>
+<line x1="82" y1="198" x2="138" y2="224" stroke="#637386" stroke-width="1.6" marker-end="url(#m-byn)"/>
+<line x1="238" y1="198" x2="182" y2="224" stroke="#637386" stroke-width="1.6" marker-end="url(#m-byn)"/>
+<rect x="30" y="226" width="260" height="36" rx="10" fill="#fff" stroke="#637386" stroke-width="1.5"/>
+<text x="160" y="249" font-size="11.5" font-weight="700">Recién entonces se publica el balance</text>
+</g>
+</svg>
+<figcaption>Misma información, conductas distintas: lo que cambia es la finalidad de la operación (apunte, 9.2.3).</figcaption>
+</figure>
 <h3 data-sub="byn-problema">Problema jurídico</h3>
 <p>Los estados financieros aprobados y aún no enviados a la CMF son información privilegiada (doctrina del caso Piñera con LAN). ¿Qué conducta prohibida cometió cada director, si uno vendió y el otro compró?</p>
 <h3 data-sub="byn-decision">Cómo se resolvió (según el apunte)</h3>
@@ -699,6 +941,7 @@
   <li><b>El almuerzo en el Tiramisú:</b> en un almuerzo familiar en esa pizzería de El Golf, con sus hermanas, para coordinar trámites de una herencia, les reveló la información o les recomendó comprar.</li>
   <li>Durante el mismo almuerzo, las hermanas dieron instrucciones por teléfono a sus corredores para <b>comprar acciones de CAP</b>.</li>
 </ul>
+<div class="flow"><div class="node">Director de la sociedad<small>conoce el plan sobre CAP por su cargo</small></div><div class="arrow">→</div><div class="node y">Almuerzo familiar<small>revela la información o recomienda comprar</small></div><div class="arrow">→</div><div class="node hot">Las hermanas compran CAP<small>durante el mismo almuerzo</small></div></div>
 <h3 data-sub="navarrete-problema">Problema jurídico</h3>
 <p>¿Qué conducta prohibida comete cada uno? El apunte distingue tres:</p>
 <table class="tabla">
