@@ -190,9 +190,14 @@
       '<a class="lat-link' + (ruta === '#/oral' ? ' activo' : '') + '" href="#/oral">🎙️ Simulacro oral</a>' +
       '<a class="lat-link' + (ruta.indexOf('#/glosario') === 0 ? ' activo' : '') + '" href="#/glosario">📘 Glosario<span class="sub">' + E.glosario().length + ' conceptos</span></a>' +
       '<a class="lat-link' + (ruta === '#/progreso' ? ' activo' : '') + '" href="#/progreso">📊 Mi progreso</a>';
+    // Las unidades especiales de casos (tipo:'casos') van arriba, justo después de «Mi progreso»;
+    // el resto sigue el orden de materia.js. Solo cambia la barra lateral.
     var bloque = null;
-    E.materia.unidades.forEach(function (meta) {
-      if (meta.bloque !== bloque) { bloque = meta.bloque; html += '<div class="lat-titulo">' + esc(bloque) + '</div>'; }
+    var metas = E.materia.unidades.filter(function (m) { return m.tipo === 'casos'; })
+      .concat(E.materia.unidades.filter(function (m) { return m.tipo !== 'casos'; }));
+    metas.forEach(function (meta) {
+      if (meta.tipo === 'casos') html += '<div class="lat-sep" aria-hidden="true"></div>';
+      else if (meta.bloque !== bloque) { bloque = meta.bloque; html += '<div class="lat-titulo">' + esc(bloque) + '</div>'; }
       var u = E.unidad(meta.id);
       if (!u) { html += '<span class="lat-link pronto">' + esc(nombreUnidad(meta)) + '<span class="sub">Próximamente</span></span>'; return; }
       var res = SRS.resumen(u.preguntas, d.preguntas);
@@ -316,28 +321,37 @@
          enLaMateria: [{ u: 'u9', seccion: '<id>', sub: '<data-sub>', nota: '…' }], // dónde se menciona
          fuentes: [{ titulo: '…', url: 'https://…' }]                        // links externos
        }
-     El motor dibuja la ficha sobre el html de la sección y, en cada sección nombrada en
-     enLaMateria, un aviso «Caso relacionado» que lleva de vuelta al caso. */
+     El motor dibuja los datos sobre el html de la sección; «Dónde se ve en la materia» y las
+     fuentes van al final, en desplegables cerrados (<details>), para no cortar la lectura.
+     En cada sección nombrada en enLaMateria aparece un aviso «Caso relacionado» que lleva
+     de vuelta al caso. */
   function buscarSeccion(uid, sid) {
     var u = E.unidad(uid), s = u && u.secciones.filter(function (x) { return x.id === sid; })[0];
     return s ? { u: u, s: s } : null;
   }
   function fichaCaso(s) {
     var f = s.ficha; if (!f) return '';
-    var html = '<div class="ficha-caso">';
-    if (f.datos && f.datos.length) html += '<dl class="ficha-datos">' + f.datos.map(function (p) { return '<div><dt>' + esc(p[0]) + '</dt><dd>' + esc(p[1]) + '</dd></div>'; }).join('') + '</dl>';
+    if (!f.datos || !f.datos.length) return '';
+    return '<div class="ficha-caso"><dl class="ficha-datos">' + f.datos.map(function (p) { return '<div><dt>' + esc(p[0]) + '</dt><dd>' + esc(p[1]) + '</dd></div>'; }).join('') + '</dl></div>';
+  }
+  function pieCaso(s) {
+    var f = s.ficha; if (!f) return '';
+    function desplegable(titulo, items) {
+      return '<details class="ficha-desplegable"><summary>' + titulo + ' <span class="small">(' + items.length + ')</span></summary><ul>' + items.join('') + '</ul></details>';
+    }
     var refs = (f.enLaMateria || []).map(function (r) {
       var x = buscarSeccion(r.u, r.seccion); if (!x) return '';
       var sub = r.sub && subseccionesDe(x.s).filter(function (y) { return y.id === r.sub; })[0];
       return '<li><a href="' + rutaSec(x.u, x.s, sub && sub.id) + '">' + esc(nombreUnidad(x.u)) + ' › ' + esc(x.s.titulo) + (sub ? ' › ' + esc(sub.titulo) : '') + '</a>' +
         (r.nota ? ' <span class="small">— ' + esc(r.nota) + '</span>' : '') + '</li>';
-    }).join('');
-    if (refs) html += '<div class="ficha-bloque"><div class="kicker">📍 Dónde se ve en la materia</div><ul>' + refs + '</ul></div>';
+    }).filter(Boolean);
     var fuentes = (f.fuentes || []).filter(function (x) { return /^https:\/\//.test(x.url || ''); }).map(function (x) {
       return '<li><a href="' + esc(x.url) + '" target="_blank" rel="noopener noreferrer">' + esc(x.titulo) + ' ↗</a></li>';
-    }).join('');
-    if (fuentes) html += '<div class="ficha-bloque"><div class="kicker">🔗 Para saber más (fuentes externas)</div><ul>' + fuentes + '</ul></div>';
-    return html + '</div>';
+    });
+    if (!refs.length && !fuentes.length) return '';
+    return '<div class="ficha-pie">' +
+      (refs.length ? desplegable('📍 Dónde se ve en la materia', refs) : '') +
+      (fuentes.length ? desplegable('🔗 Para saber más: fuentes externas', fuentes) : '') + '</div>';
   }
   function avisoCasos(u, s) {
     var links = [];
@@ -383,7 +397,7 @@
     if (u.lecturas) html += '<div class="callout"><p><b>Material base:</b> ' + u.lecturas + '</p></div>';
     html += '<div class="diapo-barra">' + chipsIndice(u, d, null) + '<div class="diapo-acciones">' + botonModo('lista') + '</div></div>';
     u.secciones.forEach(function (s) {
-      html += '<section class="seccion" id="sec-' + s.id + '">' + cabeceraSeccion(u, s, d) + fichaCaso(s) + s.html + avisoInteractivos(u, s) + avisoCasos(u, s) + '</section>';
+      html += '<section class="seccion" id="sec-' + s.id + '">' + cabeceraSeccion(u, s, d) + fichaCaso(s) + s.html + avisoInteractivos(u, s) + avisoCasos(u, s) + pieCaso(s) + '</section>';
     });
     html += '<div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" style="text-decoration:none" href="#/u/' + u.id + '/practicar">Practicar esta unidad</a><a class="btn sec" style="text-decoration:none" href="#/u/' + u.id + '/oral">Preguntas orales</a></div>';
     c.innerHTML = html;
@@ -415,7 +429,7 @@
     html += '<div class="carrusel" id="carrusel">' + flecha(ant, 'izq') +
       '<section class="seccion diapo' + (dir ? ' entra-' + dir : '') + '" id="sec-' + s.id + '">' + cabeceraSeccion(u, s, d) + fichaCaso(s) +
       (subs.length ? '<nav class="subindice" aria-label="Subsecciones">' + subs.map(function (x) { return '<a href="' + rutaSec(u, s, x.id) + '">' + esc(x.titulo) + '</a>'; }).join('') + '</nav>' : '') +
-      s.html + avisoInteractivos(u, s) + avisoCasos(u, s) +
+      s.html + avisoInteractivos(u, s) + avisoCasos(u, s) + pieCaso(s) +
       '<div class="comprueba" id="comprueba"></div>' +
       '<nav class="diapo-nav">' +
         (ant ? '<a class="btn sec" href="' + rutaSec(u, ant) + '">← ' + esc(ant.titulo) + '</a>' : '<span></span>') +

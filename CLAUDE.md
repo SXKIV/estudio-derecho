@@ -262,6 +262,9 @@ sección. Así heredan diapositivas, «Comprueba lo que leíste», modo oral, re
      fuentes: [{ titulo: '…', url: 'https://…' }]                          // solo links https
    }
    ```
+   El motor muestra `datos` como franja al inicio del caso; `enLaMateria` y `fuentes`, al final, en dos
+   desplegables cerrados (`<details>`), para no cortar la lectura. En la barra lateral, la unidad
+   `tipo: 'casos'` va justo después de «Mi progreso» (el resto de la página sigue el orden de `materia.js`).
    Cada sección nombrada en `enLaMateria` muestra sola un aviso «⚖️ Caso relacionado» con un link
    al caso: no hay que editar las unidades.
 3. Contenido de cada caso: primero «Lo que dice el apunte» (con el número del punto); después
