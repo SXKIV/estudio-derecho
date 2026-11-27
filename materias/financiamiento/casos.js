@@ -5,7 +5,7 @@
    - «Lo que dice el apunte»: apunte completo de clases del Prof. Goldenberg (Cofisa, 3.3–3.4.2) y del
      Prof. Gaspar (Inverlink, Azul Azul, Cascadas y La Polar). El apunte de Gaspar marca con la nota
      «Pregunta de examen» los casos que pregunta en el oral (lo indica la ficha de cada caso).
-   - «Contexto (fuente externa)»: solo datos confirmados en las páginas enlazadas en la ficha
+   - «Contexto (fuente externa)»: solo datos confirmados en las páginas enlazadas al final del caso
      (revisadas en noviembre de 2026).
    Pendientes: Chispas y D&S/Falabella (ver CLAUDE.md). */
 (function () {
@@ -13,7 +13,7 @@
     id: 'casos', tipo: 'casos', icono: '⚖️', bloque: 'Casos',
     titulo: 'Casos vistos en clases',
     resumen: 'Los casos que se ven en clases, explicados para el oral: hechos, problema jurídico, cómo se resolvió y por qué importan en la materia. Cada uno enlaza con las unidades donde aparece.',
-    lecturas: 'Apuntes completos de clases de los Profs. Goldenberg y Gaspar. El contexto externo de cada caso viene de las fuentes enlazadas en su ficha y está separado de lo que dice el apunte. En el oral, el Prof. Gaspar pide explicar el caso y su importancia en la materia.',
+    lecturas: 'Apuntes completos de clases de los Profs. Goldenberg y Gaspar. El contexto externo de cada caso viene de las fuentes enlazadas al final de cada caso y está separado de lo que dice el apunte. En el oral, el Prof. Gaspar pide explicar el caso y su importancia en la materia.',
 
     secciones: [
       {
@@ -78,7 +78,7 @@
   <li>La <b>NCG 484</b> de la CMF exige, entre otros requisitos, que la comisión se calcule según el <b>costo de prestar el servicio</b>. Ese requisito recoge Cofisa: un cobro que depende del plazo o del capital es interés.</li>
 </ul>
 <h3 data-sub="cofisa-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos del comunicado del Sernac enlazado en la ficha.</p>
+<p class="small">Fuera del apunte. Datos del comunicado del Sernac enlazado al final del caso.</p>
 <ul>
   <li>El Sernac informó el fallo el 9 de octubre de 2015. Dijo que la Corte Suprema estableció que Cofisa cobró intereses sobre la tasa máxima convencional mediante una «comisión variable mensual (AVM)».</li>
   <li>La cláusula que permitía el cobro se tuvo por no escrita y quedó prohibido cobrar esa comisión.</li>
@@ -155,7 +155,7 @@
 </ul>
 <div class="callout"><p><b>Ejemplo del apunte:</b> si en el bus te roban el ticket de la maleta, el chofer le entrega la maleta a quien presente el ticket y queda liberado. No importa el robo ocurrido antes.</p></div>
 <h3 data-sub="inverlink-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos de las notas de prensa enlazadas en la ficha.</p>
+<p class="small">Fuera del apunte. Datos de las notas de prensa enlazadas al final del caso.</p>
 <ul>
   <li><b>Sede penal:</b> en agosto de 2015, la Corte Suprema (Segunda Sala, fallo unánime) confirmó la condena de siete ejecutivos por delitos de la Ley de Valores. Acogió la demanda civil de la Corfo: los condenados debían pagar en forma solidaria $26.462.295.646 por daño emergente, y BBVA Corredora de Bolsa también, por la responsabilidad de sus funcionarios.</li>
   <li><b>Restitución por terceros:</b> en abril de 2013, la Corte Suprema (Tercera Sala, fallo dividido) ordenó a San Antonio Terminal Internacional (STI) restituir a la Corfo más de $400 millones, recibidos desde la corredora Inverlink. Según la nota, esa acción no busca indemnizar: el tercero solo devuelve el beneficio que recibió producto del dolo.</li>
@@ -202,7 +202,7 @@
   <li><b>En Chile</b> el esquema de Howey <b>no sería valor</b>: el art. 3° de la Ley 18.045 exige un título de crédito de inversión, con abstracción, autonomía y transferibilidad.</li>
 </ul>
 <h3 data-sub="howey-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos del texto de la sentencia enlazado en la ficha.</p>
+<p class="small">Fuera del apunte. Datos del texto de la sentencia enlazado al final del caso.</p>
 <ul>
   <li>La Corte Suprema de EE. UU. decidió el caso el <b>27 de mayo de 1946</b>. Revocó la decisión de los tribunales inferiores, que habían rechazado la acción de la SEC.</li>
   <li>La sentencia define el contrato de inversión como un contrato, transacción o esquema en que una persona invierte su dinero en una empresa común y espera ganancias <b>solo del esfuerzo del promotor o de un tercero</b>.</li>
@@ -256,7 +256,7 @@
   <li>Se relaciona con el <b>caso Sartor</b> (U8, 5.2.5): la CMF intervino Sartor AGF a fines de 2024 por préstamos sin garantías a empresas vinculadas a sus administradores.</li>
 </ul>
 <h3 data-sub="azul-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la nota de CNN Chile enlazados en la ficha.</p>
+<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la nota de CNN Chile enlazados al final del caso.</p>
 <ul>
   <li>Según la CMF, el 13 de diciembre de 2024 Inversiones Antumalal compró a Asesorías e Inversiones Sartor cuotas equivalentes al <b>90,07%</b> del FIP Tactical Sport. El FIP tenía el <b>63,07% de las acciones Serie B</b> de Azul Azul, lo que le daba el control.</li>
   <li>En octubre de 2026, el Consejo de la CMF multó a Michael Clark con <b>UF 20.000</b> por no hacer la OPA que exige el art. 199 LMV.</li>
@@ -309,7 +309,7 @@
   <li>Se estudia junto al <b>caso Sartor</b>: en Aurus hubo negligencia e indemnización voluntaria; en Sartor, cargos por deslealtad y sin compensación.</li>
 </ul>
 <h3 data-sub="aurus-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la nota de La Tercera enlazados en la ficha.</p>
+<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la nota de La Tercera enlazados al final del caso.</p>
 <ul>
   <li>La CMF informó la sanción el 3 de mayo de 2018 (Resolución Exenta N° 1653, de 27 de abril de 2018). El procedimiento se inició en 2016 por la errónea valorización, contabilización, custodia y registro de las inversiones de los fondos Insignia y Global.</li>
   <li>Peña, director de la AGF y gerente de inversiones de ambos fondos, recibió <b>UF 10.000</b> por conductas que el Consejo calificó de «gravísimas». Cuatro directores recibieron UF 1.000 cada uno; otro, UF 200; el gerente general, UF 900; y la propia AGF, UF 1.000.</li>
@@ -364,7 +364,7 @@
 <div class="card"><div class="kicker">Sartor (2024)</div><h4 style="margin:4px 0 8px">Deber de lealtad</h4><ul style="margin:0;padding-left:18px"><li>Préstamos sin garantías a empresas de <b>los propios dueños</b>.</li><li><b>Sin indemnización</b>: pérdida del 50% al 70% de las cuotas.</li><li>Intervención de la CMF y <b>formalizaciones</b> penales.</li></ul></div>
 </div>
 <h3 data-sub="sartor-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos de los comunicados de la CMF enlazados en la ficha.</p>
+<p class="small">Fuera del apunte. Datos de los comunicados de la CMF enlazados al final del caso.</p>
 <ul>
   <li>El 15 de abril de 2025, la CMF inició un procedimiento sancionatorio y formuló cargos contra Sartor AGF, en liquidación, y sus ex directores y ejecutivos, por hechos anteriores a la intervención de fines de 2024.</li>
   <li>El 18 de noviembre de 2025 (Resolución N° 11.869), la CMF aplicó multas por un total de <b>367.500 UF</b> a ex directores y al ex gerente general, en su mayoría con <b>inhabilidad de 5 años</b>, y <b>revocó la autorización de existencia</b> de Sartor AGF.</li>
@@ -443,7 +443,7 @@
   <li>Las <b>clasificadoras de riesgo</b> tuvieron errores de evaluación cuestionados en esta crisis (7.8.3).</li>
 </ul>
 <h3 data-sub="subprime-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos del ensayo de Federal Reserve History (escrito al 22 de noviembre de 2013), enlazado en la ficha.</p>
+<p class="small">Fuera del apunte. Datos del ensayo de Federal Reserve History (escrito al 22 de noviembre de 2013), enlazado al final del caso.</p>
 <ul>
   <li>Describe la crisis como un período de turbulencia financiera entre <b>2007 y 2010</b>, causado por la expansión de las hipotecas a deudores de alto riesgo junto con el alza de los precios de las viviendas.</li>
   <li>Los prestamistas agrupaban las hipotecas en carteras que vendían a inversionistas. Los bonos respaldados por hipotecas emitidos por privados financiaban la mayor parte de los créditos <i>subprime</i>.</li>
@@ -522,7 +522,7 @@
   <li>Muestra por qué la oferta privada se reserva a quienes pueden defenderse solos, como los <b>inversionistas calificados</b>, y no al público <i>retail</i>.</li>
 </ul>
 <h3 data-sub="chang-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos de las notas de prensa enlazadas en la ficha.</p>
+<p class="small">Fuera del apunte. Datos de las notas de prensa enlazadas al final del caso.</p>
 <ul>
   <li>En abril de 2017, un tribunal de Malta rechazó la extradición y Chang quedó en libertad. Según Emol, Chile lo acusaba de presunta estafa e infracciones a la Ley General de Bancos y a la Ley de Mercado de Valores.</li>
   <li>En noviembre de 2018, la Corte de Apelaciones de Malta confirmó el rechazo. Según El Dínamo, se basó en la falta de rigurosidad de la documentación presentada, porque las traducciones no se hicieron bajo juramento.</li>
@@ -602,7 +602,7 @@
   <li>Sirve para contrastar con <b>Azul Azul</b> (control indirecto, sí exigía OPA) y con <b>LAN</b> (control por pacto, sin OPA).</li>
 </ul>
 <h3 data-sub="clc-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos de las notas enlazadas en la ficha. El apunte usa cifras aproximadas («~»).</p>
+<p class="small">Fuera del apunte. Datos de las notas enlazadas al final del caso. El apunte usa cifras aproximadas («~»).</p>
 <ul>
   <li>Según CNN Chile, Indisa y EuroAmerica se quedaron cada una con una mitad del paquete que controlaba el grupo de Karlezi (55,75%). Declararon a la CMF que son grupos empresariales separados y que no han suscrito acuerdo alguno sobre la gestión ni el control de la clínica.</li>
   <li>Según Diario Financiero (8 de julio de 2025), antes del aumento de capital EuroAmerica tenía 28,66%, Indisa 27,87% y un tercer accionista 6,45%. El tercero bajó a 4,45%. Quedaron sobre el 5% solo EuroAmerica (29,6%) e Indisa (28,78%), y EuroAmerica pasó a ser la controladora.</li>
@@ -644,7 +644,7 @@
 <tr><td><b>LAN</b></td><td>Pacto de actuación conjunta, sin compra de acciones</td><td><span class="etiqueta verde">No</span> pero se informa (art. 54)</td></tr>
 </table>
 <h3 data-sub="lan-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos de las notas de Cooperativa enlazadas en la ficha.</p>
+<p class="small">Fuera del apunte. Datos de las notas de Cooperativa enlazadas al final del caso.</p>
 <ul>
   <li>En julio de 2007, la SVS sancionó a Piñera porque no se abstuvo de operar con información privilegiada sobre los resultados de LAN. Había comprado, por medio de una sociedad, tres millones de acciones de LAN un día antes de que se publicaran resultados trimestrales favorables. La multa fue de <b>19.470 UF</b> (más de $363 millones), y él anunció que la pagaría.</li>
   <li>Juan José Cueto sí reclamó. En noviembre de 2012, la Corte Suprema rechazó su casación y confirmó una multa de <b>1.620 UF</b> por no abstenerse de comprar acciones conociendo los estados financieros.</li>
@@ -692,7 +692,7 @@
   <li>Explica por qué la regulación de las operaciones en bolsa exige que el precio se forme con una contraparte real (7.7.3).</li>
 </ul>
 <h3 data-sub="cascadas-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos de las notas enlazadas en la ficha.</p>
+<p class="small">Fuera del apunte. Datos de las notas enlazadas al final del caso.</p>
 <ul>
   <li>En octubre de 2020, la Corte Suprema (Tercera Sala) rechazó la casación de Julio Ponce Lerou. La sentencia de la Corte de Apelaciones de Santiago, aplicando lo resuelto por el Tribunal Constitucional, había rebajado su multa de <b>1.700.000 UF a 75.000 UF</b>. Otro ejecutivo también quedó con una multa de 75.000 UF.</li>
   <li>Según La Tercera, la Corte Suprema ratificó la conclusión de la SVS de que Ponce cometió una serie de infracciones a las leyes de valores y de sociedades anónimas.</li>
@@ -772,7 +772,7 @@
   <li><b>Responsabilidades (8.1 y 8.3):</b> civil contra los <i>gatekeepers</i> y doble persecución, administrativa y penal, por la información falsa.</li>
 </ul>
 <h3 data-sub="polar-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos de las páginas enlazadas en la ficha.</p>
+<p class="small">Fuera del apunte. Datos de las páginas enlazadas al final del caso.</p>
 <ul>
   <li>Según CNN Chile, la Corte Suprema confirmó una multa de <b>4.500 UF</b> a PwC por su responsabilidad en la revisión de los estados financieros de Inversiones SCG, la empresa que administraba las tarjetas de crédito de La Polar.</li>
   <li>El 16 de marzo de 2026, el Poder Judicial informó que la Corte Suprema (Primera Sala, rol 25.039-2024) confirmó la condena de siete exejecutivos de La Polar a pagar a <b>AFP Provida</b>, en forma solidaria, el equivalente a <b>2.575.388 UF</b> por responsabilidad extracontractual.</li>
@@ -842,7 +842,7 @@
   <li>Muestra la tensión de los <b>hechos reservados</b>: se protege el interés social al no divulgar, pero quien conoce la reserva queda obligado a no transar.</li>
 </ul>
 <h3 data-sub="videla-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la nota de Diario Financiero enlazados en la ficha.</p>
+<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la nota de Diario Financiero enlazados al final del caso.</p>
 <ul>
   <li>La CMF aplicó a Videla una multa de <b>UF 15.000</b> (Resolución N° 7222, informada el 4 de octubre de 2023) por infringir el art. 165 LMV.</li>
   <li>El hecho reservado era del <b>3 de febrero de 2022</b>. Cencosud, por medio de Cencosud Brasil, había firmado un memorándum de entendimiento para analizar y eventualmente comprar Torre y Cía. Supermercados, una cadena de Río de Janeiro.</li>
@@ -912,7 +912,7 @@
   <li>Aplica la doctrina de <b>Piñera con LAN</b>: los estados financieros aprobados son información privilegiada hasta que se divulgan (9.2.1).</li>
 </ul>
 <h3 data-sub="byn-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la noticia del Poder Judicial enlazados en la ficha.</p>
+<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la noticia del Poder Judicial enlazados al final del caso.</p>
 <ul>
   <li>La información eran los estados financieros de Blanco y Negro <b>al 31 de marzo de 2018</b>, aprobados por el directorio el día anterior y no publicados. Las operaciones fueron el 29 de mayo de 2018.</li>
   <li><b>Ruiz-Tagle:</b> la CMF lo sancionó por infringir el deber de abstención y, por las ventas del mismo día, la prohibición de usar información privilegiada. Su multa de 15.000 UF se rebajó a <b>7.500 UF</b> por colaboración, con inhabilidad de cinco años, y la CMF remitió los antecedentes al Ministerio Público.</li>
@@ -959,7 +959,7 @@
   <li>Se estudia junto al <b>caso Blanco y Negro</b> (2020), que el apunte usa para distinguir el uso (Restle vendió para evitar una pérdida) de la infracción al deber de abstención (Mosa compró para aumentar su control, sin fin especulativo).</li>
 </ul>
 <h3 data-sub="navarrete-contexto">Contexto (fuente externa)</h3>
-<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la nota de La Tercera enlazados en la ficha.</p>
+<p class="small">Fuera del apunte. Datos del comunicado de la CMF y de la nota de La Tercera enlazados al final del caso.</p>
 <ul>
   <li>La información era un acuerdo del directorio de Invercap del <b>4 de diciembre de 2020</b>: comprar el <b>6,77% de las acciones de CAP</b>. Esa compra podía darle a Invercap la elección de cuatro de los siete directores de CAP.</li>
   <li>Según la CMF, Felipe Navarrete compró acciones de CAP el 7 de diciembre de 2020. Sus hermanas dieron la orden de compra el 4 de enero de 2021, en un almuerzo.</li>
